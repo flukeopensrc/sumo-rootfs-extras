@@ -1,0 +1,300 @@
+[
+	{
+		"currentValue" : 50,
+		"factoryDefault" : 50,
+		"integervalidator" : 
+		{
+			"max" : 100,
+			"min" : 0
+		},
+		"name" : "brightness"
+	},
+	{
+		"currentValue" : "I90D",
+		"factoryDefault" : "I90D",
+		"name" : "cal_interval",
+		"regexvalidator" : 
+		{
+			"regex" : "^(I90D|I1Y|I2Y)$"
+		}
+	},
+	{
+		"currentValue" : "C95",
+		"factoryDefault" : "C95",
+		"name" : "confidence_level",
+		"regexvalidator" : 
+		{
+			"regex" : "^(C95|C99)$"
+		}
+	},
+	{
+		"currentValue" : 30.199999999999999,
+		"doublevalidator" : 
+		{
+			"max" : 30.199999999999999,
+			"min" : 0.0
+		},
+		"factoryDefault" : 30.199999999999999,
+		"name" : "current_max"
+	},
+	{
+		"currentValue" : -30.199999999999999,
+		"doublevalidator" : 
+		{
+			"max" : 0.0,
+			"min" : -30.199999999999999
+		},
+		"factoryDefault" : -30.199999999999999,
+		"name" : "current_min"
+	},
+	{
+		"currentValue" : "Z600",
+		"factoryDefault" : "Z600",
+		"name" : "dbm_reference",
+		"regexvalidator" : 
+		{
+			"regex" : "^(Z50|Z75|Z90|Z100|Z135|Z150|Z300|Z600|Z900|Z1000|Z1200)$"
+		}
+	},
+	{
+		"currentValue" : "CELSIUS",
+		"factoryDefault" : "CELSIUS",
+		"name" : "degree_default",
+		"regexvalidator" : 
+		{
+			"regex" : "^(CELSIUS|FAHRENHEIT)$"
+		}
+	},
+	{
+		"currentValue" : "NOMINAL",
+		"factoryDefault" : "NOMINAL",
+		"name" : "error_reference",
+		"regexvalidator" : 
+		{
+			"regex" : "^(NOMINAL|TRUEVALUE)$"
+		}
+	},
+	{
+		"currentValue" : 10,
+		"factoryDefault" : 10,
+		"integervalidator" : 
+		{
+			"max" : 30,
+			"min" : 0
+		},
+		"name" : "gpib_address"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : true,
+		"name" : "gpib_enabled"
+	},
+	{
+		"currentValue" : "R100",
+		"factoryDefault" : "R100",
+		"name" : "pt385_default",
+		"regexvalidator" : 
+		{
+			"regex" : "^(R100|R200|R500|R1000)$"
+		}
+	},
+	{
+		"currentValue" : 0,
+		"factoryDefault" : 0,
+		"integervalidator" : 
+		{
+			"max" : 255,
+			"min" : 0
+		},
+		"name" : "remote_ese"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : true,
+		"name" : "remote_psc"
+	},
+	{
+		"currentValue" : 0,
+		"factoryDefault" : 0,
+		"integervalidator" : 
+		{
+			"max" : 255,
+			"min" : 0
+		},
+		"name" : "remote_sre"
+	},
+	{
+		"currentValue" : "B9600",
+		"factoryDefault" : "B9600",
+		"name" : "rs232_baud_rate",
+		"regexvalidator" : 
+		{
+			"regex" : "^(B9600|B19200|B38400|B57600|B115200)$"
+		}
+	},
+	{
+		"currentValue" : 8,
+		"factoryDefault" : 8,
+		"integervalidator" : 
+		{
+			"max" : 8,
+			"min" : 7
+		},
+		"name" : "rs232_data_bits"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : true,
+		"name" : "rs232_enabled"
+	},
+	{
+		"currentValue" : "CRLF",
+		"factoryDefault" : "CRLF",
+		"name" : "rs232_eol_char",
+		"regexvalidator" : 
+		{
+			"regex" : "^(CR|LF|CRLF)$"
+		}
+	},
+	{
+		"currentValue" : "xon_xoff",
+		"factoryDefault" : "xon_xoff",
+		"name" : "rs232_flow_control",
+		"regexvalidator" : 
+		{
+			"regex" : "^(none|xon_xoff|rts_cts)$"
+		}
+	},
+	{
+		"currentValue" : "TERM",
+		"factoryDefault" : "TERM",
+		"name" : "rs232_interface",
+		"regexvalidator" : 
+		{
+			"regex" : "^(TERM|COMP)$"
+		}
+	},
+	{
+		"currentValue" : "none",
+		"factoryDefault" : "none",
+		"name" : "rs232_parity",
+		"regexvalidator" : 
+		{
+			"regex" : "^(none|odd|even)$"
+		}
+	},
+	{
+		"currentValue" : 1,
+		"factoryDefault" : 1,
+		"integervalidator" : 
+		{
+			"max" : 2,
+			"min" : 1
+		},
+		"name" : "rs232_stop_bits"
+	},
+	{
+		"currentValue" : "PT385",
+		"factoryDefault" : "PT385",
+		"name" : "rtd_default",
+		"regexvalidator" : 
+		{
+			"regex" : "^(PT385|PT3926|PT3916|CU10|NU120)$"
+		}
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : false,
+		"factoryDefault" : false,
+		"name" : "state_fine_trace"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : false,
+		"factoryDefault" : false,
+		"name" : "state_gross_trace"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : false,
+		"factoryDefault" : false,
+		"name" : "system_fine_trace"
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : false,
+		"name" : "system_gross_trace"
+	},
+	{
+		"currentValue" : "B",
+		"factoryDefault" : "K",
+		"name" : "tc_default",
+		"regexvalidator" : 
+		{
+			"regex" : "^[BCEJKLNRSTUXYZ]$|^A1$|^XK$"
+		}
+	},
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : true,
+		"name" : "telnet_enabled"
+	},
+	{
+		"currentValue" : "CRLF",
+		"factoryDefault" : "CRLF",
+		"name" : "telnet_eol_char",
+		"regexvalidator" : 
+		{
+			"regex" : "^(CR|LF|CRLF)$"
+		}
+	},
+	{
+		"currentValue" : "TERM",
+		"factoryDefault" : "TERM",
+		"name" : "telnet_interface",
+		"regexvalidator" : 
+		{
+			"regex" : "^(TERM|COMP)$"
+		}
+	},
+    {
+        "currentValue" : "ITS90",
+        "factoryDefault" : "ITS90",
+        "name" : "temp_scale_default",
+        "regexvalidator" :
+        {
+            "regex" : "^(ITS90|IPTS48|IPTS68)$"
+        }
+    },
+	{
+		"booleanvalidator" : "",
+		"currentValue" : true,
+		"factoryDefault" : true,
+		"name" : "usbtmc_enabled"
+	},
+	{
+		"currentValue" : 1020.0,
+		"doublevalidator" : 
+		{
+			"max" : 1020.0,
+			"min" : 0.0
+		},
+		"factoryDefault" : 1020.0,
+		"name" : "voltage_max"
+	},
+	{
+		"currentValue" : -1020.0,
+		"doublevalidator" : 
+		{
+			"max" : 0.0,
+			"min" : -1020.0
+		},
+		"factoryDefault" : -1020.0,
+		"name" : "voltage_min"
+	}
+]

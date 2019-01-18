@@ -1,0 +1,76 @@
+a9_011719:
+- Recommended filesystem is 011719
+- Minimum A6 firmware is 011717/1.6
+- Persistent guard crossing with keep alive
+- Usbtmc
+- Lots of GUI changes
+- Scope infrastructure
+
+a9_121918:
+- Recommended filesystem is 121818 
+- Minimum A6 firmware is 082818/1.51
+- Recompiled all processes and libraries with Sumo
+- Target now has only Python 3
+
+a9_120618:
+- Recommended filesystem is 091418
+- Minimum A6 firmware is 082818/1.51
+- Includes new GUI using QML
+- Additional Opman support for current and power
+- State support for temperature functions (not in Opman yet)
+- Reduced polling from Opman and delays in busy loops to improve
+  performance
+- System settings module
+- Added mutex to jsonrpc connectors
+- Go to standby on all function changes
+
+a9_092818:
+- Minimum A6 firmware is 082818/1.51
+- Additional fixes for high voltage AC. Some concerns still exist
+  about the 330V range boundary.
+
+a9_092618:
+- Minimum A6 firmware is 082818/1.51
+- *** For use with Proto C A7 ***
+- ACV - reverted to full frequency 330V AC range
+- Initial pass at temperature functions, more work to be done.
+
+a9_091918:
+- Minimum A6 firmware is 082818/1.51
+- ACV - between 110V and 330V with > 10 kHz frequency should now
+  select the 330V range. Above 330V with <= 10 kHZ frequency should
+  now select the 1020V range.
+- Fix for segmentation fault in GUI.
+- Resistance should be functioning again.
+- Some tweaks to the Qwidgets implementation of setup.
+- Partial AC Power functionality in Opman.
+- Partial DC Power functionality in Opman.
+- Lows open/tied in DC & AC Power.
+
+a9_083018:
+- Minimum A6 firmware is 082818/1.51
+- High voltage ranges now call correct sequences for DCV and ACV
+- All initialization sequences should run, even if there is a prior
+  failure or board missing.
+- The SEQ? command in the remote interface is now SEQ without the
+  question mark.
+- The GUI should start automatically on power up.
+Known Issues:
+- Some performance related issues were observed on Dave's system.
+  Notably, remote commands issued via telnet seemed a bit slow and a
+  keytest application was observed to be slow. There was some hardware
+  swapping that occurred and the problem seems to have gone away.
+  Please report any similar instances.
+- A segmentation fault was observed within the GUI, but this seems to
+  only occur if the GUI is started independently from the other
+  modules. The fault appeared sporadically, so please try to document
+  the steps you took prior to observing the fault condition.
+
+a9_082818:
+- Minimum A6 firmware is 082818/1.51
+- 1st release on rev3 a9
+- includes guard crossing changes:
+  - Seq downloaded to inguard
+  - Reg downloaded to outguard
+Known Issues:
+- High voltage ranges not calling correct sequences

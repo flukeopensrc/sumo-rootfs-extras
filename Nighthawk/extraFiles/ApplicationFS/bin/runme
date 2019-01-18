@@ -1,0 +1,15 @@
+#!/bin/sh
+
+export QMLSCENE_DEVICE=softwarecontext
+export QT_QPA_PLATFORM=linuxfb
+export QT_QPA_FONTDIR=/usr/share/fonts/ttf
+
+cd /home/Nighthawk/bin
+/home/Nighthawk/bin/subpub &
+sleep 1
+/home/Nighthawk/bin/settings &> /settings_out.txt 2>&1 &
+/home/Nighthawk/bin/opman &> /opman_out.txt 2>&1 &
+sleep 12
+/home/Nighthawk/bin/state &> /state_out.txt 2>&1 &
+/home/Nighthawk/bin/remoteapp &> /remote_out.txt 2>&1 &
+/home/Nighthawk/bin/start-ui

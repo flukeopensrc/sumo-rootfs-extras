@@ -1,0 +1,208 @@
+{
+    "AC 10 mV gain": {
+        "description": "Gain correction for 10 mV AC range",
+        "type": "ac gain",
+        "gain": 600.000,
+        "default": {
+            "gain": 600.0
+        }
+    },
+    "AC 100 mV gain": {
+        "description": "Gain correction for 100 mV AC range",
+        "type": "ac gain",
+        "gain": 60.0000,
+        "default": {
+            "gain": 60.0
+        }
+    },
+    "AC 1V gain": {
+        "description": "Gain correction for 1V AC range",
+        "type": "ac gain",
+        "gain": 6.00000,
+        "default": {
+            "gain": 6.0
+        }
+    },
+    "AC 10V gain": {
+        "description": "Gain correction for 10V AC range",
+        "type": "ac gain",
+        "gain": 0.600000,
+        "default": {
+            "gain": 0.6
+        }
+    },
+    "AC 100V gain": {
+        "description": "Gain correction for 100V AC range",
+        "type": "ac gain",
+        "gain": 0.060000,
+        "default": {
+            "gain": 0.06
+        }
+    },
+    "AC 330V gain": {
+        "description": "Gain correction for 330V AC range",
+        "type": "ac gain",
+        "gain": 0.020000,
+        "default": {
+            "gain": 0.02
+        }
+    },
+    "AC HF330V gain": {
+        "description": "Gain correction for 330V high frequency AC range",
+        "type": "ac gain",
+        "gain": 0.019000,
+        "default": {
+            "gain": 0.019
+        }
+    },
+    "AC 1000V gain": {
+        "description": "Gain correction for 1000V AC range",
+        "type": "ac gain",
+        "gain": 0.006000,
+        "default": {
+            "gain": 0.006
+        }
+    },
+    "AC 10 mV DC offset gain": {
+        "description": "Gain correction for 10 mV range DC offset of AC",
+        "type": "linear",
+        "gain": 359.71,
+        "offset": 0.0,
+        "default": {
+            "gain": 359.71,
+            "offset": 0.0
+        }
+    },
+    "AC 100 mV DC offset gain": {
+        "description": "Gain correction for 100 mV range DC offset of AC",
+        "type": "linear",
+        "gain": 35.971,
+        "offset": 0.0,
+        "default": {
+            "gain": 35.971,
+            "offset": 0.0
+        }
+    },
+    "AC 1V DC offset gain": {
+        "description": "Gain correction for 1V range DC offset of AC",
+        "type": "linear",
+        "gain": 3.5971,
+        "offset": 0.0,
+        "default": {
+            "gain": 3.5971,
+            "offset": 0.0
+        }
+    },
+    "AC 10V DC offset gain": {
+        "description": "Gain correction for 10V range DC offset of AC",
+        "type": "linear",
+        "gain": 0.35971,
+        "offset": 0.0,
+        "default": {
+            "gain": 0.35971,
+            "offset": 0.0
+        }
+    },
+    "AC 10 mV centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 10 mV AC range",
+        "type": "linear",
+        "gain": 22222220.0,
+        "offset": 0.0,
+        "default": {
+            "gain": 22222220.0,
+            "offset": 0.0
+        }
+    },
+    "AC 100 mV centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 100 mV AC range",
+        "type": "linear",
+        "gain": 4098360.0,
+        "offset": 0.0,
+        "default": {
+            "gain": 4098360.0,
+            "offset": 0.0
+        }
+    },
+    "AC 1V centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 1V AC range",
+        "type": "linear",
+        "gain": 222222.2,
+        "offset": 0.0,
+        "default": {
+            "gain": 222222.2,
+            "offset": 0.0
+        }
+    },
+    "AC 10V centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 10V AC range",
+        "type": "linear",
+        "gain": 38461.5,
+        "offset": 0.0,
+        "default": {
+            "gain": 38461.5,
+            "offset": 0.0
+        }
+    },
+    "AC 100V centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 100V AC range",
+        "type": "linear",
+        "gain": 3846.15,
+        "offset": 0.0,
+        "default": {
+            "gain": 3846.15,
+            "offset": 0.0
+        }
+    },
+    "AC 1000V centering": {
+        "description": "Counts per volt to cancel DC offset of the signal in 1000V AC range",
+        "type": "linear",
+        "gain": 384.615,
+        "offset": 0.0,
+        "default": {
+            "gain": 384.615,
+            "offset": 0.0
+        }
+    },
+    "BiPoly test": {
+        "description": "Test of the BiPoly correction",
+        "type": "bipoly",
+        "coeffs": [
+            [
+                1.0
+            ],
+            [
+                0.0,
+                0.0
+            ],
+            [
+                0.0,
+                0.0,
+                0.0
+            ]
+        ],
+        "default": {
+            "coeffs": [
+                [
+                    0.0
+                ]
+            ]
+        }
+
+    },
+    "Piecewise test": {
+        "description": "Test of the piecewise correction. TODO: needs a default",
+        "type": "piecewise",
+        "points": [
+            {
+                "x": 1000.0,
+                "y": 0.0,
+                "interp": "linear"
+            },
+            {
+                "x": 1000000.0,
+                "y": 0.0,
+                "interp": "poly2"
+            }
+        ]
+    }
+}

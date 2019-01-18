@@ -1,0 +1,156 @@
+{
+    "AC 100 uA range": {
+        "description": "VCAL volts for 100 uA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 uA gain"
+        ]
+    },
+    "AC 1 mA range": {
+        "description": "VCAL volts for 1 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1 mA gain"
+        ]
+    },
+    "AC 10 mA range": {
+        "description": "VCAL volts for 10 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10 mA gain"
+        ]
+    },
+    "AC 100 mA range": {
+        "description": "VCAL volts for 100 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 mA gain"
+        ]
+    },
+    "AC 1A range": {
+        "description": "VCAL volts for 1A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1A gain"
+        ]
+    },
+    "AC 3A range": {
+        "description": "VCAL volts for 3A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 3A gain"
+        ]
+    },
+    "AC 10A range": {
+        "description": "VCAL volts for 10A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10A gain"
+        ]
+    },
+    "AC 30A range": {
+        "description": "VCAL volts for 30A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 30A gain"
+        ]
+    },
+    "AC aux 100 mV range": {
+        "description": "VCAL volts for secondary 100 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 mA gain"
+        ]
+    },
+    "AC aux 1V range": {
+        "description": "VCAL volts for secondary 1V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1A gain"
+        ]
+    },
+    "AC aux 5V range": {
+        "description": "VCAL volts for secondary 5V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 3A gain"
+        ]
+    },
+    "AC 100 uA range scale": {
+        "description": "Scale DAC volts for 100 uA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 uA scale gain"
+        ]
+    },
+    "AC 1 mA range scale": {
+        "description": "Scale DAC volts for 1 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1 mA scale gain"
+        ]
+    },
+    "AC 10 mA range scale": {
+        "description": "Scale DAC volts for 10 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10 mA scale gain"
+        ]
+    },
+    "AC 100 mA range scale": {
+        "description": "Scale DAC volts for 100 mA AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 mA scale gain"
+        ]
+    },
+    "AC 1A range scale": {
+        "description": "Scale DAC volts for 1A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1A scale gain"
+        ]
+    },
+    "AC 3A range scale": {
+        "description": "Scale DAC volts for 3A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 3A scale gain"
+        ]
+    },
+    "AC 10A range scale": {
+        "description": "Scale DAC volts for 10A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10A scale gain"
+        ]
+    },
+    "AC 30A range scale": {
+        "description": "Scale DAC volts for 30A AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 30A scale gain"
+        ]
+    },
+    "AC aux 100 mV range scale": {
+        "description": "Scale DAC volts for 100 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC aux 100 mA scale gain"
+        ]
+    },
+    "AC aux 1V range scale": {
+        "description": "Scale DAC volts for 1V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC aux 1A scale gain"
+        ]
+    },
+    "AC aux 5V range scale": {
+        "description": "Scale DAC volts for 5V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC aux 5V scale gain"
+        ]
+    }
+}

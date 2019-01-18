@@ -1,0 +1,11 @@
+#!/bin/sh
+source /home/setup_environment_target
+file=/home/$PRODUCT_NAME/config/setmac
+cp $file ${file}.save
+echo "export macaddr_eth0=$1" >> $file
+echo '/sbin/ifconfig eth0 down' >> $file
+echo '/sbin/ifconfig eth0 hw ether $macaddr_eth0' >> $file
+
+echo "export macaddr_eth1=$2" >> $file
+echo '/sbin/ifconfig eth1 down' >> $file
+echo '/sbin/ifconfig eth1 hw ether $macaddr_eth1' >> $file

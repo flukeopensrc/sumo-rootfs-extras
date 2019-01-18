@@ -1,0 +1,79 @@
+
+/srv/tftpboot
+
+
+
+# get host's (southwind)IP address using ifconfig:
+/sbin/ifconfig
+    inet addr:129.196.136.114
+
+sf probe 1
+# In U-Boot, set an environment variable to southwind's IP address:
+setenv serverip 129.196.136.114
+setenv serverip 129.196.137.128
+
+# check for mac addr on device
+printenv ethaddr
+
+# if not set
+setenv ethaddr 00:80:40:FF:00:30
+setenv eth1addr 00:80:40:FF:00:31
+
+# Program U10 
+sf probe ${qspiloadcs}
+mw.b ${loadaddr} 0xffffffff 0x4000000
+dhcp ${loadaddr} Nighthawk/U10.bin
+sf probe ${qspiloadcs}
+sf update ${loadaddr} 0x0 0x4000000
+
+# download the image for the second flash part
+sf probe 1
+sf erase 0x0 0x10000000
+sf probe 1
+mw.b ${loadaddr} 0xffffffff 0x10000000
+dhcp ${loadaddr} Nighthawk/ubi.img
+sf probe 1
+sf update ${loadaddr} 0x0 0x10000000
+
+Linux Kernel 
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${bootimagesize}
+dhcp ${loadaddr} Nighthawk/zImage 
+sf update ${loadaddr} ${qspibootimageaddr} ${bootimagesize}
+
+Aux JFFS2 partition 
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x3000000 
+dhcp ${loadaddr} Nighthawk/jffs2Aux.bin 
+sf update ${loadaddr} 0x800000 0x3000000 
+
+BLOB
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x10000 
+dhcp ${fdtaddr} Nighthawk/zImage-Nighthawk_soc.dtb 
+sf update ${fdtaddr} ${qspifdtaddr} 0x10000 
+
+Pre-Loader
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x50000
+dhcp ${loadaddr} Nighthawk/preloader-mkpimage.bin
+sf update ${loadaddr} 0x0 0x50000
+
+U-Boot
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x40000
+dhcp ${loadaddr} Nighthawk/u-boot.img
+sf update ${loadaddr} 0x60000 0x40000
+
+U-Boot Splash screen application
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${splashimagesize}
+dhcp ${loadaddr} Nighthawk/hello_world.bin
+sf update ${loadaddr} ${qspisplashimageaddr} ${splashimagesize}
+
+FPGA configuration
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${fpgadatasize}
+dhcp ${loadaddr} Nighthawk/Nighthawk_OG.rbf
+sf update ${loadaddr} ${qspifpgaaddr} ${fpgadatasize}
+

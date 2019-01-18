@@ -1,0 +1,132 @@
+{
+    "AC 10 mV range": {
+        "description": "VDAC volts for 10 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10 mV gain"
+        ]
+    },
+    "AC 100 mV range": {
+        "description": "VDAC volts for 100 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 mV gain"
+        ]
+    },
+    "AC 1V range": {
+        "description": "VDAC volts for 1V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1V gain",
+            "Piecewise test"
+        ]
+    },
+    "AC 10V range": {
+        "description": "VDAC volts for 10V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10V gain",
+            "BiPoly test"
+        ]
+    },
+    "AC 100V range": {
+        "description": "VDAC volts for 100V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100V gain"
+        ]
+    },
+    "AC 330V range": {
+        "description": "VDAC volts for 1000V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 330V gain"
+        ]
+    },
+    "AC HF330V range": {
+        "description": "VDAC volts for 330V high frequency AC range",
+        "type": "ac chain",
+        "links": [
+            "AC HF330V gain"
+        ]
+    },
+    "AC 1000V range": {
+        "description": "VDAC volts for 1000V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1000V gain"
+        ]
+    },
+    "AC 10 mV range scale": {
+        "description": "Scale DAC volts for 10 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10 mV range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 100 mV range scale": {
+        "description": "Scale DAC volts for 100 mV AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100 mV range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 1V range scale": {
+        "description": "Scale DAC volts for 1V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 10V range scale": {
+        "description": "Scale DAC volts for 10V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 10V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 100V range scale": {
+        "description": "Scale DAC volts for 100V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 100V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 330V range scale": {
+        "description": "Scale DAC volts for 330V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 330V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC HF330V range scale": {
+        "description": "Scale DAC volts for 330V high frequency AC range",
+        "type": "ac chain",
+        "links": [
+            "AC HF330V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "AC 1000V range scale": {
+        "description": "Scale DAC volts for 1000V AC range",
+        "type": "ac chain",
+        "links": [
+            "AC 1000V range",
+            "ACV scale/main ratio"
+        ]
+    },
+    "ACV scale/main ratio": {
+        "description": "Ratio of scale DAC to main DAC setting for ACV ranges (separate from peak/avg)",
+        "type": "ac gain",
+        "gain": 0.16666666,
+        "default": {
+            "gain": 0.166666666
+        }
+    }
+}

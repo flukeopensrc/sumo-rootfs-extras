@@ -1,0 +1,99 @@
+{
+    "Baud Rate": {
+        "description": "Baud Rate for RS-232",
+		"type": "integer", 		
+        "value": 0,
+        "default": 0
+    },
+    "Data Bits": {
+        "description": "Data Bits for RS-232",
+		"type": "integer",		
+        "value": 3,
+        "default": 3
+    },	
+    "Stop Bits": {
+        "description": "Data Bits for RS-232",
+		"type": "integer",		
+        "value": 0,
+        "default": 0
+    },
+    "Parity": {
+        "description": "Parity Setting for RS-232",
+		"type": "integer",		
+        "value": 2,
+        "default": 2
+    },	
+    "Flow Control": {
+        "description": "Flow Control Setting for RS-232",
+		"type": "integer",		
+        "value": 0,
+        "default": 0
+    },	
+    "Serial EOL": {
+        "description": "End Of Line Setting for RS-232",
+		"type": "integer",		
+        "value": 2,
+        "default": 2
+    },
+    "Serial Verbose": {
+        "description": "Terminal or Computer Mode Setting for RS-232",
+		"type": "bool",		
+        "value": true,
+        "default": true
+    },	
+    "USB Gadget Verbose": {
+        "description": "Terminal or Computer Mode Setting for USB Gadget",
+		"type": "bool",		
+        "value": true,
+        "default": true
+    },	
+    "USB Gadget EOL": {
+        "description": "End Of Line Setting for USB Gadget",
+		"type": "integer",		
+        "value": 2,
+        "default": 2
+    },	
+    "Telnet Verbose": {
+        "description": "Terminal or Computer Mode Setting for Ethernet Telnet",
+		"type": "bool",		
+        "value": true,
+        "default": true
+    },	
+    "Telnet EOL": {
+        "description": "End Of Line Setting for Ethernet Telnet",
+		"type": "integer",		
+        "value": 2,
+        "default": 2
+    },
+    "Telnet Port": {
+        "description": "Ethernet Telnet Port Setting",
+		"type": "integer",		
+        "value": 3490,
+        "default": 3490
+    },	
+    "GPIB Address": {
+        "description": "GPIB Primary Address Setting",
+		"type": "integer",		
+        "value": 10,
+        "default": 10
+    },	
+    "Remote PSC": {
+        "description": "Remote Power On Status Clear Setting",
+		"type": "bool",		
+        "value": true,
+        "default": true
+    },
+    "Remote ESE": {
+        "description": "Remote Event Status Enable (ESE) Mask Setting",
+		"type": "integer",		
+        "value": 0,
+        "default": 0
+    },	
+    "Remote SRE": {
+        "description": "Remote Service Request Enable (SRE) Mask Setting",
+		"type": "integer",		
+        "value": 0,
+        "default": 0
+    }	
+}
+

@@ -1,0 +1,47 @@
+
+source ./setup_environment
+
+sudo mkdir ./target/home/$PROJECT_NAME
+#mkdir ./target/lib/modules
+sudo mkdir ./target/home/Test
+sudo mkdir ./target/home/Proto
+sudo mkdir ./target/lib/firmware
+sudo mkdir ./target/config
+
+sudo rm -f ./target/etc/systemd/network/*
+sudo rm -f ./target/etc/systemd/system/getty.target.wants/getty@tty1.service
+sudo rm -f ./target/lib/systemd/system/systemd-timesyncd.service
+sudo rm -f ./target/lib/systemd/system/systemd-timedated.service
+sudo rm -f ./target/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+sudo rm -f ./target/etc/lighttpd.conf
+sudo rm -f ./target/etc/php-fpm.conf
+sudo rm -rf ./target/www
+
+sudo ln -s /dev/null ./target/etc/systemd/network/10-en.network
+sudo ln -s /dev/null ./target/etc/systemd/network/11-eth.network
+
+sudo cp -p ./extraFiles/systemd/* ./target/etc/systemd/system/.
+sudo cp -p ./extraFiles/profile ./target/etc/.
+sudo cp -p ./extraFiles/lighttpd.conf ./target/etc/.
+sudo cp -p ./extraFiles/php-fpm.conf ./target/etc/.
+sudo cp -Rp ./extraFiles/www ./target/.
+
+sudo sed -i "s/#NAutoVTs=.*$/NAutoVTs=0/" ./target/etc/systemd/logind.conf
+sudo sed -i "s/#ReserveVT=.*$/ReserveVT=0/" ./target/etc/systemd/logind.conf
+sudo sed -i '/root/d' ./target/etc/passwd
+sudo bash -c "cat ./extraFiles/passwd >> ./target/etc/passwd"
+sudo bash -c "cat ./extraFiles/group  >> ./target/etc/group"
+#cat ./extraFiles/fstab  >> ./target/etc/fstab
+
+sudo cp -RpL ./extraFiles/ApplicationFS/* ./target/home/$PROJECT_NAME/.
+sudo cp -Rp ./modules/lib/modules/* ./target/lib/modules/.
+
+sudo cp -RpP ./extraFiles/usr_lib/* ./target/usr/lib/.
+sudo cp -p ./setup_environment_target  ./target/home/.
+sudo cp -p ./DeviceTree/zImage-Nighthawk_soc_overlay.dtb ./target/lib/firmware/.
+
+cd ./target/etc/systemd/system/multi-user.target.wants
+sudo ln -s /lib/systemd/system/php-fpm.service php-fpm.service
+sudo ln -s ../instrument.service instrument.service
+sudo ln -s ../launchApp.service launchApp.service
+

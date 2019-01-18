@@ -1,0 +1,273 @@
+{
+    "A8_DORM": {
+        "description": "Put the A8 into known safe state",
+        "steps": [
+            {
+                "description": "Turn off HV supplies",
+                "operation": "exec",
+                "sequence": "A8_SUPPLY_ALL_OFF"
+            },
+            {
+                "description": "Reset A8 relays",
+                "operation": "write",
+                "register": "A8RLY",
+                "value": "0x000"
+            }
+        ]
+    },
+    "A8_100V_STBY": {
+        "description": "12V TO 120V DC TO 100KHZ",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8RLY",
+                "value": "0x0C0"
+            }
+        ]
+    },
+    "A8_HF330V_STBY": {
+        "description": "120V TO 330V 10KHZ TO 100KHZ",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8RLY",
+                "value": "0x368"
+            }
+        ]
+    },
+    "A8_330V_STBY": {
+        "description": "120V TO 330V DC TO 10KHZ",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8RLY",
+                "value": "0x02B"
+            }
+        ]
+    },
+    "A8_1000V_STBY": {
+        "description": "330V TO 1020V DC TO 10KHZ",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8RLY",
+                "value": "0x417"
+            }
+        ]
+    },
+    "A8_SUPPLY_200VDC_ON": {
+        "description": "ENABLE THE 200V SUPPLIES",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8190EN",
+                "value": "0x1"
+            }
+        ]
+    },
+    "A8_SUPPLY_ALL_OFF": {
+        "description": "TURN OFF ALL HV SUPPLIES",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8HVEN",
+                "value": "0x0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8190EN",
+                "value": "0x0"
+            }
+        ]
+    },
+    "A8_SUPPLY_HVDC_ON": {
+        "description": "ENABLE THE 2KV SUPPLIES",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A8HVEN",
+                "value": "0x1"
+            }
+        ]
+    },
+    "A8_DCV_LT330V_SETUP": {
+        "description": "Set up A8 for values from 120V to 330V",
+        "steps": [
+            {
+                "description": "Set up A8 relays",
+                "operation": "exec",
+                "sequence": "A8_330V_STBY"
+            },
+            {
+                "description": "Select 1000V supply",
+                "operation": "exec",
+                "sequence": "A8_SUPPLY_HVDC_ON"
+            }
+        ]
+    },
+    "A8_DCV_GT330V_SETUP": {
+        "description": "Set up A8 for values from 330V to 1020V",
+        "steps": [
+            {
+                "description": "Set up A8 relays",
+                "operation": "exec",
+                "sequence": "A8_1000V_STBY"
+            },
+            {
+                "description": "Select 1000V supply",
+                "operation": "exec",
+                "sequence": "A8_SUPPLY_HVDC_ON"
+            }
+        ]
+    },
+    "A8_INIT": {
+        "description": "Initialize the a8 msp430",
+        "steps": [
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P8P2DIR",
+                "value": "0xe0"
+            },
+            {
+                "description": "enable pwm 1",
+                "operation": "force",
+                "register": "P8P2SEL",
+                "value": "0x80"
+            },
+            {
+                "description": "set all bits as outputs",
+                "operation": "force",
+                "register": "P8P5DIR",
+                "value": "0xff"
+            },
+            {
+                "description": "initialize to zeros",
+                "operation": "force",
+                "register": "P8P5",
+                "value": "0x00"
+            },
+            {
+                "description": "set bits 7,2,1,0 as outputs",
+                "operation": "force",
+                "register": "P8P6DIR",
+                "value": "0x87"
+            },
+            {
+                "description": "initialize to zeros",
+                "operation": "force",
+                "register": "P8P6",
+                "value": "0x00"
+            },
+            {
+                "description": "set bits [6..4] as outputs",
+                "operation": "force",
+                "register": "P8P7DIR",
+                "value": "0x70"
+            },
+            {
+                "description": "initialize to zeros",
+                "operation": "force",
+                "register": "P8P7",
+                "value": "0x00"
+            },
+            {
+                "description": "no clock dividers, up mode",
+                "operation": "force",
+                "register": "P8PWM1CTL",
+                "value": "0x0214"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P8PWM1EX0",
+                "value": "0x0000"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P8PWM10CCTL",
+                "value": "0x0000"
+            },
+            {
+                "description": "set output mode to toggle",
+                "operation": "force",
+                "register": "P8PWM11CCTL",
+                "value": "0x0080"
+            },
+            {
+                "description": "100 kHz (hex value is 16 MHz / 100kHz)",
+                "operation": "force",
+                "register": "P8PWM10",
+                "value": "0x0050"
+            },
+            {
+                "description": "50% duty cycle (A0 / 2)",
+                "operation": "force",
+                "register": "P8PWM11",
+                "value": "0x0028"
+            },
+            {
+                "description": "16-cycle sample-and-hold time, ADC on",
+                "operation": "force",
+                "register": "P8ADCTL0",
+                "value": "0x0210"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P8ADCTL1",
+                "value": "0x0000"
+            },
+            {
+                "description": "set 10-bit resolution",
+                "operation": "force",
+                "register": "P8ADCTL2",
+                "value": "0x0010"
+            },
+            {
+                "description": "select refs: V(R+)=VREF, V(R-)=AVSS",
+                "operation": "force",
+                "register": "P8ADMCTL",
+                "value": "0x10"
+            },
+            {
+                "description": "avearge 16 readings",
+                "operation": "force",
+                "register": "P8ADAVG",
+                "value": "0x0010"
+            },
+            {
+                "description": "enable ch3 and ch4 ADCs",
+                "operation": "force",
+                "register": "P8P9SEL",
+                "value": "0x0c"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A8_SUPPLY_ALL_OFF"
+            },
+            {
+                "description": "set relay strobe high",
+                "operation": "force",
+                "register": "P8P6",
+                "value": "0x80"
+            },
+            {
+                "description": "Reset all relays",
+                "operation": "force",
+                "register": "A8RLY",
+                "value": "0x00"
+            }
+        ]
+    }
+}

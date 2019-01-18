@@ -1,0 +1,1099 @@
+{
+    "A4_AD9956_INIT": {
+        "description": "Initialize control registers on AD9956",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4LFCFR1",
+                "value": "0x4050"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4LFCFR2",
+                "value": "0x610010"
+            }
+        ]
+    },
+    "A4_ADF4002_INIT": {
+        "description": "Initialize ADF4002",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4REFFUNC",
+                "value": "0x18014"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4REFRCNT",
+                "value": "0x28"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4REFNCNT",
+                "value": "0x100"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4REFFUNC",
+                "value": "0x18010"
+            }
+        ]
+    },
+    "A4_ADF4351_1100MHz": {
+        "description": "Set the 4351 to produce 1100 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0x9320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x90"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_137M5Hz": {
+        "description": "Set the 4351 to produce 137.5 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0xC320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x9A"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_1500MHz": {
+        "description": "Set the 4351 to produce 1500 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0x9320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x3C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x60"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_2100MHz": {
+        "description": "Set the 4351 to produce 2100 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0x9320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x540000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x40"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_2200MHz": {
+        "description": "Set the 4351 to produce 2200 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0x8320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x40"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_275MHz": {
+        "description": "Set the 4351 to produce 275 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0xB320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x9C"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_50MHZ": {
+        "description": "Set the 4351 to produce 50 Mhz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0xE320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0x8084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10EC2"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x400000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x9B"
+            }
+        ]
+    },
+    "A4_ADF4351_550MHz": {
+        "description": "Set the 4351 to produce 550 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0xA320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x98"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_ADF4351_68M75Hz": {
+        "description": "Set the 4351 to produce 68.75 MHz",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR5",
+                "value": "0x580005"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR4",
+                "value": "0xD320FC"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR3",
+                "value": "0xA084B3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR2",
+                "value": "0x10F42"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR1",
+                "value": "0x8008011"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4HFR0",
+                "value": "0x2C0000"
+            },
+            {
+                "description": "",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x9B"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x48"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            }
+        ]
+    },
+    "A4_DDS_FREQ": {
+        "description": "SET DDS Frequency",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4LFPCR0",
+                "value": "0xFCB923A29C7"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x0800"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P3",
+                "value": "0xB8"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x57"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P8",
+                "value": "0x09"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P9",
+                "value": "0x01"
+            }
+        ]
+    },
+    "A4_EDGE_A": {
+        "description": "2.5 V, 0.5 us pulse width at 1 MHz rep rate",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPP",
+                "value": "0x000400"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPW",
+                "value": "0x000200"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4CPLDMARKER",
+                "value": "0x05"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x17"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P7",
+                "value": "0xB6"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P8",
+                "value": "0x08"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_10VDC_RANGE"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_POLARITY_NEGATIVE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VCALCOARSE",
+                "value": "0x1300"
+            }
+        ]
+    },
+    "A4_EDGE_B": {
+        "description": "600 mV, 0.5 us pulse width at 1 MHz rep rate",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPP",
+                "value": "0x000400"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPW",
+                "value": "0x000200"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4CPLDMARKER",
+                "value": "0x05"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P6",
+                "value": "0x32"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P7",
+                "value": "0xB5"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x8000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P8",
+                "value": "0x08"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_10VDC_RANGE"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_POLARITY_NEGATIVE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VCALCOARSE",
+                "value": "0x1300"
+            }
+        ]
+    },
+    "A4_INIT": {
+        "description": "Initialize A4 board (configures MSP430 only right now)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P1SEL",
+                "value": "0x38"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P1DIR",
+                "value": "0xFF"
+            },
+            {
+                "description": "CS/latch defaults",
+                "operation": "force",
+                "register": "P4P1",
+                "value": "0x82"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P2DIR",
+                "value": "0x7"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P2RES",
+                "value": "0xF8"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P3DIR",
+                "value": "0xFC"
+            },
+            {
+                "description": "",
+                "mask": "0xFC",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0x08"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P4RES",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P5DIR",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P6DIR",
+                "value": "0x7F"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P6RES",
+                "value": "0x80"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P7DIR",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P8DIR",
+                "value": "0x8F"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P8RES",
+                "value": "0x70"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P9DIR",
+                "value": "0x1"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4P9RES",
+                "value": "0xE"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P4SPICTL",
+                "value": "0xA940"
+            },
+            {
+                "description": "Enable relay drivers",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "P4P7",
+                "value": "0x80"
+            }
+        ]
+    },
+    "A4_INIT_LEVSINE": {
+        "description": "Initialize A4 board (configures MSP430 only right now)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_INIT"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_ADF4002_INIT"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_ADF4351_50MHz"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_LEVSINE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P8",
+                "value": "0x09"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x9B"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P9",
+                "value": "0x01"
+            }
+        ]
+    },
+    "A4_INIT_TOP": {
+        "description": "Initialize A4 board (configures MSP430 only right now)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_INIT"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_ADF4002_INIT"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_ADF4351_50MHZ"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_LEVELED_SINE_ATTEN0"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_INIT"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6VCALCOARSE",
+                "value": "0x3000"
+            }
+        ]
+    },
+    "A4_LEVELED_SINE_ATTEN0": {
+        "description": "(draft) Set up relays and outputs for leveled sine 0 attenuation",
+        "steps": [
+            {
+                "description": "enable relay output",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "P4P7",
+                "value": "0x80"
+            },
+            {
+                "description": "Set LF_SINE_H",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x0800"
+            },
+            {
+                "description": "",
+                "mask": "0xF0",
+                "operation": "modify",
+                "register": "P4P3",
+                "value": "0xB0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4P5",
+                "value": "0x1B"
+            },
+            {
+                "description": "",
+                "mask": "0x7F",
+                "operation": "modify",
+                "register": "P4P6",
+                "value": "0x57"
+            },
+            {
+                "description": "",
+                "mask": "0x3F",
+                "operation": "modify",
+                "register": "P4P7",
+                "value": "0x37"
+            },
+            {
+                "description": "",
+                "mask": "0x8F",
+                "operation": "modify",
+                "register": "P4P8",
+                "value": "0x09"
+            },
+            {
+                "description": "",
+                "mask": "0x1",
+                "operation": "modify",
+                "register": "P4P9",
+                "value": "0x0"
+            }
+        ]
+    },
+    "A4_PULSE": {
+        "description": "Sets 200 us pulse width at 1 kHz rep rate",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPP",
+                "value": "0x0F4240"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4PGPW",
+                "value": "0x030D40"
+            },
+            {
+                "description": "Select PLS_GEN",
+                "operation": "write",
+                "register": "P4CPLDMARKER",
+                "value": "0x07"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P4RLY",
+                "value": "0x0040"
+            }
+        ]
+    },
+    "A4_nest_test": {
+        "description": "Test the exec cmd",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_INIT"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A4_LEVELED_SINE_ATTEN0"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A14_HIV_LOI_OPER"
+            }
+        ]
+    }
+}

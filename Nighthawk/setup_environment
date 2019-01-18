@@ -1,0 +1,6 @@
+
+export PROJECT_NAME=Nighthawk
+export PROJECT_DEPLOY_DIR=/windriver/usr1/halfdome/fluke-cda-sumo-setup/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/glibc/images/
+export PROJECT_IMAGES_DIR=fluke-cda-nighthawk
+export PROJECT_IMAGES=$PROJECT_DEPLOY_DIR$PROJECT_IMAGES_DIR
+export TOOLCHAIN_REPO=/windriver/usr1/halfdome/fluke-cda-sumo-setup/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/glibc/sdk/x86_64/fluke-cda-nighthawk

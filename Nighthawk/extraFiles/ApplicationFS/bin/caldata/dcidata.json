@@ -1,0 +1,113 @@
+{
+    "DC 100 uA": {
+        "description": "Gain/offset correction for 100 uA DC range",
+        "type": "linear",
+        "gain": -50000.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -50000.0,
+            "offset": 0.0
+        }
+    },
+    "DC 1 mA": {
+        "description": "Gain/offset correction for 1 mA DC range",
+        "type": "linear",
+        "gain": -5000.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -5000.0,
+            "offset": 0.0
+        }
+    },
+    "DC 10 mA": {
+        "description": "Gain/offset correction for 10 mA DC range",
+        "type": "linear",
+        "gain": -500.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -500.0,
+            "offset": 0.0
+        }
+    },
+    "DC 100 mA": {
+        "description": "Gain/offset correction for 100 mA DC range",
+        "type": "linear",
+        "gain": -50.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -50.0,
+            "offset": 0.0
+        }
+    },
+    "DC 1A": {
+        "description": "Gain/offset correction for 1A DC range",
+        "type": "linear",
+        "gain": -5.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -5.0,
+            "offset": 0.0
+        }
+    },
+    "DC 3A": {
+        "description": "Gain/offset correction for 3A DC range",
+        "type": "linear",
+        "gain": -1.0,
+        "offset": 0.0,
+        "default": {
+            "gain": -1.0,
+            "offset": 0.0
+        }
+    },
+    "DC 10A": {
+        "description": "Gain/offset correction for 10A DC range (for Proto B, same as 30A)",
+        "type": "linear",
+        "gain": -0.09091,
+        "offset": 0.0,
+        "default": {
+            "gain": -0.09091,
+            "offset": 0.0
+        }
+    },
+    "DC 30A": {
+        "description": "Gain/offset correction for 30A DC range",
+        "type": "linear",
+        "gain": -0.09091,
+        "offset": 0.0,
+        "default": {
+            "gain": -0.09091,
+            "offset": 0.0
+        }
+    },
+    "DC aux 100 mV": {
+        "description": "Gain/offset correction for secondary 100 mV DC range",
+        "type": "linear",
+        "gain": 24.0,
+        "offset": 0.0,
+        "default": {
+            "gain": 24.0,
+            "offset": 0.0
+        }
+    },
+    "DC aux 1V": {
+        "description": "Gain/offset correction for secondary 1V DC range",
+        "type": "linear",
+        "gain": 3.0,
+        "offset": 0.0,
+        "default": {
+            "gain": 3.0,
+            "offset": 0.0
+        }
+    },
+    "DC aux 5V": {
+        "description": "Gain/offset correction for secondary 5V DC range",
+        "type": "linear",
+        "gain": 0.6,
+        "offset": 0.0,
+        "default": {
+            "gain": 0.6,
+            "offset": 0.0
+        }
+    }
+}
+

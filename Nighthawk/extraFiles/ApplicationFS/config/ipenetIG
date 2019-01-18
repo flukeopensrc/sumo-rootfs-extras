@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Set the MAC address for the inguard interface.
+/home/Nighthawk/config/setmacIG
+
+# Set up the internal ethernet interface.
+/sbin/ifconfig eth0 169.254.1.1 netmask 255.255.255.000
+

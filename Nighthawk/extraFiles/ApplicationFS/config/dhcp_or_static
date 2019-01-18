@@ -1,0 +1,9 @@
+#!/bin/sh
+# eth1 is the exposed network interface. Set it to DHCP mode. 
+# eth0 is the internal guard crossing interface. Set it to 
+#      the instrument specific static ip address. 
+source /home/setup_environment_target
+touch /etc/hosts
+hostname $sh_hostname
+/sbin/ifconfig eth0 $sh_ipaddr_nighthawk netmask $sh_netmask
+/sbin/udhcpc -i eth1 -t 0 -x hostname:$sh_hostname -q

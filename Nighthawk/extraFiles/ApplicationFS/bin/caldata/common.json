@@ -1,0 +1,104 @@
+{
+    "A6 VDAC": {
+        "description": "Compute VDAC coarse/fine counts from DAC volts",
+        "type": "hi res dac",
+        "coarse span": 16384,
+        "fine span": 16384,
+        "ratio": 15000.0,
+        "positive gain": 1187.25,
+        "negative gain": 1187.25,
+        "bipolar gain": 1187.25,
+        "positive zero": 314.62,
+        "negative zero": 16063.44,
+        "bipolar zero": 8192.0000,
+        "default":
+        {
+            "ratio": 15000.0,
+            "positive gain": 1187.25,
+            "negative gain": 1187.25,
+            "bipolar gain": 1187.25,
+            "positive zero": 314.62,
+            "negative zero": 16063.44,
+            "bipolar zero": 8192.0
+        }
+    },
+    "A6 VCAL": {
+        "description": "Compute VCAL coarse/fine counts from DAC volts",
+        "type": "hi res dac",
+        "coarse span": 16384,
+        "fine span": 16384,
+        "ratio": 15000.0,
+        "positive gain": 1187.25,
+        "negative gain": 1187.25,
+        "bipolar gain": 1187.25,
+        "positive zero": 314.62,
+        "negative zero": 16063.44,
+        "bipolar zero": 8192.0000,
+        "default":
+        {
+            "ratio": 15000.0,
+            "positive gain": 1187.25,
+            "negative gain": 1187.25,
+            "bipolar gain": 1187.25,
+            "positive zero": 314.62,
+            "negative zero": 16063.44,
+            "bipolar zero": 8192.0
+        }
+    },
+    "A6 VSCALE DAC": {
+        "description": "Compute scale DAC counts from AC volts",
+        "type": "linear",
+        "gain": 2222.43,
+        "offset": 0.0,
+        "default":
+        {
+            "gain": 2222.43,
+            "offset": 0.0
+        }
+    },
+    "A6 ISCALE DAC": {
+        "description": "Compute scale DAC counts from AC volts needed by the A7",
+        "type": "linear",
+        "gain": 2222.43,
+        "offset": 0.0,
+        "default":
+        {
+            "gain": 2222.43,
+            "offset": 0.0
+        }
+    },
+    "A6 frequency DAC": {
+        "description": "Compute frequency accumulator value for A6 DDS",
+        "type": "linear",
+        "gain": 100.0,
+        "offset": 0.0,
+        "default":
+        {
+            "gain": 100.0,
+            "offset": 0.0
+        }
+    },
+    "A7 DAC": {
+        "description": "Compute A7 DAC coarse/fine counts from DAC volts",
+        "type": "hi res dac",
+        "coarse span": 8196,
+        "fine span": 8196,
+        "ratio": 3000.0,
+        "positive gain": 1170.86,
+        "negative gain": 1170.86,
+        "bipolar gain": 1170.86,
+        "positive zero": 0.00000,
+        "negative zero": 8196.0000,
+        "bipolar zero": 4098.0000,
+        "default":
+        {
+            "ratio": 3000.0,
+            "positive gain": 1170.86,
+            "negative gain": 1170.86,
+            "bipolar gain": 1170.86,
+            "positive zero": 0.00000,
+            "negative zero": 8196.0000,
+            "bipolar zero": 4098.0000
+        }
+    }
+}

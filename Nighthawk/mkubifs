@@ -1,0 +1,7 @@
+
+
+mkfs.ubifs -q -r ./target -m 1 -e 65408 -c 4094 -o ubifs.img
+ubinize -o ubi.img -m 1 -p 64KiB ubinize.cfg
+mv ./ubifs.img ./rootfs/.
+mv ./ubi.img ./rootfs/.
+

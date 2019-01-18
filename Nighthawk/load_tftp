@@ -1,0 +1,13 @@
+source setup_environment
+
+if [ ! -d "/srv/tftpboot/$PROJECT_NAME" ]; then
+    echo "Creating the tftp server folder for "$PROJECT_NAME
+    mkdir /srv/tftpboot/$PROJECT_NAME
+fi
+
+echo "Populating the tftp server folders for "$PROJECT_NAME
+
+cp -p ./kernel/zImage /srv/tftpboot/$PROJECT_NAME/. 
+cp -p ./rootfs/U10.bin  /srv/tftpboot/$PROJECT_NAME/.
+cp -p ./rootfs/U11.bin  /srv/tftpboot/$PROJECT_NAME/.
+cp -p ./DeviceTree/zImage-*.dtb  /srv/tftpboot/$PROJECT_NAME/.
