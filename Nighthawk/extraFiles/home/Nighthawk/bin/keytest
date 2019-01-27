@@ -1,4 +1,0 @@
-#!/bin/sh
-
-source /home/Nighthakw/bin/qtenv
-/home/Nighthawk/bin/keytest.elf -qws &
