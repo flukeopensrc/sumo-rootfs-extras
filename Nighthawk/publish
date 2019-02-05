@@ -6,9 +6,9 @@ echo "Getting images from the deploy archive."
 ./getImages
 echo "done!"
 
-echo "Customizing the target directory."
-./targetify
-echo "done!"
+#echo "Customizing the target directory."
+#./targetify
+#echo "done!"
 
 echo "Building the rootfs image."
 if [ ! -d "./rootfs" ]; then
@@ -18,7 +18,9 @@ if [ ! -d "./targetAux" ]; then
     mkdir ./targetAux
 fi
 echo "Building the ubifs image."
-sudo ./mkubifs
+#sudo ./mkubifs
+cp -p $PROJECT_IMAGES/fluke-full-image-fluke-cda-nighthawk.ubi ./rootfs/ubi.img
+
 
 echo "Setting image permissions."
 sudo chmod 666 ./rootfs/ubi.img
