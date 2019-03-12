@@ -1,0 +1,19 @@
+Package: libxcb-keysyms1
+Version: 0.4.0-r0
+Description: XCB: The X protocol C binding utilities
+ The xcb-util module provides a number of libraries which sit on top of
+ libxcb, the core X protocol library, and some of the extension libraries.
+ These experimental libraries provide convenience functions and interfaces
+ which make the raw X protocol more usable. Some of the libraries also
+ provide client-side code which is not strictly part of the X protocol but
+ which have traditionally been provided by Xlib.
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv7at2hf-neon
+OE: xcb-util-keysyms
+Homepage: http://xcb.freedesktop.org/XcbUtil/
+Depends: libc6 (>= 2.25), libxcb1 (>= 1.12)
+Provides: xcb-util-keysyms
+Source: xcb-util-keysyms_0.4.0.bb

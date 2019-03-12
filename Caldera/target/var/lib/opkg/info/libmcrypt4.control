@@ -1,0 +1,15 @@
+Package: libmcrypt4
+Version: 2.5.8-r0
+Description: Replacement for the old crypt() package and crypt(1) command, with extensions
+ Replacement for the old crypt() package and crypt(1) command, with
+ extensions.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv7at2hf-neon
+OE: libmcrypt
+Homepage: http://mcrypt.sourceforge.net/
+Depends: libc6 (>= 2.25)
+Provides: libmcrypt
+Source: libmcrypt_2.5.8.bb

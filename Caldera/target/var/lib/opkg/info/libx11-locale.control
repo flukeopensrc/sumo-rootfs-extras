@@ -1,0 +1,14 @@
+Package: libx11-locale
+Version: 1:1.6.4-r0
+Description: Xlib: C Language X Interface library
+ This package provides a client interface to the X Window System,
+ otherwise known as 'Xlib'.  It provides a complete API for the basic
+ functions of the window system.
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT & MIT-style & BSD
+Architecture: armv7at2hf-neon
+OE: libx11
+Homepage: http://www.x.org
+Source: libx11_1.6.4.bb

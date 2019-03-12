@@ -1,0 +1,15 @@
+Package: util-linux-sulogin
+Version: 2.29.1-r0
+Description: A suite of basic system administration utilities
+ Util-linux includes a suite of basic system administration utilities
+ commonly found on most Linux systems.  Some of the more important
+ utilities include disk partitioning, kernel message management,
+ filesystem creation, and system login.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ & LGPLv2.1+ & BSD
+Architecture: armv7at2hf-neon
+OE: util-linux
+Depends: libc6 (>= 2.25), update-alternatives-opkg
+Source: util-linux_2.29.1.bb

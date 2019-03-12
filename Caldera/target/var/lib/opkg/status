@@ -1,0 +1,2205 @@
+Package: shadow-securetty
+Version: 4.2.1-r3
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Installed-Size: 1848
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: libbz2-1
+Version: 1.0.6-r5
+Depends: libc6 (>= 2.25)
+Provides: libbz2
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 49964
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libmcrypt4
+Version: 2.5.8-r0
+Depends: libc6 (>= 2.25)
+Provides: libmcrypt
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 129900
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-mail
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-mail-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9860
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libpam
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25)
+Recommends: libpam-runtime-suffix
+Provides: libpam-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 54556
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: lighttpd-module-indexfile
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5832
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: busybox-syslog
+Version: 1.24.1-r0
+Depends: update-alternatives-opkg
+Provides: busybox-syslog-systemd
+Replaces: busybox-syslog-systemd
+Conflicts: busybox-syslog-systemd
+Status: deinstall hold not-installed
+Architecture: armv7at2hf-neon
+
+Package: libxdmcp6
+Version: 1:1.1.2-r0
+Depends: libc6 (>= 2.25)
+Provides: libxdmcp
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 13996
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: php-cli
+Version: 7.1.7-r0
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libmcrypt4 (>= 2.5.8), libmysqlclient18 (>= 5.5.55), libpam (>= 1.3.0), libsqlite3-0 (>= 3.17.0), libssl1.0.2 (>= 1.0.2n), libxml2 (>= 2.9.4), libz1 (>= 1.2.11), php
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 10013476
+Installed-Time: 1533327292
+
+Package: libc6
+Version: 2.25-r0
+Provides: eglibc, glibc, rtld(GNU_HASH)
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 2830468
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: opkg
+Version: 1:0.3.4-r0
+Depends: libarchive, libc6 (>= 2.25), libopkg1 (>= 0.3.4), opkg-arch-config, update-alternatives-opkg, wget
+Provides: opkg-collateral
+Replaces: opkg-collateral, opkg-nogpg
+Conflicts: opkg-collateral
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/opkg/opkg.conf 882b918d3b6f80af40390aaca25d3f2e
+Installed-Size: 22920
+Installed-Time: 1533327292
+
+Package: wget
+Version: 1.19.1-r0
+Depends: libc6 (>= 2.25), libgnutls30 (>= 3.5.9), libpcre1 (>= 8.40), libz1 (>= 1.2.11), nettle (>= 3.3), update-alternatives-opkg
+Recommends: ca-certificates
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 385365
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: util-linux-mkfs
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 10016
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgstapp-1.0-0
+Version: 1.10.4-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3)
+Provides: libgstapp-1.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 39204
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: busybox
+Version: 1.24.1-r0
+Depends: libc6 (>= 2.25), update-alternatives-opkg
+Recommends: busybox-syslog, busybox-udhcpc
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 454321
+Installed-Time: 1533327290
+
+Package: libunistring2
+Version: 0.9.7-r0
+Depends: libc6 (>= 2.25)
+Provides: libunistring
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1359488
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-umount
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libmount1 (>= 2.29.1), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 18568
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: tslib-conf
+Version: 1.1-r0
+Provides: libts-0.0-conf
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 770
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: libssl1.0.2
+Version: 1.0.2n-r0
+Depends: libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n)
+Provides: libssl
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 244536
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: ttf-sazanami-mincho
+Version: 20040629-r9
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 10561570
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libgbm1
+Version: 2:17.0.2-r0
+Depends: libc6 (>= 2.25), libdrm2 (>= 2.4.75), libexpat1 (>= 2.2.0), wayland (>= 1.13.0)
+Provides: libgbm
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 35152
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: update-alternatives-opkg
+Version: 0.3.4+git0+1a708fd73d-r0
+Provides: update-alternatives, update-alternatives-cworth
+Replaces: update-alternatives-cworth
+Conflicts: update-alternatives-cworth
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 4510
+Installed-Time: 1533327289
+
+Package: lighttpd-module-fastcgi
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 35216
+Installed-Time: 1533327290
+
+Package: libxcb-keysyms1
+Version: 0.4.0-r0
+Depends: libc6 (>= 2.25), libxcb1 (>= 1.12)
+Provides: xcb-util-keysyms
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5688
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: busybox-udhcpc
+Version: 1.24.1-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2683
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-group
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-group-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9948
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libusb-0.1-4
+Version: 1:0.1.5-r0
+Depends: libc6 (>= 2.25), libusb-1.0-0 (>= 1.0.21)
+Provides: libusb-compat
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14064
+Installed-Time: 1533327290
+
+Package: libffi6
+Version: 3.2.1-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0)
+Provides: libffi
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 22440
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: openssl
+Version: 1.0.2n-r0
+Depends: libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libssl1.0.2 (>= 1.0.2n), openssl-conf
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 405162
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-xfixes0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-xfixes
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 18064
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libsolv0
+Version: 0.6.26-r0
+Depends: libc6 (>= 2.25)
+Provides: libsolv
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 327404
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: dbus-1
+Version: 1.10.14-r0
+Depends: base-files, base-passwd, libc6 (>= 2.25), libdbus-1-3 (>= 1.10.14), libexpat1 (>= 2.2.0), libsystemd0 (>= 232), libx11-6 (>= 1.6.4), shadow
+Provides: dbus, dbus-systemd, dbus-x11
+Replaces: dbus-systemd, dbus-x11
+Conflicts: dbus-systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/dbus-1/system.conf ba0df1208e214a87771671053c29dbe7
+ /etc/dbus-1/session.conf cc8ea0872ace9945b8fcfc232c316be2
+Installed-Size: 254415
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: nettle
+Version: 3.3-r0
+Depends: libc6 (>= 2.25), libgmp10 (>= 6.1.2)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 399720
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libqt5sensors-plugins
+Version: 5.8.0+git0+1220a31e6c-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5sensors5 (>= 5.8.0+git0+1220a31e6c), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Provides: qtsensors-plugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 141764
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: qtlocation-plugins
+Version: 5.8.0+git0+41cc347040-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtlocation (>= 5.8.0+git0+41cc347040)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 748572
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: libgstaudio-1.0-0
+Version: 1.10.4-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3), libgsttag-1.0-0 (>= 1.10.4), liborc-0.4-0 (>= 0.4.26), libz1 (>= 1.2.11)
+Provides: libgstaudio-1.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 294248
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: libxcb-randr0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-randr
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 38660
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: qtdeclarative
+Version: 5.8.0+git0+fffb997e19-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libgl-mesa (>= 17.0.2), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Recommends: qtdeclarative-plugins, qtdeclarative-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5695592
+Installed-Time: 1533327294
+
+Package: pam-plugin-securetty
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-securetty-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5760
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libopkg1
+Version: 1:0.3.4-r0
+Depends: libarchive (>= 3.2.2), libc6 (>= 2.25), libsolv0 (>= 0.6.26)
+Provides: libopkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 110828
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: lighttpd-module-dirlisting
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25), libpcre1 (>= 8.40)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 22528
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libusb-1.0-0
+Version: 1.0.21-r0
+Depends: libc6 (>= 2.25)
+Provides: libusb1
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 67724
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libuuid1
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25)
+Provides: util-linux-libuuid
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14272
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: ttf-dejavu-sans-mono
+Version: 2.37-r7
+Depends: fontconfig-utils, ttf-dejavu-common
+Status: install ok installed
+Architecture: all
+Installed-Size: 1178216
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: qtwebkit
+Version: 5.8.0+git0+74ac5b0f34-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libgcc1 (>= 6.4.0), libgl-mesa (>= 17.0.2), libglib-2.0-0 (>= 2.50.3), libgstapp-1.0-0 (>= 1.10.4), libgstaudio-1.0-0 (>= 1.10.4), libgstpbutils-1.0-0 (>= 1.10.4), libgstvideo-1.0-0 (>= 1.10.4), libicui18n58 (>= 58.2), libicuuc58 (>= 58.2), libjpeg62 (>= 1.5.1), libpng16-16 (>= 1.6.28), libqt5sensors5 (>= 5.8.0+git0+1220a31e6c), libsqlite3-0 (>= 3.17.0), libstdc++6 (>= 6.4.0), libx11-6 (>= 1.6.4), libxcomposite1 (>= 0.4.4), libxml2 (>= 2.9.4), libxrender1 (>= 0.9.10), libxslt (>= 1.1.29), libz1 (>= 1.2.11), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19), qtlocation (>= 5.8.0+git0+41cc347040)
+Recommends: qtwebkit-plugins, qtwebkit-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 21053560
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: qtquickcontrols-qmlplugins
+Version: 5.8.0+git0+201c86391c-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 860456
+Installed-Time: 1533327295
+
+Package: libxcb-shm0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-shm
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9872
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: mesa-megadriver
+Version: 2:17.0.2-r0
+Depends: libc6 (>= 2.25), libdrm-freedreno1 (>= 2.4.75), libdrm2 (>= 2.4.75), libexpat1 (>= 2.2.0), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0)
+Provides: mesa-driver-kgsl, mesa-driver-kms-swrast, mesa-driver-msm, mesa-driver-swrast
+Replaces: mesa-driver-kgsl, mesa-driver-kms-swrast, mesa-driver-msm, mesa-driver-swrast
+Conflicts: mesa-driver-kgsl, mesa-driver-kms-swrast, mesa-driver-msm, mesa-driver-swrast
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 4291552
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: base-files
+Version: 3.0.14-r89
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Conffiles:
+ /etc/fstab 3f9fc1357c78c1806237af3849476924
+ /etc/hostname ae33be3206e33427444add02f9a4204c
+ /etc/shells a0b758b0ae1eaefda1dfb8b031f7a903
+ /etc/motd d41d8cd98f00b204e9800998ecf8427e
+ /etc/nsswitch.conf 109e33e2c91d1853b5bc56078a96aa18
+ /etc/profile 384695e013697659005b73a5423b5c53
+Installed-Size: 3489
+Installed-Time: 1533327289
+
+Package: util-linux-mountpoint
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libmount1 (>= 2.29.1), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 10076
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: util-linux-sfdisk
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libfdisk1 (>= 2.29.1), libsmartcols1 (>= 2.29.1), libtinfo5 (>= 6.0+20161126)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 68324
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: shadow-base
+Version: 4.2.1-r0
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 103919
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-dri2-0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-dri2
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9876
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libstdc++6
+Version: 6.4.0-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0)
+Provides: libstdc++
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1047332
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-motd
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-motd-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5736
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: util-linux-runuser
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 22632
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: pam-plugin-warn
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-warn-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5696
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxrender1
+Version: 1:0.9.10-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4)
+Provides: libxrender
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 26528
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libsmartcols1
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25)
+Provides: util-linux-libsmartcols
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 96988
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-lsblk
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libmount1 (>= 2.29.1), libsmartcols1 (>= 2.29.1)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 47472
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libdbus-1-3
+Version: 1.10.14-r0
+Depends: libc6 (>= 2.25), libsystemd0 (>= 232)
+Recommends: dbus-1
+Provides: dbus-lib
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 192112
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: pam-plugin-rootok
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-rootok-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5704
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-util1
+Version: 0.4.0-r0
+Depends: libc6 (>= 2.25), libxcb1 (>= 1.12)
+Provides: xcb-util
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14060
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: packagegroup-fonts-truetype-japanese
+Version: 1.0-r2
+Depends: packagegroup-fonts-truetype-core, ttf-sazanami-gothic, ttf-sazanami-mincho
+Status: install ok installed
+Architecture: all
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: openssl-conf
+Version: 1.0.2n-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/ssl/openssl.cnf 7df26c55291b33344dc15e3935dabaf3
+Installed-Size: 10835
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libarchive
+Version: 3.2.2-r0
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libxml2 (>= 2.9.4), libz1 (>= 1.2.11)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 510784
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libmount1
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libuuid1 (>= 2.29.1)
+Provides: util-linux-libmount
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 187960
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: util-linux-mount
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libmount1 (>= 2.29.1), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 26888
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libxdamage1
+Version: 1:1.1.4-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4), libxfixes3 (>= 5.0.3)
+Provides: libxdamage
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5764
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libcrypto1.0.2
+Version: 1.0.2n-r0
+Depends: libc6 (>= 2.25)
+Recommends: openssl-conf
+Provides: libcrypto
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1178388
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: php
+Version: 7.1.7-r0
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libmcrypt4 (>= 2.5.8), libmysqlclient18 (>= 5.5.55), libpam (>= 1.3.0), libsqlite3-0 (>= 3.17.0), libssl1.0.2 (>= 1.0.2n), libxml2 (>= 2.9.4), libz1 (>= 1.2.11)
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 10169480
+Installed-Time: 1533327291
+
+Package: libtinfo5
+Version: 6.0+20161126-r0
+Depends: libc6 (>= 2.25)
+Recommends: ncurses-terminfo-base
+Suggests: ncurses-terminfo
+Provides: ncurses-libtinfo
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 105124
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libx11-locale
+Version: 1:1.6.4-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1238796
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libxxf86vm1
+Version: 1:1.1.4-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4), libxext6 (>= 1.3.3)
+Provides: libxxf86vm
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14004
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: wayland
+Version: 1.13.0-r0
+Depends: libc6 (>= 2.25), libffi6 (>= 3.2.1)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 100928
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: lighttpd-module-accesslog
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14232
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: packagegroup-fonts-truetype-core
+Version: 1.0-r2
+Depends: fontconfig-utils, ttf-dejavu-common, ttf-dejavu-sans, ttf-dejavu-sans-mono
+Status: install ok installed
+Architecture: all
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: util-linux-swaponoff
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libmount1 (>= 2.29.1), libsmartcols1 (>= 2.29.1), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 45288
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libelf1
+Version: 0.168-r0
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: libelf
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 63464
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgstpbutils-1.0-0
+Version: 1.10.4-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3), libgstaudio-1.0-0 (>= 1.10.4), libgsttag-1.0-0 (>= 1.10.4), libgstvideo-1.0-0 (>= 1.10.4), liborc-0.4-0 (>= 0.4.26), libz1 (>= 1.2.11)
+Provides: libgstpbutils-1.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 150876
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: libxcb-shape0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-shape
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9868
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: less
+Version: 487-r0
+Depends: libc6 (>= 2.25), libtinfo5 (>= 6.0+20161126), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 115688
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-permit
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-permit-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5700
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: systemd-extra-utils
+Version: 1:232-r0
+Depends: base-files, base-passwd, libblkid1 (>= 2.29.1), libc6 (>= 2.25), libgcc1 (>= 6.4.0), shadow, systemd (>= 232)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 259279
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: systemd-container
+Version: 1:232-r0
+Depends: iptables (>= 1.6.1), libacl1 (>= 2.2.52), libblkid1 (>= 2.29.1), libc6 (>= 2.25), libgcc1 (>= 6.4.0), systemd (>= 232)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 331111
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: iproute2
+Version: 4.10.0-r0
+Depends: libc6 (>= 2.25), libelf1 (>= 0.168), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 410201
+Installed-Time: 1533327291
+
+Package: ttf-dejavu-sans
+Version: 2.37-r7
+Depends: fontconfig-utils, ttf-dejavu-common
+Status: install ok installed
+Architecture: all
+Installed-Size: 3096848
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: pointercal
+Version: 0.0-r11
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-agetty
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 35060
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libpng16-16
+Version: 1.6.28-r0
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: libpng
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 129224
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libts-1.0-0
+Version: 1.1-r0
+Depends: libc6 (>= 2.25), tslib-conf
+Recommends: pointercal
+Provides: tslib
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 71672
+Installed-Time: 1533327290
+
+Package: php-fpm
+Version: 7.1.7-r0
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libmcrypt4 (>= 2.5.8), libmysqlclient18 (>= 5.5.55), libpam (>= 1.3.0), libsqlite3-0 (>= 3.17.0), libssl1.0.2 (>= 1.0.2n), libxml2 (>= 2.9.4), libz1 (>= 1.2.11)
+Status: install ok installed
+Architecture: armv7ahf-neon
+Conffiles:
+ /etc/php-fpm.conf f0e179be8fc5ade480e14efddc3d7278
+Installed-Size: 10100460
+Installed-Time: 1533327292
+
+Package: libxml2
+Version: 2.9.4-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libz1 (>= 1.2.11)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 915324
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: lighttpd
+Version: 1.4.45-r0
+Depends: libattr1 (>= 2.4.47), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libpcre1 (>= 8.40), libssl1.0.2 (>= 1.0.2n), lighttpd-module-dirlisting, lighttpd-module-indexfile, lighttpd-module-staticfile
+Recommends: lighttpd-module-access, lighttpd-module-accesslog
+Provides: lighttpd-systemd
+Replaces: lighttpd-systemd
+Conflicts: lighttpd-systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/lighttpd.conf 828b370fa8cd3a66f2fbec1ae86150de
+Installed-Size: 181196
+Installed-Time: 1533327291
+
+Package: libavahi-common3
+Version: 0.6.32-r0
+Depends: libc6 (>= 2.25)
+Provides: libavahi-common
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 35072
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libblkid1
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libuuid1 (>= 2.29.1)
+Provides: util-linux-libblkid
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 167068
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libsqlite3-0
+Version: 3:3.17.0-r0
+Depends: libc6 (>= 2.25)
+Provides: libsqlite3
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 510180
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: volatile-binds
+Version: 1.0-r0
+Status: install ok installed
+Architecture: all
+Installed-Size: 2465
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: libicuuc58
+Version: 58.2-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libicudata58 (>= 58.2), libstdc++6 (>= 6.4.0)
+Provides: libicuuc
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1129236
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: mtd-utils
+Version: 2.0.0-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 205782
+Installed-Time: 1533327290
+
+Package: libxcb1
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxdmcp6 (>= 1.1.2)
+Provides: libxcb
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 88152
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libpam-runtime
+Version: 1.3.0-r5
+Depends: libpam-suffix, pam-plugin-deny-suffix, pam-plugin-permit-suffix, pam-plugin-unix-suffix, pam-plugin-warn-suffix
+Provides: libpam-runtime-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/pam.d/common-session c50a38c29d83c5fdf518301e33d216d9
+ /etc/pam.d/common-auth 69cf68857b21d93054461246c51b6960
+ /etc/pam.d/common-password 9931234aae9afe5ba8aa755acef90e69
+ /etc/pam.d/common-session-noninteractive ca51dc0e2f5b71591fc00a59e1f32db8
+ /etc/pam.d/common-account 9d50c7dda6ba8b6a8422fd4453722324
+ /etc/security/limits.conf 0bc96d8cec6f85bd2b60b27483843297
+Installed-Size: 23513
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libxcb-render-util0
+Version: 0.3.9-r0
+Depends: libc6 (>= 2.25), libxcb-render0 (>= 1.12), libxcb1 (>= 1.12)
+Provides: xcb-util-renderutil
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9960
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: php-phar
+Version: 7.1.7-r0
+Depends: php-cli
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 14823
+Installed-Time: 1533327293
+
+Package: dropbear
+Version: 2016.74-r0
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-runtime, libz1 (>= 1.2.11), pam-plugin-deny, pam-plugin-permit, pam-plugin-unix, update-alternatives-opkg
+Provides: dropbear-systemd, ssh, sshd
+Replaces: dropbear-systemd
+Conflicts: dropbear-systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 176370
+Installed-Time: 1533327292
+
+Package: libdrm-freedreno1
+Version: 2.4.75-r0
+Depends: libc6 (>= 2.25), libdrm2 (>= 2.4.75)
+Provides: libdrm-freedreno
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 18312
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libpcre1
+Version: 8.40-r0
+Depends: libc6 (>= 2.25)
+Provides: libpcre
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 210732
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgstvideo-1.0-0
+Version: 1.10.4-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3), liborc-0.4-0 (>= 0.4.26)
+Provides: libgstvideo-1.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 359668
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: libgmp10
+Version: 6.1.2-r0
+Depends: libc6 (>= 2.25)
+Provides: gmp
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 285924
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libqt5declarative5
+Version: 5.8.0+git0+64faeb0d80-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5xmlpatterns5 (>= 5.8.0+git0+9f7e01b582), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtscript (>= 5.8.0+git0+c35df2ec0e)
+Recommends: libqt5declarative-plugins, libqt5declarative-qmlplugins
+Provides: qtquick1
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2058168
+Installed-Time: 1533327295
+
+Package: ttf-droid-sans-mono
+Version: 0.1+gitr0+21e6e2de1f-r3
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 119380
+Installed-Time: 1533327293
+
+Package: pam-plugin-nologin
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-nologin-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5740
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: opkg-arch-config
+Version: 1.0-r1
+Provides: opkg-config-base
+Replaces: opkg-config-base
+Conflicts: opkg-config-base
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Conffiles:
+ /etc/opkg/arch.conf 9ff912461efc79c823376bf5ba8710c5
+Installed-Size: 278
+Installed-Time: 1533327289
+
+Package: libxkbcommon
+Version: 0.7.1-r0
+Depends: libc6 (>= 2.25), libxcb-xkb1 (>= 1.12), libxcb1 (>= 1.12)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 212996
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libncursesw5
+Version: 6.0+20161126-r0
+Depends: libc6 (>= 2.25), libtinfo5 (>= 6.0+20161126)
+Provides: ncurses-libncursesw
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 121512
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libxcb-sync1
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-sync
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14008
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxext6
+Version: 1:1.3.3-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4)
+Provides: libxext
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 39368
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libxcb-xkb1
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-xkb
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 67464
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-xinerama0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-xinerama
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5776
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: lighttpd-module-staticfile
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5812
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: systemd
+Version: 1:232-r0
+Depends: base-files, base-passwd, dbus-1, iptables (>= 1.6.1), kmod, libacl1 (>= 2.2.52), libc6 (>= 2.25), libcap2 (>= 2.25), libgcc1 (>= 6.4.0), libidn11 (>= 1.33), libkmod2 (>= 23+git0+65a885df5f), libmount1 (>= 2.29.1), libpam (>= 1.3.0), lz4 (>= 131+git0+d86dc91677), shadow, systemd-container, udev (= 1:232-r0), update-alternatives-opkg, update-rc.d, util-linux-mount, volatile-binds
+Recommends: e2fsprogs-e2fsck, kernel-module-autofs4, kernel-module-ipv6, kernel-module-unix, less, os-release, systemd-compat-units, systemd-extra-utils, systemd-serialgetty, udev-hwdb, util-linux-agetty, util-linux-fsck
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/machine-id d41d8cd98f00b204e9800998ecf8427e
+ /etc/systemd/journald.conf 0a56bf72c1a7651c3a05bd1ff00aac0e
+ /etc/systemd/logind.conf 54c7662130f1fd57ef8fc72a09448137
+ /etc/systemd/system.conf 5c6bdc343d6a6077be7167101dc874ca
+ /etc/systemd/user.conf 675370e2d80a4ad957202e68c1b4aaee
+Installed-Size: 4432256
+Installed-Time: 1533327294
+
+Package: libqt5declarative-qmlplugins
+Version: 5.8.0+git0+64faeb0d80-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5declarative5 (>= 5.8.0+git0+64faeb0d80), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtwebkit (>= 5.8.0+git0+74ac5b0f34)
+Provides: qtquick1-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 409320
+Installed-Time: 1533327295
+
+Package: libxcb-render0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-render
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 30460
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libkmod2
+Version: 23+git0+65a885df5f-r0
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: libkmod
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 47160
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libacl1
+Version: 2.2.52-r0
+Depends: libattr1 (>= 2.4.47), libc6 (>= 2.25)
+Provides: libacl
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 22380
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: xcb-util-wm
+Version: 0.4.1-r0
+Depends: libc6 (>= 2.25), libxcb1 (>= 1.12)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 44452
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: base-passwd
+Version: 3.5.29-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: lz4
+Version: 131+git0+d86dc91677-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 173484
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: systemd-serialgetty
+Version: 1.0-r5
+Depends: systemd
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Installed-Size: 1059
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: packagegroup-fonts-truetype-chinese
+Version: 1.0-r2
+Depends: packagegroup-fonts-truetype-core, ttf-arphic-uming
+Status: install ok installed
+Architecture: all
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: libsystemd0
+Version: 1:232-r0
+Depends: libc6 (>= 2.25), libcap2 (>= 2.25), libgcc1 (>= 6.4.0), lz4 (>= 131+git0+d86dc91677)
+Provides: libsystemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 351112
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-deny
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-deny-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5640
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: qtbase-tools
+Version: 5.8.0+git0+49dc9aa409-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), perl
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 7191788
+Installed-Time: 1533327291
+
+Package: qtlocation
+Version: 5.8.0+git0+41cc347040-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19)
+Recommends: qtlocation-plugins, qtlocation-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 628824
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: libxfixes3
+Version: 1:5.0.3-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4)
+Provides: libxfixes
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 13952
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: angstrom-feed-configs
+Version: v2017.06-r17
+Recommends: opkg
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Conffiles:
+ /etc/opkg/base-feed.conf 625114927d0fb7f450816076e9e33b01
+ /etc/opkg/debug-feed.conf 2b6111ce7c30d0489b87e9b23fce124b
+ /etc/opkg/perl-feed.conf efc762705c9a2840c01ff5601e801c7d
+ /etc/opkg/python-feed.conf cd2e4ecd20c117f0b01c9d11fb924208
+ /etc/opkg/gstreamer-feed.conf 59af5f7e2a9e3ff8540c6ecf7fb1133b
+ /etc/opkg/fluke_cda_caldera-feed.conf 5cec5515480c1a6bc1481d0138babc29
+ /etc/opkg/noarch-feed.conf afdd6d4b8148de2056361585b51599ff
+ /etc/opkg/sdk-feed.conf d24003e028674995cb1990db3f731367
+Installed-Size: 1436
+Installed-Time: 1533327289
+
+Package: shadow
+Version: 4.2.1-r0
+Depends: base-passwd, libattr1 (>= 2.4.47), libc6 (>= 2.25), libpam (>= 1.3.0), libpam-runtime, pam-plugin-env, pam-plugin-faildelay, pam-plugin-group, pam-plugin-lastlog, pam-plugin-limits, pam-plugin-mail, pam-plugin-motd, pam-plugin-nologin, pam-plugin-rootok, pam-plugin-securetty, pam-plugin-shells, shadow-base, shadow-securetty, update-alternatives-opkg, util-linux-sulogin
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 890726
+Installed-Time: 1533327292
+
+Package: e2fsprogs-e2fsck
+Version: 1.43.4-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libcom-err2 (>= 1.43.4), libe2p2 (>= 1.43.4), libext2fs2 (>= 1.43.4), libuuid1 (>= 2.29.1)
+Status: deinstall hold not-installed
+Architecture: armv7at2hf-neon
+
+Package: pam-plugin-unix
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-unix-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 71564
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: kmod
+Version: 23+git0+65a885df5f-r0
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11), update-alternatives-opkg
+Provides: module-init-tools, module-init-tools-depmod, module-init-tools-insmod-static
+Replaces: module-init-tools, module-init-tools-depmod, module-init-tools-insmod-static
+Conflicts: module-init-tools, module-init-tools-depmod, module-init-tools-insmod-static
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 80067
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: ttf-droid-sans-fallback
+Version: 0.1+gitr0+21e6e2de1f-r3
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 3725920
+Installed-Time: 1533327293
+
+Package: avahi-autoipd
+Version: 0.6.32-r0
+Depends: base-files, base-passwd, libc6 (>= 2.25), libdaemon0 (>= 0.14), shadow
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 29527
+Installed-Time: 1533327293
+
+Package: xkeyboard-config
+Version: 2.20-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2916094
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: lighttpd-module-access
+Version: 1.4.45-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5788
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libqt5sensors-qmlplugins
+Version: 5.8.0+git0+1220a31e6c-r0
+Depends: libc6 (>= 2.25), libqt5sensors5 (>= 5.8.0+git0+1220a31e6c), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19)
+Provides: qtsensors-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 146156
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: qtlocation-qmlplugins
+Version: 5.8.0+git0+41cc347040-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19), qtlocation (>= 5.8.0+git0+41cc347040)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 670245
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: ttf-arphic-uming
+Version: 20080216-r6
+Depends: fontconfig-utils
+Provides: virtual-chinese-font
+Status: install ok installed
+Architecture: all
+Installed-Size: 21053592
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: glibc-binary-localedata-en-us
+Version: 2.25-r0
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 1565217
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: ttf-droid-sans-japanese
+Version: 0.1+gitr0+21e6e2de1f-r3
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 1173140
+Installed-Time: 1533327293
+
+Package: ttf-roboto
+Version: 2.138-r1
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 9422404
+Installed-Time: 1533327293
+
+Package: iptables
+Version: 1.6.1-r0
+Depends: libc6 (>= 2.25)
+Recommends: kernel-module-ip-tables, kernel-module-ipt-masquerade, kernel-module-iptable-filter, kernel-module-iptable-nat, kernel-module-nf-conntrack, kernel-module-nf-conntrack-ipv4, kernel-module-nf-defrag-ipv4, kernel-module-nf-nat, kernel-module-x-tables
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1020412
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgnutls30
+Version: 3.5.9-r0
+Depends: libc6 (>= 2.25), libgmp10 (>= 6.1.2), libidn11 (>= 1.33), libunistring2 (>= 0.9.7), libz1 (>= 1.2.11), nettle (>= 3.3)
+Provides: gnutls
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 932064
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: ttf-droid-sans
+Version: 0.1+gitr0+21e6e2de1f-r3
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 385264
+Installed-Time: 1533327293
+
+Package: perl
+Version: 5.24.1-r0
+Depends: libc6 (>= 2.25), libperl5 (>= 5.24.1)
+Provides: perl-module-config, perl-module-strict, perl-module-vars, perl-module-warnings, perl-module-warnings-register
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 62501
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: udev
+Version: 1:232-r0
+Depends: libacl1 (>= 2.2.52), libblkid1 (>= 2.29.1), libc6 (>= 2.25), libgcc1 (>= 6.4.0), libkmod2 (>= 23+git0+65a885df5f)
+Provides: hotplug, udev-systemd
+Replaces: udev-systemd
+Conflicts: udev-systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 773715
+Installed-Time: 1533327291
+
+Package: libfdisk1
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libuuid1 (>= 2.29.1)
+Provides: util-linux-libfdisk
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 245384
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-glx0
+Version: 1.12-r0
+Depends: libc6 (>= 2.25), libxau6 (>= 1.0.8), libxcb1 (>= 1.12), libxdmcp6 (>= 1.1.2)
+Provides: libxcb-glx
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 59032
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: qtwebkit-qmlplugins
+Version: 5.8.0+git0+74ac5b0f34-r0
+Depends: libc6 (>= 2.25), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19), qtwebkit (>= 5.8.0+git0+74ac5b0f34)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 65505
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: ca-certificates
+Version: 20161130-r0
+Depends: openssl
+Status: install ok installed
+Architecture: all
+Conffiles:
+ /etc/ca-certificates.conf 74fc54c31bac988ddd9b572bfeabdd89
+Installed-Size: 287523
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libqt5xmlpatterns5
+Version: 5.8.0+git0+9f7e01b582-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Recommends: libqt5xmlpatterns-plugins, libqt5xmlpatterns-qmlplugins
+Provides: qtxmlpatterns
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2277488
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: avahi-daemon
+Version: 0.6.32-r0
+Depends: base-files, base-passwd, libavahi-common3 (>= 0.6.32), libavahi-core7 (>= 0.6.32), libc6 (>= 2.25), libcap2 (>= 2.25), libdaemon0 (>= 0.14), libdbus-1-3 (>= 1.10.14), libexpat1 (>= 2.2.0), shadow
+Recommends: libnss-mdns
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/avahi/avahi-daemon.conf e8db50f9bbddb019c74dbffda71e595d
+Installed-Size: 103646
+Installed-Time: 1533327293
+
+Package: ttf-droid-serif
+Version: 0.1+gitr0+21e6e2de1f-r3
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 726008
+Installed-Time: 1533327293
+
+Package: libxcomposite1
+Version: 1:0.4.4-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4)
+Provides: libxcomposite
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9852
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: ncurses-terminfo-base
+Version: 6.0+20161126-r0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 21503
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-cfdisk
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libfdisk1 (>= 2.29.1), libmount1 (>= 2.29.1), libncursesw5 (>= 6.0+20161126), libsmartcols1 (>= 2.29.1), libtinfo5 (>= 6.0+20161126)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 56116
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libattr1
+Version: 2.4.47-r0
+Depends: libc6 (>= 2.25)
+Provides: libattr
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14052
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libxi6
+Version: 1:1.7.9-r0
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4), libxext6 (>= 1.3.3)
+Provides: libxi
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 38700
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: pam-plugin-env
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-env-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9892
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libqt5sensors5
+Version: 5.8.0+git0+1220a31e6c-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Recommends: libqt5sensors-plugins, libqt5sensors-qmlplugins
+Provides: qtsensors
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 163992
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: libidn11
+Version: 1.33-r0
+Depends: libc6 (>= 2.25)
+Provides: libidn
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 194440
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libfontconfig1
+Version: 2.12.1-r0
+Depends: libc6 (>= 2.25), libexpat1 (>= 2.2.0), libfreetype6 (>= 2.7.1)
+Provides: fontconfig
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 256487
+Installed-Time: 1533327291
+
+Package: update-rc.d
+Version: 0.7-r5
+Status: install ok installed
+Architecture: all
+Installed-Size: 4858
+Installed-Time: 1533327289
+Auto-Installed: yes
+
+Package: util-linux-fdisk
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libfdisk1 (>= 2.29.1), libsmartcols1 (>= 2.29.1), libtinfo5 (>= 6.0+20161126), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 74648
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libcap2
+Version: 2.25-r0
+Depends: libc6 (>= 2.25)
+Provides: libcap
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 19988
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: angstrom-version
+Version: 2:v2017.06-r12
+Provides: os-release
+Replaces: os-release
+Conflicts: os-release
+Status: install ok installed
+Architecture: fluke_cda_caldera
+Installed-Size: 4601
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-prlimit
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libsmartcols1 (>= 2.29.1)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 18728
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: liborc-0.4-0
+Version: 0.4.26-r0
+Depends: libc6 (>= 2.25)
+Provides: liborc-0.4
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 312804
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgl-mesa
+Version: 2:17.0.2-r0
+Depends: libc6 (>= 2.25), libdrm2 (>= 2.4.75), libexpat1 (>= 2.2.0), libglapi0 (>= 17.0.2), libx11-6 (>= 1.6.4), libx11-xcb1 (>= 1.6.4), libxcb-dri2-0 (>= 1.12), libxcb-glx0 (>= 1.12), libxcb1 (>= 1.12), libxdamage1 (>= 1.1.4), libxext6 (>= 1.3.3), libxfixes3 (>= 5.0.3), libxxf86vm1 (>= 1.1.4)
+Recommends: mesa-megadriver
+Provides: libgl, libgl1
+Replaces: libgl, libgl1
+Conflicts: libgl, libgl1
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 285512
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: pam-plugin-lastlog
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-lastlog-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9904
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libz1
+Version: 1.2.11-r0
+Depends: libc6 (>= 2.25)
+Provides: zlib
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 63380
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: linux-gpib-user
+Version: svnr1748-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 101470
+Installed-Time: 1533327290
+
+Package: libglib-2.0-0
+Version: 1:2.50.3-r0
+Depends: libc6 (>= 2.25), libffi6 (>= 3.2.1), libmount1 (>= 2.29.1), libpcre1 (>= 8.40), libz1 (>= 1.2.11)
+Provides: glib-2.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2050296
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: util-linux-fsck
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libmount1 (>= 2.29.1), update-alternatives-opkg
+Status: deinstall hold not-installed
+Architecture: armv7at2hf-neon
+
+Package: libx11-6
+Version: 1:1.6.4-r0
+Depends: libc6 (>= 2.25), libxcb1 (>= 1.12)
+Provides: libx11
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 956448
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libxcb-image0
+Version: 0.4.0-r0
+Depends: libc6 (>= 2.25), libxcb-shm0 (>= 1.12), libxcb-util1 (>= 0.4.0), libxcb1 (>= 1.12)
+Provides: xcb-util-image
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14024
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: gstreamer1.0
+Version: 1.10.4-r0
+Depends: libc6 (>= 2.25), libcap2 (>= 2.25), libglib-2.0-0 (>= 2.50.3)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 2038124
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: ttf-sazanami-gothic
+Version: 20040629-r9
+Depends: fontconfig-utils
+Status: install ok installed
+Architecture: all
+Installed-Size: 7697698
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: packagegroup-fonts-truetype
+Version: 1.0-r2
+Recommends: packagegroup-fonts-truetype-chinese, packagegroup-fonts-truetype-core, packagegroup-fonts-truetype-japanese
+Status: install ok installed
+Architecture: all
+Installed-Time: 1533327289
+
+Package: qtbase
+Version: 5.8.0+git0+49dc9aa409-r0
+Depends: libc6 (>= 2.25), libdbus-1-3 (>= 1.10.14), libfreetype6 (>= 2.7.1), libgcc1 (>= 6.4.0), libgl-mesa (>= 17.0.2), libglib-2.0-0 (>= 2.50.3), libpng16-16 (>= 1.6.28), libssl1.0.2, libstdc++6 (>= 6.4.0), libx11-6 (>= 1.6.4), libx11-xcb1 (>= 1.6.4), libxcb-image0 (>= 0.4.0), libxcb-keysyms1 (>= 0.4.0), libxcb-randr0 (>= 1.12), libxcb-render-util0 (>= 0.3.9), libxcb-render0 (>= 1.12), libxcb-shape0 (>= 1.12), libxcb-shm0 (>= 1.12), libxcb-sync1 (>= 1.12), libxcb-xfixes0 (>= 1.12), libxcb-xinerama0 (>= 1.12), libxcb-xkb1 (>= 1.12), libxcb1 (>= 1.12), libxi6 (>= 1.7.9), libxkbcommon (>= 0.7.1), libz1 (>= 1.2.11), xcb-util-wm (>= 0.4.1), xkeyboard-config
+Recommends: qtbase-plugins, qtbase-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14876856
+Installed-Time: 1533327294
+
+Package: libxslt
+Version: 1.1.29-r0
+Depends: libc6 (>= 2.25), libxml2 (>= 2.9.4)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 206376
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libicui18n58
+Version: 58.2-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libicudata58 (>= 58.2), libicuuc58 (>= 58.2), libstdc++6 (>= 6.4.0)
+Provides: libicui18n
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1636468
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: rt-tests
+Version: 1:1.1-r0
+Depends: libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 208561
+Installed-Time: 1533327290
+
+Package: libdrm2
+Version: 2.4.75-r0
+Depends: libc6 (>= 2.25)
+Provides: libdrm
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 38888
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libglapi0
+Version: 2:17.0.2-r0
+Depends: libc6 (>= 2.25)
+Provides: libglapi
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 145176
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libgcc1
+Version: 6.4.0-r0
+Depends: libc6 (>= 2.25)
+Provides: libgcc
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 100216
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-limits
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-limits-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14096
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: libgsttag-1.0-0
+Version: 1.10.4-r0
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3), libz1 (>= 1.2.11)
+Provides: libgsttag-1.0
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 215672
+Installed-Time: 1533327293
+Auto-Installed: yes
+
+Package: tslib-tests
+Version: 1.1-r0
+Depends: libc6 (>= 2.25), libts-1.0-0 (>= 1.1)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 48264
+Installed-Time: 1533327291
+
+Package: libegl-mesa
+Version: 2:17.0.2-r0
+Depends: libc6 (>= 2.25), libdrm2 (>= 2.4.75), libexpat1 (>= 2.2.0), libgbm1 (>= 17.0.2), libx11-6 (>= 1.6.4), libx11-xcb1 (>= 1.6.4), libxcb-dri2-0 (>= 1.12), libxcb-xfixes0 (>= 1.12), libxcb1 (>= 1.12), wayland (>= 1.13.0)
+Recommends: mesa-megadriver
+Provides: libegl, libegl1
+Replaces: libegl, libegl1
+Conflicts: libegl, libegl1
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 118248
+Installed-Time: 1533327292
+Auto-Installed: yes
+
+Package: libexpat1
+Version: 2.2.0-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0)
+Provides: expat
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 96092
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: fontconfig-utils
+Version: 2.12.1-r0
+Depends: libc6 (>= 2.25), libfontconfig1 (>= 2.12.1), libfreetype6 (>= 2.7.1)
+Provides: libfontconfig-utils
+Replaces: libfontconfig-utils
+Conflicts: libfontconfig-utils
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 72032
+Installed-Time: 1533327292
+
+Package: locale-base-en-us
+Version: 2.25-r0
+Depends: glibc-binary-localedata-en-us
+Provides: virtual-locale-en, virtual-locale-en-us
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Time: 1533327289
+
+Package: qtbase-plugins
+Version: 5.8.0+git0+49dc9aa409-r0
+Depends: libc6 (>= 2.25), libegl-mesa (>= 17.0.2), libfreetype6 (>= 2.7.1), libgcc1 (>= 6.4.0), libgl-mesa (>= 17.0.2), libglib-2.0-0 (>= 2.50.3), libjpeg62 (>= 1.5.1), libstdc++6 (>= 6.4.0), libudev1 (>= 232), libx11-6 (>= 1.6.4), libxcb-glx0 (>= 1.12), libxcb1 (>= 1.12), libxkbcommon (>= 0.7.1), qtbase (>= 5.8.0+git0+49dc9aa409)
+Recommends: libx11-locale
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1242004
+Installed-Time: 1533327295
+
+Package: ttf-dejavu-common
+Version: 2.37-r7
+Status: install ok installed
+Architecture: all
+Installed-Size: 388
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: pam-plugin-faildelay
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-faildelay-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5764
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: util-linux-losetup
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), libsmartcols1 (>= 2.29.1), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 51512
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: util-linux-readprofile
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 14236
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: run-postinsts
+Version: 1.0-r9
+Status: install ok installed
+Architecture: all
+Installed-Size: 2275
+Installed-Time: 1533327289
+
+Package: systemd-compat-units
+Version: 1.0-r29
+Depends: systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: util-linux
+Version: 2.29.1-r0
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libmount1 (>= 2.29.1), libpam (>= 1.3.0), libsmartcols1 (>= 2.29.1), libtinfo5 (>= 6.0+20161126), libuuid1 (>= 2.29.1), update-alternatives-opkg, util-linux-losetup, util-linux-lsblk, util-linux-runuser, util-linux-sulogin, util-linux-swaponoff, util-linux-umount
+Recommends: util-linux-cfdisk, util-linux-fdisk, util-linux-mkfs, util-linux-mount, util-linux-mountpoint, util-linux-prlimit, util-linux-readprofile, util-linux-sfdisk
+Provides: util-linux-systemd
+Replaces: util-linux-systemd
+Conflicts: util-linux-systemd
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1301753
+Installed-Time: 1533327292
+
+Package: libperl5
+Version: 5.24.1-r0
+Depends: libc6 (>= 2.25)
+Provides: perl-lib
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1317146
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: php-cgi
+Version: 7.1.7-r0
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libmcrypt4 (>= 2.5.8), libmysqlclient18 (>= 5.5.55), libpam (>= 1.3.0), libsqlite3-0 (>= 3.17.0), libssl1.0.2 (>= 1.0.2n), libxml2 (>= 2.9.4), libz1 (>= 1.2.11)
+Status: install ok installed
+Architecture: armv7ahf-neon
+Installed-Size: 9964504
+Installed-Time: 1533327291
+
+Package: libx11-xcb1
+Version: 1:1.6.4-r0
+Depends: libc6 (>= 2.25)
+Provides: libx11-xcb
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5648
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libxau6
+Version: 1:1.0.8-r0
+Depends: libc6 (>= 2.25)
+Provides: libxau
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 9900
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libudev1
+Version: 1:232-r0
+Depends: libc6 (>= 2.25), libcap2 (>= 2.25), libgcc1 (>= 6.4.0)
+Provides: libudev
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 88700
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libqt5declarative-plugins
+Version: 5.8.0+git0+64faeb0d80-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5declarative5 (>= 5.8.0+git0+64faeb0d80), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Provides: qtquick1-plugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 99012
+Installed-Time: 1533327295
+
+Package: libmysqlclient18
+Version: 5.5.55-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libz1 (>= 1.2.11)
+Provides: libmysqlclient
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Conffiles:
+ /etc/my.cnf.d/client.cnf ad56ee35d48d321420e1be1719c76e52
+Installed-Size: 2792147
+Installed-Time: 1533327291
+Auto-Installed: yes
+
+Package: qtquickcontrols
+Version: 5.8.0+git0+201c86391c-r0
+Recommends: qtquickcontrols-plugins, qtquickcontrols-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Time: 1533327289
+
+Package: qtscript
+Version: 5.8.0+git0+c35df2ec0e-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409)
+Recommends: qtscript-plugins, qtscript-qmlplugins
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 1683444
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: libicudata58
+Version: 58.2-r0
+Depends: libc6 (>= 2.25)
+Provides: libicudata
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 26220096
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libdaemon0
+Version: 0.14-r0
+Depends: libc6 (>= 2.25)
+Provides: libdaemon
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 18300
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: qtdeclarative-qmlplugins
+Version: 5.8.0+git0+fffb997e19-r0
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5xmlpatterns5 (>= 5.8.0+git0+9f7e01b582), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 737014
+Installed-Time: 1533327295
+Auto-Installed: yes
+
+Package: libjpeg62
+Version: 1:1.5.1-r0
+Depends: libc6 (>= 2.25)
+Provides: jpeg, libjpeg-turbo
+Replaces: jpeg
+Conflicts: jpeg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 161960
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: udev-hwdb
+Version: 1:232-r0
+Depends: udev
+Status: deinstall hold not-installed
+Architecture: armv7at2hf-neon
+
+Package: util-linux-sulogin
+Version: 2.29.1-r0
+Depends: libc6 (>= 2.25), update-alternatives-opkg
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 26788
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libnss-mdns
+Version: 0.10-r7
+Depends: avahi-daemon, libc6 (>= 2.25)
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 59340
+Installed-Time: 1533327294
+Auto-Installed: yes
+
+Package: libavahi-core7
+Version: 0.6.32-r0
+Depends: libavahi-common3 (>= 0.6.32), libc6 (>= 2.25)
+Provides: libavahi-core
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 142440
+Installed-Time: 1533327290
+Auto-Installed: yes
+
+Package: libfreetype6
+Version: 2.7.1-r0
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: freetype
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 379148
+Installed-Time: 1533327291
+
+Package: pam-plugin-shells
+Version: 1.3.0-r5
+Depends: libc6 (>= 2.25), libpam (>= 1.3.0), libpam-suffix
+Provides: pam-plugin-shells-suffix
+Status: install ok installed
+Architecture: armv7at2hf-neon
+Installed-Size: 5728
+Installed-Time: 1533327291
+Auto-Installed: yes
+

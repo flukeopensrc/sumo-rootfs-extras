@@ -1,0 +1,14 @@
+Package: libgstvideo-1.0-0
+Version: 1.10.4-r0
+Description: gstreamer gstvideo-1.0 library
+ gstreamer gstvideo-1.0 library
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ & LGPLv2+
+Architecture: armv7at2hf-neon
+OE: gstreamer1.0-plugins-base
+Homepage: http://gstreamer.freedesktop.org/
+Depends: gstreamer1.0 (>= 1.10.4), libc6 (>= 2.25), libglib-2.0-0 (>= 2.50.3), liborc-0.4-0 (>= 0.4.26)
+Provides: libgstvideo-1.0
+Source: gstreamer1.0-plugins-base_1.10.4.bb

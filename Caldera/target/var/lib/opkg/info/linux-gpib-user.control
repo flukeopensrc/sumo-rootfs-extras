@@ -1,0 +1,13 @@
+Package: linux-gpib-user
+Version: svnr1748-r0
+Description: Linux-GPIB user space
+ https://linux-gpib.sourceforge.io/
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv7at2hf-neon
+OE: linux-gpib-user
+Homepage: https://linux-gpib.sourceforge.io/
+Depends: libc6 (>= 2.25)
+Source: linux-gpib-user_svn.bb

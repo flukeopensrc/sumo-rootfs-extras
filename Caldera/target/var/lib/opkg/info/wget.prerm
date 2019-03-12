@@ -1,0 +1,4 @@
+#!/bin/sh
+# Begin section update-alternatives
+update-alternatives --remove  wget /usr/bin/wget.wget
+# End section update-alternatives

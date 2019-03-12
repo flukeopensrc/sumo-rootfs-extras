@@ -1,0 +1,15 @@
+Package: libgmp10
+Version: 6.1.2-r0
+Description: GNU multiprecision arithmetic library
+ GMP is a free library for arbitrary precision arithmetic, operating on
+ signed integers, rational numbers, and floating point numbers
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ | LGPLv3+
+Architecture: armv7at2hf-neon
+OE: gmp
+Homepage: http://gmplib.org/
+Depends: libc6 (>= 2.25)
+Provides: gmp
+Source: gmp_6.1.2.bb

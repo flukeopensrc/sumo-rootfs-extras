@@ -1,0 +1,13 @@
+Package: libfdisk1
+Version: 2.29.1-r0
+Description: util-linux libfdisk
+ util-linux libfdisk
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ & LGPLv2.1+ & BSD
+Architecture: armv7at2hf-neon
+OE: util-linux
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libuuid1 (>= 2.29.1)
+Provides: util-linux-libfdisk
+Source: util-linux_2.29.1.bb

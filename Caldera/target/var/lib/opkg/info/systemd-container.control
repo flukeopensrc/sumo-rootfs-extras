@@ -1,0 +1,13 @@
+Package: systemd-container
+Version: 1:232-r0
+Description: Tools for containers and VMs
+ Systemd tools to spawn and manage containers and virtual machines.
+Section: base/shell
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2 & LGPLv2.1
+Architecture: armv7at2hf-neon
+OE: systemd
+Homepage: http://www.freedesktop.org/wiki/Software/systemd
+Depends: iptables (>= 1.6.1), libacl1 (>= 2.2.52), libblkid1 (>= 2.29.1), libc6 (>= 2.25), libgcc1 (>= 6.4.0), systemd (>= 232)
+Source: systemd_232.bb

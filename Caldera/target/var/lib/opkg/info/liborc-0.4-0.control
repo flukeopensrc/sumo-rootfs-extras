@@ -1,0 +1,14 @@
+Package: liborc-0.4-0
+Version: 0.4.26-r0
+Description: ORC orc-0.4 library
+ ORC orc-0.4 library
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-2-Clause & BSD-3-Clause
+Architecture: armv7at2hf-neon
+OE: orc
+Homepage: http://gstreamer.freedesktop.org/modules/orc.html
+Depends: libc6 (>= 2.25)
+Provides: liborc-0.4
+Source: orc_0.4.26.bb

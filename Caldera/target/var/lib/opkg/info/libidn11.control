@@ -1,0 +1,15 @@
+Package: libidn11
+Version: 1.33-r0
+Description: Internationalized Domain Name support library
+ Implementation of the Stringprep, Punycode and IDNA specifications
+ defined by the IETF Internationalized Domain Names (IDN) working group.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1+ | LGPLv3
+Architecture: armv7at2hf-neon
+OE: libidn
+Homepage: http://www.gnu.org/software/libidn/
+Depends: libc6 (>= 2.25)
+Provides: libidn
+Source: libidn_1.33.bb

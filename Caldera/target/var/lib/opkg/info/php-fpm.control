@@ -1,0 +1,13 @@
+Package: php-fpm
+Version: 7.1.7-r0
+Description: A server-side, HTML-embedded scripting language
+ A server-side, HTML-embedded scripting language.
+Section: console/network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: PHP-3.0
+Architecture: armv7ahf-neon
+OE: php
+Homepage: http://www.php.net
+Depends: libbz2-1 (>= 1.0.6), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libmcrypt4 (>= 2.5.8), libmysqlclient18 (>= 5.5.55), libpam (>= 1.3.0), libsqlite3-0 (>= 3.17.0), libssl1.0.2 (>= 1.0.2n), libxml2 (>= 2.9.4), libz1 (>= 1.2.11)
+Source: php_7.1.7.bb

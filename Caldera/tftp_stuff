@@ -1,0 +1,78 @@
+
+/srv/tftpboot
+
+
+
+# get host's (southwind)IP address using ifconfig:
+/sbin/ifconfig
+    inet addr:129.196.136.114
+
+erver  In U-Boot, set an environment variable to southwind's IP address:
+setenv serverip 129.196.136.114
+setenv serverip 192.168.1.138
+
+# check for mac addr on device
+printenv ethaddr
+
+# if not set
+setenv ethaddr 00:80:40:FF:00:30
+
+# Probe first flash device
+sf probe ${qspiloadcs}
+
+#initialize RAM
+mw ${loadaddr} 0xffffffff 0x8000000
+
+#download the image
+dhcp ${loadaddr} Caldera/U10.bin
+
+#Program image
+#If "sf update" fails, simply repeat until it succeeds.
+sf probe ${qspiloadcs}
+sf update ${loadaddr} 0x0 0x4000000
+
+# download the image for the second flash part
+sf probe 1
+sf erase 0x0 0x10000000
+sf probe 1
+mw ${loadaddr} 0xffffffff 0xb000000
+dhcp ${loadaddr} Caldera/ubi.img
+sf probe 1
+sf update ${loadaddr} 0x0 0xb000000
+
+Linux Kernel 
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${bootimagesize}
+dhcp ${loadaddr} Caldera/zImage 
+sf update ${loadaddr} ${qspibootimageaddr} ${bootimagesize}
+
+BLOB
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x10000 
+dhcp ${fdtaddr} Caldera/zImage-Caldera_soc.dtb 
+sf update ${fdtaddr} ${qspifdtaddr} 0x10000 
+
+Pre-Loader
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x50000
+dhcp ${loadaddr} Caldera/preloader-mkpimage.bin
+sf update ${loadaddr} 0x0 0x50000
+
+U-Boot
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff 0x40000
+dhcp ${loadaddr} Caldera/u-boot.img
+sf update ${loadaddr} 0x60000 0x40000
+
+U-Boot Splash screen application
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${splashimagesize}
+dhcp ${loadaddr} Caldera/hello_world.bin
+sf update ${loadaddr} ${qspisplashimageaddr} ${splashimagesize}
+
+FPGA configuration
+sf probe ${qspiloadcs}
+mw ${loadaddr} 0xffffffff ${fpgadatasize}
+dhcp ${loadaddr} Caldera/Caldera_OG.rbf
+sf update ${loadaddr} ${qspifpgaaddr} ${fpgadatasize}
+

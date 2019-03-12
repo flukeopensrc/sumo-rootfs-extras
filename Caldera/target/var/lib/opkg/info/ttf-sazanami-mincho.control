@@ -1,0 +1,13 @@
+Package: ttf-sazanami-mincho
+Version: 20040629-r9
+Description: Sazanami Mincho Japanese TrueType font
+ Sazanami Gothic/Mincho Japanese TrueType fonts.
+Section: fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: PD
+Architecture: all
+OE: ttf-sazanami
+Homepage: http://sourceforge.jp/projects/efont/
+Depends: fontconfig-utils
+Source: ttf-sazanami_20040629.bb

@@ -1,0 +1,17 @@
+Package: libxi6
+Version: 1:1.7.9-r0
+Description: XI: X Input extension library
+ libxi is an extension to the X11 protocol to support input devices other
+ than the core X keyboard and pointer.  It allows client programs to
+ select input from these devices independently from each other and
+ independently from the core devices.
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT & MIT-style
+Architecture: armv7at2hf-neon
+OE: libxi
+Homepage: http://www.x.org
+Depends: libc6 (>= 2.25), libx11-6 (>= 1.6.4), libxext6 (>= 1.3.3)
+Provides: libxi
+Source: libxi_1.7.9.bb

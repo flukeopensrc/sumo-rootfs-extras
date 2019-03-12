@@ -1,0 +1,13 @@
+Package: openssl
+Version: 1.0.2n-r0
+Description: Secure Socket Layer
+ Secure Socket Layer (SSL) binary and related cryptographic tools.
+Section: libs/network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: openssl
+Architecture: armv7at2hf-neon
+OE: openssl
+Homepage: http://www.openssl.org/
+Depends: libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libssl1.0.2 (>= 1.0.2n), openssl-conf
+Source: openssl_1.0.2n.bb

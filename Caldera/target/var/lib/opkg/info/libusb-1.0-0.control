@@ -1,0 +1,14 @@
+Package: libusb-1.0-0
+Version: 1.0.21-r0
+Description: Userspace library to access USB (version 1.0)
+ Userspace library to access USB (version 1.0).
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1+
+Architecture: armv7at2hf-neon
+OE: libusb1
+Homepage: http://libusb.sf.net
+Depends: libc6 (>= 2.25)
+Provides: libusb1
+Source: libusb1_1.0.21.bb

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Begin section update-alternatives
+update-alternatives --remove  readprofile /usr/sbin/readprofile.util-linux
+# End section update-alternatives

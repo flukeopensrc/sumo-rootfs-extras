@@ -1,0 +1,8 @@
+/etc/ssl/private/
+/usr/bin/openssl
+/usr/lib/ssl/private
+/usr/bin/c_rehash
+/usr/lib/ssl/certs
+/usr/lib/ssl/openssl.cnf
+/usr/lib/ssl/
+/etc/ssl/certs/

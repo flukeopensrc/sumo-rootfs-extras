@@ -1,0 +1,14 @@
+Package: libpng16-16
+Version: 1.6.28-r0
+Description: PNG image format decoding library
+ PNG image format decoding library.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Libpng
+Architecture: armv7at2hf-neon
+OE: libpng
+Homepage: http://www.libpng.org/
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: libpng
+Source: libpng_1.6.28.bb

@@ -1,0 +1,13 @@
+Package: ttf-droid-serif
+Version: 0.1+gitr0+21e6e2de1f-r3
+Description: Droid fonts - TTF Edition
+ Droid fonts - TTF Edition.
+Section: fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Apache-2.0
+Architecture: all
+OE: ttf-droid
+Homepage: http://www.droidfonts.com/
+Depends: fontconfig-utils
+Source: ttf-droid_git.bb

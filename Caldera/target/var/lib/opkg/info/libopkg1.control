@@ -1,0 +1,14 @@
+Package: libopkg1
+Version: 1:0.3.4-r0
+Description: Open Package Manager library
+ Open Package Manager.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: armv7at2hf-neon
+OE: opkg
+Homepage: http://code.google.com/p/opkg/
+Depends: libarchive (>= 3.2.2), libc6 (>= 2.25), libsolv0 (>= 0.6.26)
+Provides: libopkg
+Source: opkg_0.3.4.bb

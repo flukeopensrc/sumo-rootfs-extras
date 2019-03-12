@@ -1,0 +1,18 @@
+Package: libjpeg62
+Version: 1:1.5.1-r0
+Description: Hardware accelerated JPEG compression/decompression library
+ libjpeg-turbo is a derivative of libjpeg that uses SIMD instructions
+ (MMX, SSE2, NEON) to accelerate baseline JPEG compression and
+ decompression
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-3-Clause
+Architecture: armv7at2hf-neon
+OE: libjpeg-turbo
+Homepage: http://libjpeg-turbo.org/
+Depends: libc6 (>= 2.25)
+Provides: jpeg, libjpeg-turbo
+Replaces: jpeg
+Conflicts: jpeg
+Source: libjpeg-turbo_1.5.1.bb

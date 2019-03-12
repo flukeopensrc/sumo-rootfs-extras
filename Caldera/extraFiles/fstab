@@ -1,0 +1,2 @@
+gadget               /dev/gadget          gadgetfs   noauto,user,group     0  0
+

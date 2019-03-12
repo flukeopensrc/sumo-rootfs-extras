@@ -1,0 +1,13 @@
+Package: php-phar
+Version: 7.1.7-r0
+Description: A server-side, HTML-embedded scripting language
+ A server-side, HTML-embedded scripting language.
+Section: console/network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: PHP-3.0
+Architecture: armv7ahf-neon
+OE: php
+Homepage: http://www.php.net
+Depends: php-cli
+Source: php_7.1.7.bb

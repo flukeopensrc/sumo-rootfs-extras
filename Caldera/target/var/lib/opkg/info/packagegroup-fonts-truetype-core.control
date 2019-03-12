@@ -1,0 +1,12 @@
+Package: packagegroup-fonts-truetype-core
+Version: 1.0-r2
+Description: Install one of these tasks to get support for truetype fonts
+ Install one of these tasks to get support for truetype fonts.
+Section: fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: all
+OE: packagegroup-fonts-truetype
+Depends: fontconfig-utils, ttf-dejavu-common, ttf-dejavu-sans, ttf-dejavu-sans-mono
+Source: packagegroup-fonts-truetype.bb

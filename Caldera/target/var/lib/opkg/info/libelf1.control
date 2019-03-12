@@ -1,0 +1,14 @@
+Package: libelf1
+Version: 0.168-r0
+Description: Utilities and libraries for handling compiled object files
+ Utilities and libraries for handling compiled object files.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: (GPLv3 & Elfutils-Exception)
+Architecture: armv7at2hf-neon
+OE: elfutils
+Homepage: https://sourceware.org/elfutils
+Depends: libc6 (>= 2.25), libz1 (>= 1.2.11)
+Provides: libelf
+Source: elfutils_0.168.bb

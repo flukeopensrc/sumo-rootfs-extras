@@ -1,0 +1,19 @@
+Package: util-linux
+Version: 2.29.1-r0
+Description: A suite of basic system administration utilities
+ Util-linux includes a suite of basic system administration utilities
+ commonly found on most Linux systems.  Some of the more important
+ utilities include disk partitioning, kernel message management,
+ filesystem creation, and system login.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ & LGPLv2.1+ & BSD
+Architecture: armv7at2hf-neon
+OE: util-linux
+Depends: libblkid1 (>= 2.29.1), libc6 (>= 2.25), libmount1 (>= 2.29.1), libpam (>= 1.3.0), libsmartcols1 (>= 2.29.1), libtinfo5 (>= 6.0+20161126), libuuid1 (>= 2.29.1), update-alternatives-opkg, util-linux-losetup, util-linux-lsblk, util-linux-runuser, util-linux-sulogin, util-linux-swaponoff, util-linux-umount
+Recommends: util-linux-cfdisk, util-linux-fdisk, util-linux-mkfs, util-linux-mount, util-linux-mountpoint, util-linux-prlimit, util-linux-readprofile, util-linux-sfdisk
+Provides: util-linux-systemd
+Replaces: util-linux-systemd
+Conflicts: util-linux-systemd
+Source: util-linux_2.29.1.bb

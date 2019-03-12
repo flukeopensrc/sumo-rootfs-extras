@@ -1,0 +1,14 @@
+Package: ttf-arphic-uming
+Version: 20080216-r6
+Description: Unicode Mingti (printed) TrueType Font
+ Unicode Mingti (printed) TrueType Font.
+Section: fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Arphic-Public-License
+Architecture: all
+OE: ttf-arphic-uming
+Homepage: http://www.freedesktop.org/wiki/Software/CJKUnifonts
+Depends: fontconfig-utils
+Provides: virtual-chinese-font
+Source: ttf-arphic-uming_20080216.bb

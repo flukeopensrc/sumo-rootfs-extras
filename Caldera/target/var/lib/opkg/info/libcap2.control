@@ -1,0 +1,14 @@
+Package: libcap2
+Version: 2.25-r0
+Description: Library for getting/setting POSIX.1e capabilities
+ Library for getting/setting POSIX.1e capabilities.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD | GPLv2
+Architecture: armv7at2hf-neon
+OE: libcap
+Homepage: http://sites.google.com/site/fullycapable/
+Depends: libc6 (>= 2.25)
+Provides: libcap
+Source: libcap_2.25.bb

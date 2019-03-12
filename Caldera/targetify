@@ -1,0 +1,46 @@
+
+source ./setup_environment
+
+mkdir ./target/home/$PROJECT_NAME
+mkdir ./target/lib/modules
+mkdir ./target/home/Test
+mkdir ./target/home/Proto
+mkdir ./target/lib/firmware
+mkdir ./target/usr/lib/fonts
+mkdir ./target/config
+
+rm -f ./target/etc/systemd/system/getty.target.wants/getty@tty1.service
+rm -f ./target/lib/systemd/system/systemd-timesyncd.service
+rm -f ./target/lib/systemd/system/systemd-timedated.service
+rm -f ./target/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+rm -f ./target/etc/lighttpd.conf
+rm -f ./target/etc/php-fpm.conf
+rm -rf ./target/www
+
+
+cp -p ./extraFiles/systemd/* ./target/etc/systemd/system/.
+cp -p ./extraFiles/profile ./target/etc/.
+cp -p ./extraFiles/lighttpd.conf ./target/etc/.
+cp -p ./extraFiles/php-fpm.conf ./target/etc/.
+cp -Rp ./extraFiles/www ./target/.
+
+sed -i "s/#NAutoVTs=.*$/NAutoVTs=0/" ./target/etc/systemd/logind.conf
+sed -i "s/#ReserveVT=.*$/ReserveVT=0/" ./target/etc/systemd/logind.conf
+sed -i '/root/d' ./target/etc/passwd
+cat ./extraFiles/passwd >> ./target/etc/passwd
+cat ./extraFiles/group  >> ./target/etc/group
+cat ./extraFiles/fstab  >> ./target/etc/fstab
+
+cp -RpL ./extraFiles/ApplicationFS/* ./target/home/$PROJECT_NAME/.
+cp -Rp ./modules/lib/modules/* ./target/lib/modules/.
+mv ./target/usr/share/fonts/truetype/*.* ./target/usr/lib/fonts/.
+
+cp -RpP ./extraFiles/usr_lib/* ./target/usr/lib/.
+cp -p ./setup_environment_target  ./target/home/.
+cp -p ./DeviceTree/zImage-Caldera_soc_overlay.dtb ./target/lib/firmware/.
+
+cd ./target/etc/systemd/system/multi-user.target.wants
+ln -s /lib/systemd/system/php-fpm.service php-fpm.service
+ln -s ../instrument.service instrument.service
+ln -s ../launchApp.service launchApp.service
+

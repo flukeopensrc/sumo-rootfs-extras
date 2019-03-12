@@ -1,0 +1,13 @@
+Package: libqt5declarative-qmlplugins
+Version: 5.8.0+git0+64faeb0d80-r0
+Description: qtquick1 version 5.8.0+gitAUTOINC+64faeb0d80-r0
+ qtquick1 version 5.8.0+gitAUTOINC+64faeb0d80-r0.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GFDL-1.3 & BSD & ( GPL-3.0 & The-Qt-Company-GPL-Exception-1.0 | The-Qt-Company-Commercial ) & ( GPL-2.0+ | LGPL-3.0 | The-Qt-Company-Commercial )
+Architecture: armv7at2hf-neon
+OE: qtquick1
+Depends: libc6 (>= 2.25), libgcc1 (>= 6.4.0), libqt5declarative5 (>= 5.8.0+git0+64faeb0d80), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtwebkit (>= 5.8.0+git0+74ac5b0f34)
+Provides: qtquick1-qmlplugins
+Source: qtquick1_git.bb

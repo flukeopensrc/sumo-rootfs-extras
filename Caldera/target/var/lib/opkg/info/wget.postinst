@@ -1,0 +1,4 @@
+#!/bin/sh
+# Begin section update-alternatives
+update-alternatives --install /usr/bin/wget wget /usr/bin/wget.wget 100
+# End section update-alternatives

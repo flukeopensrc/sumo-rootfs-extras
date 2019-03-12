@@ -1,0 +1,13 @@
+Package: ttf-roboto
+Version: 2.138-r1
+Description: Google Roboto Fonts
+ Roboto font files from Google, commonly used on Fluke tools
+Section: x11/fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Apache-2.0
+Architecture: all
+OE: ttf-roboto
+Homepage: https://fonts.google.com/specimen/Roboto
+Depends: fontconfig-utils
+Source: ttf-roboto_2.138.bb

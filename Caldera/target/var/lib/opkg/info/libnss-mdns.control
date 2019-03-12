@@ -1,0 +1,13 @@
+Package: libnss-mdns
+Version: 0.10-r7
+Description: Name Service Switch module for Multicast DNS (zeroconf) name resolution
+ Name Service Switch module for Multicast DNS (zeroconf) name resolution.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1+
+Architecture: armv7at2hf-neon
+OE: libnss-mdns
+Homepage: http://0pointer.de/lennart/projects/nss-mdns/
+Depends: avahi-daemon, libc6 (>= 2.25)
+Source: libnss-mdns_0.10.bb

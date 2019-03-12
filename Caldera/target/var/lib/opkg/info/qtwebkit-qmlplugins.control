@@ -1,0 +1,12 @@
+Package: qtwebkit-qmlplugins
+Version: 5.8.0+git0+74ac5b0f34-r0
+Description: qtwebkit version 5.8.0+gitAUTOINC+74ac5b0f34-r0
+ qtwebkit version 5.8.0+gitAUTOINC+74ac5b0f34-r0.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD & LGPLv2+ | GPL-2.0
+Architecture: armv7at2hf-neon
+OE: qtwebkit
+Depends: libc6 (>= 2.25), libstdc++6 (>= 6.4.0), qtbase (>= 5.8.0+git0+49dc9aa409), qtdeclarative (>= 5.8.0+git0+fffb997e19), qtwebkit (>= 5.8.0+git0+74ac5b0f34)
+Source: qtwebkit_git.bb

@@ -1,0 +1,13 @@
+Package: libuuid1
+Version: 2.29.1-r0
+Description: util-linux libuuid
+ util-linux libuuid
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ & LGPLv2.1+ & BSD
+Architecture: armv7at2hf-neon
+OE: util-linux
+Depends: libc6 (>= 2.25)
+Provides: util-linux-libuuid
+Source: util-linux_2.29.1.bb

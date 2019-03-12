@@ -1,0 +1,6 @@
+
+export PROJECT_NAME=Caldera
+export PROJECT_DEPLOY_DIR=/windriver/usr1/halfdome/fluke-cda-setup/angstrom-v2017.06-yocto2.3-manifest-fluke-cda/deploy/glibc/images/
+export PROJECT_IMAGES_DIR=fluke-cda-caldera
+export PROJECT_IMAGES=$PROJECT_DEPLOY_DIR$PROJECT_IMAGES_DIR
+export TOOLCHAIN_REPO=/windriver/usr1/halfdome/fluke-cda-setup/angstrom-v2017.06-yocto2.3-manifest-fluke-cda/deploy/glibc/sdk/x86_64/fluke-cda-caldera

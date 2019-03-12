@@ -1,0 +1,4 @@
+#!/bin/sh
+# Begin section update-alternatives
+update-alternatives --install /bin/mountpoint mountpoint /bin/mountpoint.util-linux 80
+# End section update-alternatives

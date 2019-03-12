@@ -1,0 +1,51 @@
+Configured Openembedded layers:
+meta-angstrom     = work:137803eb32f6b34374c7a5a3c1f03eb88b68e4d4
+meta-oe           
+meta-efl          
+meta-gpe          
+meta-gnome        
+meta-xfce         
+meta-initramfs    
+meta-multimedia   
+meta-networking   
+meta-webserver    
+meta-ruby         
+meta-filesystems  
+meta-perl         
+meta-python       = work:9eaebc6e783f1394bb5444326cd05a976b3122e9
+meta-qt4          = work:88989ae3abe98b30089e7518d3adabe990c40a10
+meta-java         = work:0c27b120aa508e4bb41394b8dd3645949a611128
+meta-browser      = work:6edb45804c5e532fdbca31e9d358d9052eaee90b
+meta-mono         = work:bca825420a0ea9d19db525d4351475a539fb544e
+meta-qt5          = work:3ae86cb32edd1449f702e0a094929ae9b21ce191
+meta-systemd      = work:9eaebc6e783f1394bb5444326cd05a976b3122e9
+meta-ros          = work:f591713a1494772882d6b4459c7cb1fa6bc059ba
+meta-photography  = work:5ee6cb065d05e724df6b477b4ee1635c1883a780
+meta-maker        = work:2caf75897b9424eaab681b08b48e9b42bb8c382e
+meta-office       = work:3213948bafb7fae4fa00ce6dc997d1801e870b5e
+meta-kodi         = work:5bb04b5af21d19bcc5bf5278d34eb87292b4a020
+meta-ti           = work:e57e6a3c1b9668b0b09d39e03fab7a557c392f81
+meta-freescale    = work:af5a8cf74d488ba45715ed0b0e0441e60b10c31d
+meta-freescale-3rdparty = work:9613dbc02ca970122a01c935bc9e5789ced73a9d
+meta-altera       = work:37ca0f7ab398e2e5bc61bd163b0bc16df535160f
+meta-fluke-cda    = master:ab1bbd8975974913a42c64f0b5dac49f397f2788
+meta-nslu2        = work:8f35264fe9bb38439ece38c0c324cec792b22a8f
+meta-htc          
+meta-nokia        
+meta-openmoko     
+meta-palm         = work:8590bde800e1e633e1d5b39edf1b5c01f1fba116
+meta-handheld     = work:0e37bd53c70abd4819a7f5976b6dd6bc54441f45
+meta-intel        = work:9b37952d6af36358b6397cedf3dd53ec8962b6bf
+meta-sunxi        = work:d7e301393d706816118a6d744d273bdabb339df8
+meta-raspberrypi  = work:acfb857227f1216cd64767952f0c25d633df10b8
+meta-dominion     = work:b2cfe5e2d1505898cacb43b8f30da3a169de8df4
+meta-gumstix-community = work:c8e7ec7f391a4b66adadac090d55beba18e1117e
+meta-qcom         = work:e27bc2054557df848f22b05674e51f289491723b
+meta-edison       = work:395c66f21526ee07d963233218e4eaa8d47f32dd
+meta-96boards     = work:c56da47b8fd65f950eec729e7e8aff482c175f04
+meta-linaro       
+meta-linaro-toolchain 
+meta-aarch64      
+meta-optee        = work:74dacb34c13d1c85fe4627a890b9c04940f9ffeb
+meta              = work:819aa151bd634122a46ffdd822064313c67f5ba5
+

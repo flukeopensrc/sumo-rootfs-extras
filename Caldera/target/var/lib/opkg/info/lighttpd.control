@@ -1,0 +1,17 @@
+Package: lighttpd
+Version: 1.4.45-r0
+Description: Lightweight high-performance web server
+ Lightweight high-performance web server.
+Section: net
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv7at2hf-neon
+OE: lighttpd
+Homepage: http://www.lighttpd.net/
+Depends: libattr1 (>= 2.4.47), libc6 (>= 2.25), libcrypto1.0.2 (>= 1.0.2n), libpcre1 (>= 8.40), libssl1.0.2 (>= 1.0.2n), lighttpd-module-dirlisting, lighttpd-module-indexfile, lighttpd-module-staticfile
+Recommends: lighttpd-module-access, lighttpd-module-accesslog
+Provides: lighttpd-systemd
+Replaces: lighttpd-systemd
+Conflicts: lighttpd-systemd
+Source: lighttpd_1.4.45.bb

@@ -1,0 +1,14 @@
+Package: libsolv0
+Version: 0.6.26-r0
+Description: Library for solving packages and reading repositories
+ Library for solving packages and reading repositories.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-3-Clause
+Architecture: armv7at2hf-neon
+OE: libsolv
+Homepage: https://github.com/openSUSE/libsolv
+Depends: libc6 (>= 2.25)
+Provides: libsolv
+Source: libsolv_0.6.26.bb

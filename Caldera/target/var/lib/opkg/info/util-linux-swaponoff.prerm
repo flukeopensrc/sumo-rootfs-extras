@@ -1,0 +1,5 @@
+#!/bin/sh
+# Begin section update-alternatives
+update-alternatives --remove  swapoff /sbin/swapoff.util-linux
+update-alternatives --remove  swapon /sbin/swapon.util-linux
+# End section update-alternatives

@@ -1,0 +1,13 @@
+Package: nettle
+Version: 3.3-r0
+Description: A low level cryptographic library
+ A low level cryptographic library.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv3+ | GPLv2+
+Architecture: armv7at2hf-neon
+OE: nettle
+Homepage: http://www.lysator.liu.se/~nisse/nettle/
+Depends: libc6 (>= 2.25), libgmp10 (>= 6.1.2)
+Source: nettle_3.3.bb

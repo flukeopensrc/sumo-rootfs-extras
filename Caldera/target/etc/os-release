@@ -1,0 +1,6 @@
+VERSION_ID="v2017.06"
+NAME="Angstrom"
+ID="angstrom"
+PRETTY_NAME="The Ångström Distribution v2017.06"
+ANSI_COLOR="1;35"
+HOME_URL="http://www.angstrom-distribution.org"
