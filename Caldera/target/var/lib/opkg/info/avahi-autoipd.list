@@ -1,5 +1,0 @@
-/etc/avahi/
-/etc/avahi/avahi-autoipd.action
-/etc/udhcpc.d/99avahi-autoipd
-/usr/sbin/avahi-autoipd
-/etc/udhcpc.d/00avahi-autoipd

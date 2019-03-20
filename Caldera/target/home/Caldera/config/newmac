@@ -1,9 +1,0 @@
-#!/bin/sh
-file=/home/Caldera/config/setmacOG
-cp $file ${file}.save
-echo "export macaddr=$1" >> $file
-echo '/sbin/ifconfig eth0 down' >> $file
-echo '/sbin/ifconfig eth0 hw ether $macaddr' >> $file
-sync
-chmod 777 /home/Caldera/config/setmacOG
-sync

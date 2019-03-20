@@ -1,4 +1,0 @@
-#!/bin/sh
-
-source /home/Caldera/bin/qtenv
-/home/Caldera/bin/keytest.elf -qws &

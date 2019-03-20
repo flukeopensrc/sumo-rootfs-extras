@@ -1,2 +1,0 @@
-	rm -rf $D/usr/lib/opkg/alternatives
-	rmdir $D/usr/lib/opkg || true

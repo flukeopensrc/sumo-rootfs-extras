@@ -1,1 +1,0 @@
-ACTION=="add", SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="0957", ATTR{idProduct}=="0[57]18", ENV{DEVICE}="$devnode", ENV{SERIAL}="$attr{serial}", RUN+="/etc/hotplug/usb/agilent_82357a"

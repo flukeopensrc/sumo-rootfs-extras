@@ -1,9 +1,0 @@
-/lib/systemd/system/php-fpm.service
-/etc/php-fpm.d/
-/etc/php-fpm.conf
-/etc/init.d/
-/etc/php-fpm.d/www.conf.default
-/usr/share/fpm/
-/etc/init.d/php-fpm
-/usr/share/fpm/status.html
-/usr/sbin/php-fpm
