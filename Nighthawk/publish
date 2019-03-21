@@ -1,4 +1,1 @@
-#!/bin/sh
-#
-source ./setup_environment
-source ../common/publish
+../common/publish

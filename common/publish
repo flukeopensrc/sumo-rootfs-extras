@@ -1,7 +1,9 @@
 #!/bin/sh
 #
 
-export PUBLISH_COMMON_DIR=../common
+source ./setup_environment
+
+export PUBLISH_COMMON_DIR=../common/
 
 echo "Getting images from the deploy archive."
 ${PUBLISH_COMMON_DIR}getImages
