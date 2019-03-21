@@ -1,9 +1,10 @@
 #!/bin/sh
 #
-source ./setup_environment
+
+export PUBLISH_COMMON_DIR=../common
 
 echo "Getting images from the deploy archive."
-./getImages
+${PUBLISH_COMMON_DIR}getImages
 echo "done!"
 
 #echo "Customizing the target directory."
@@ -19,7 +20,7 @@ if [ ! -d "./targetAux" ]; then
 fi
 echo "Building the ubifs image."
 #sudo ./mkubifs
-cp -p $PROJECT_IMAGES/fluke-full-image-fluke-cda-nighthawk.ubi ./rootfs/ubi.img
+cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.ubi ./rootfs/ubi.img
 
 
 echo "Setting image permissions."
@@ -31,9 +32,9 @@ echo "done!"
 echo "Building composite flash images."
 /usr/bin/srec_cat \
 ./loader/u-boot-with-spl.sfp -Binary \
-./DeviceTree/zImage-Nighthawk_soc.dtb -Binary -Offset 0x00110000 \
+./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
 ./kernel/zImage -Binary -Offset 0x00200000 \
-./fpga/Nighthawk_OG.rbf -Binary -Offset 0x0800000 \
+./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x0800000 \
 -Output ./rootfs/U10.flash -Motorola --address-length=4 -Data_Only
 
 # Create binary image from Motorola S-Record.  Fill blank spaces
