@@ -6,4 +6,5 @@ if [ ! -d "/config" ]; then
 fi
 mount -t configfs configfs /config
 mkdir /config/device-tree/overlays/$PRODUCT_NAME
-echo zImage-Caldera_soc_overlay.dtb > /config/device-tree/overlays/$PRODUCT_NAME/path
+#echo zImage-Caldera_soc_overlay.dtb > /config/device-tree/overlays/$PRODUCT_NAME/path
+cat /boot/Caldera_soc_overlay.dtb > /config/device-tree/overlays/$PRODUCT_NAME/dtbo
