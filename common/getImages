@@ -26,12 +26,14 @@ echo Retrieving images from $PROJECT_IMAGES
 #sudo rm ./rootfs.tar
 #cd ..
 
+install -d ./loader/U-boot/
 cp -p $PROJECT_IMAGES/u-boot-with-spl.sfp-${PROJECT_MACHINE} ./loader/u-boot-with-spl.sfp
 cp -p $PROJECT_IMAGES/u-boot.img ./loader/U-boot/.
 #cp -p $PROJECT_IMAGES/modules-fluke-cda-nighthawk.tgz ./modules/.
+install -d ./kernel/
 cp -p $PROJECT_IMAGES/zImage ./kernel/.
 #cp -p $PROJECT_IMAGES/zImage-Nighthawk_soc_overlay.dtb ./DeviceTree/.
-#cp -p $PROJECT_IMAGES/zImage-Nighthawk_soc.dtb ./DeviceTree/.
+cp -p $PROJECT_IMAGES/zImage-${PROJECT_NAME}_soc.dtb ./DeviceTree/.
 
 #cd ./modules
 #gunzip ./modules-fluke-cda-nighthawk.tgz
@@ -40,10 +42,5 @@ cp -p $PROJECT_IMAGES/zImage ./kernel/.
 #cd ..
 
 echo Retrieving toolchain package from $TOOLCHAIN_REPO
-if [ ! -d "./toolchain" ]; then
-    mkdir ./toolchain
-fi
-if [ ! -d "./toolchain/sdk" ]; then
-    mkdir ./toolchain/sdk
-fi
+install -d ./toolchain/sdk/
 cp -Rp $TOOLCHAIN_REPO/* ./toolchain/sdk/.

@@ -60,31 +60,14 @@ BUILD_DATE=$(date +"%y_%m_%d")
 RELEASE_FOLDER=${BUILD_DATE}_${PROJECT_NAME}
 echo "Building release folder "$RELEASE_FOLDER
 
-if [ ! -d "./release/$RELEASE_FOLDER" ]; then
-    mkdir ./release/$RELEASE_FOLDER
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/toolchain" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/toolchain
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/zImage" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/zImage
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/rootfs" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/rootfs
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/fpga" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/fpga
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/U10" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/U10
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/U11" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/U11
-fi
-if [ ! -d "./release/${RELEASE_FOLDER}/loader" ]; then
-    mkdir ./release/${RELEASE_FOLDER}/loader
-fi
-#mkdir ./release/${RELEASE_FOLDER}/devicetree
+install -d ./release/$RELEASE_FOLDER/toolchain
+install -d ./release/$RELEASE_FOLDER/zImage
+install -d ./release/$RELEASE_FOLDER/rootfs
+install -d ./release/$RELEASE_FOLDER/fpga
+install -d ./release/$RELEASE_FOLDER/U10
+install -d ./release/$RELEASE_FOLDER/U11
+install -d ./release/$RELEASE_FOLDER/loader
+#install -d ./release/$RELEASE_FOLDER/devicetree
 
 cp -Rp ./toolchain/* ./release/${RELEASE_FOLDER}/toolchain/ 
 cp -Rp ./DeviceTree ./release/${RELEASE_FOLDER}/.
