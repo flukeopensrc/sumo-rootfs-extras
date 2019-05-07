@@ -63,7 +63,7 @@
 #define CONFIG_SYS_TEXT_BASE		0x01000040
 #endif
 /* Default load address */
-#define CONFIG_SYS_LOAD_ADDR		0x8000
+#define CONFIG_SYS_LOAD_ADDR		0x1000000
 #ifdef CONFIG_USE_IRQ
 /* Enable board late init for ECC setup if IRQ enabled */
 #define CONFIG_BOARD_LATE_INIT
@@ -175,7 +175,7 @@
 #ifdef CONFIG_SOCFPGA_VIRTUAL_TARGET
 #define CONFIG_BOOTCOMMAND "run ramboot"
 #else
-#define CONFIG_BOOTCOMMAND "run splashboot; run qspiload; run qspiboot"
+#define CONFIG_BOOTCOMMAND "run qspifpga; run bridge_enable_handoff; run rotate_init; run qspiload; run qspiboot"
 #endif
 
 /*
@@ -192,13 +192,13 @@
 	"bootimage=zImage\0" \
 	"bootimagesize=0x600000\0" \
 	"fdtimage=socfpga.dtb\0" \
-	"fdtimagesize=0x7F00\0" \
+	"fdtimagesize=0xFF00\0" \
 	"mmcloadcmd=fatload\0" \
 	"mmcloadpart=1\0" \
 	"mmcroot=/dev/mmcblk0p2\0" \
 	"qspiloadcs=0\0" \
-	"qspibootimageaddr=0xa0000\0" \
-	"qspifdtaddr=0x50000\0" \
+	"qspibootimageaddr=0x200000\0" \
+	"qspifdtaddr=0x110000\0" \
 	"qspirootpartition=ubi.mtd=4\0" \
 	"qspiroot=ubi0:root-fs\0" \
 	"qspirootfstype=ubifs\0" \
@@ -222,7 +222,7 @@
 		"sf read ${loadaddr} ${qspibootimageaddr} ${bootimagesize};" \
 		"sf read ${fdtaddr} ${qspifdtaddr} ${fdtimagesize};\0" \
 	"qspiboot=setenv bootargs " CONFIG_BOOTARGS \
-		" mem=${mem} ${qspirootpartition} root=${qspiroot} rw rootfstype=${qspirootfstype} coherent_pool=256K isolcpus=1; "\
+		" mem=${mem} ${qspirootpartition} root=${qspiroot} rw rootfstype=${qspirootfstype} vt.global_cursor_default=0 vt.cur_default=1 coherent_pool=256K isolcpus=1; "\
 		"bootz ${loadaddr} - ${fdtaddr}\0" \
 	"nandload=nand read ${loadaddr} ${nandbootimageaddr} ${bootimagesize};"\
 		"nand read ${fdtaddr} ${nandfdtaddr} ${fdtimagesize}\0" \

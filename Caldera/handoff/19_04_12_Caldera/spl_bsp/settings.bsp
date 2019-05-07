@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>spl</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 11, 2019 3:26:25 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1552343185409</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Apr 12, 2019 2:05:29 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1555103129065</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>./</BspGeneratedLocation>
-        <BspSettingsFile>/evtfs/wg03/fcal_cda/grponly/hw/fpga/p6331-3003_rev003/software/spl_bsp/settings.bsp</BspSettingsFile>
-        <HpsSettingsPath>../../hps_isw_handoff/Caldera_soc_hps_0</HpsSettingsPath>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
+        <HpsSettingsPath>../../hps_isw_handoff/Caldera_soc_hps_0/</HpsSettingsPath>
         <JdiFile>default</JdiFile>
         <Cpu xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         <SchemaVersion>1.9</SchemaVersion>
