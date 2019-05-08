@@ -5,11 +5,13 @@ export QT_QPA_PLATFORM=linuxfb
 export QT_QPA_FONTDIR=/usr/share/fonts/ttf
 
 cd /home/Nighthawk/bin
-/home/Nighthawk/bin/subpub &
+/home/Nighthawk/bin/subpub &> /subpub_out.txt 2>&1 &
+/home/Nighthawk/bin/errorpub  &> /errorpub_out.txt 2>&1 &
 sleep 1
 /home/Nighthawk/bin/settings &> /settings_out.txt 2>&1 &
 /home/Nighthawk/bin/opman &> /opman_out.txt 2>&1 &
 sleep 12
+/home/Nighthawk/bin/procedure &> /procedure_out.txt 2>&1 &
 /home/Nighthawk/bin/state &> /state_out.txt 2>&1 &
 /home/Nighthawk/bin/remoteapp &> /remote_out.txt 2>&1 &
 /home/Nighthawk/bin/start-ui

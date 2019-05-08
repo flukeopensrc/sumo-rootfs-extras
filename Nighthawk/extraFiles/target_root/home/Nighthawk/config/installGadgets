@@ -2,7 +2,4 @@
 depmod
 modprobe u_serial
 modprobe libcomposite
-modprobe usb_f_acm
-modprobe g_serial
-modprobe g_ffs
 
