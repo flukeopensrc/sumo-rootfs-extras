@@ -1,1 +1,3 @@
-../common/publish
+#!/bin/bash
+
+SKIP_UBIFS=1 ../common/publish

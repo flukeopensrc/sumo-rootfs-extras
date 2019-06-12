@@ -1,5 +1,6 @@
 # cp -pL 
 
+set -e 
 
 # fluke-console-image-socfpga_cyclone5.tar  // symlink to fs
 
