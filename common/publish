@@ -21,14 +21,6 @@ fi
 if [ ! -d "./targetAux" ]; then
     mkdir ./targetAux
 fi
-#echo "Building the ubifs image."
-#sudo ./mkubifs
-if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
-then
-	:
-else
-	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.ubi ./rootfs/ubi.img
-fi
 
 echo "Building composite flash images."
 if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
@@ -60,36 +52,7 @@ fi
 -Fill 0xff -over ./rootfs/U10.flash \
 -Output ./rootfs/U10.bin -Binary
 echo "U10 done!"
-if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
-then
-	echo "Using EMMC, skipping U11"
-else
-	/usr/bin/srec_cat \
-	./rootfs/ubi.img -Binary \
-	-Output ./rootfs/U11.flash -Motorola --address-length=4 -Data_Only
-	/usr/bin/srec_cat ./rootfs/U11.flash -Motorola \
-	-Fill 0xff -over ./rootfs/U11.flash \
-	-Output ./rootfs/U11.bin -Binary
-	echo "U11 done!"
-fi
 echo "Composite images created!"
-
-
-if [ -z "$SKIP_PMENGR_GROUP" ] || [ "$SKIP_PMENGR_GROUP" -eq 0 ]  
-then
-	echo "Setting image permissions."
-	if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
-	then
-		:
-	else
-		chmod 666 ./rootfs/ubi.img
-		chgrp pmengr ./rootfs/ubi.img
-		chgrp pmengr ./rootfs/U11.bin
-	fi
-	chgrp pmengr ./kernel/zImage
-	chgrp pmengr ./rootfs/U10.bin
-	echo "done!"
-fi
 
 BUILD_DATE=$(date +"%y_%m_%d")
 RELEASE_FOLDER=${BUILD_DATE}_${PROJECT_NAME}
@@ -113,8 +76,24 @@ then
 	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.wic.gz ./release/${RELEASE_FOLDER}/rootfs/
 	cp -p ./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz ./release/${RELEASE_FOLDER}/zImage/.
 else
-	cp -p ./rootfs/ubi.img ./release/${RELEASE_FOLDER}/rootfs/. 
-	cp -p ./rootfs/U11.bin ./release/${RELEASE_FOLDER}/U11/. 
+	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.ubi ./release/${RELEASE_FOLDER}/rootfs/.
+	ln -srf ./release/${RELEASE_FOLDER}/rootfs/fluke-full-image-${PROJECT_MACHINE}.ubi ./release/${RELEASE_FOLDER}/U11/U11.bin
 fi
 cp -p ./rootfs/U10.bin ./release/${RELEASE_FOLDER}/U10/. 
 cp -p ./fpga/* ./release/${RELEASE_FOLDER}/fpga/.
+
+if [ -z "$SKIP_PMENGR_GROUP" ] || [ "$SKIP_PMENGR_GROUP" -eq 0 ]  
+then
+	echo "Setting image permissions."
+	if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
+	then
+		:
+	else
+		chmod 666 ./release/${RELEASE_FOLDER}/rootfs/fluke-full-image-${PROJECT_MACHINE}.ubi
+		chgrp pmengr ./release/${RELEASE_FOLDER}/rootfs/fluke-full-image-${PROJECT_MACHINE}.ubi
+	fi
+	chgrp pmengr ./release/${RELEASE_FOLDER}/zImage/zImage
+	chgrp pmengr ./release/${RELEASE_FOLDER}/U10/U10.bin
+	echo "done!"
+fi
+
