@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # cp -pL 
 
 set -e 
@@ -28,11 +30,20 @@ echo Retrieving images from $PROJECT_IMAGES
 #cd ..
 
 install -d ./loader/U-boot/
-cp -p $PROJECT_IMAGES/u-boot-with-spl.sfp-${PROJECT_MACHINE} ./loader/u-boot-with-spl.sfp
+cp -p $PROJECT_IMAGES/u-boot-with-spl.sfp-${PROJECT_MACHINE} ./loader/U-boot/u-boot-with-spl.sfp
 cp -p $PROJECT_IMAGES/u-boot.img ./loader/U-boot/.
 #cp -p $PROJECT_IMAGES/modules-fluke-cda-nighthawk.tgz ./modules/.
 install -d ./kernel/
-cp -p $PROJECT_IMAGES/zImage ./kernel/.
+if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
+then
+	echo "Retrieving rescue kernel (bitbake linux-fluke-rescue)"
+	cp -p $PROJECT_IMAGES/fluke-rescue-kernel/zImage ./kernel/.
+	echo "Retrieving initrd for  rescue kernel (bitbake fluke-initrd-image)"
+	cp -p $PROJECT_IMAGES/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz ./kernel/
+else
+	cp -p $PROJECT_IMAGES/zImage ./kernel/.
+fi
+
 #cp -p $PROJECT_IMAGES/zImage-Nighthawk_soc_overlay.dtb ./DeviceTree/.
 cp -p $PROJECT_IMAGES/zImage-${PROJECT_NAME}_soc.dtb ./DeviceTree/.
 

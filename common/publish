@@ -23,18 +23,36 @@ if [ ! -d "./targetAux" ]; then
 fi
 #echo "Building the ubifs image."
 #sudo ./mkubifs
-if [ -z "$SKIP_UBIFS" ] 
+if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 then
+	:
+else
 	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.ubi ./rootfs/ubi.img
 fi
 
 echo "Building composite flash images."
-/usr/bin/srec_cat \
-./loader/u-boot-with-spl.sfp -Binary \
-./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
-./kernel/zImage -Binary -Offset 0x00200000 \
-./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x0800000 \
--Output ./rootfs/U10.flash -Motorola --address-length=4 -Data_Only
+if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
+then
+	/usr/bin/srec_cat \
+	./loader/U-boot/u-boot-with-spl.sfp -Binary \
+	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
+	./kernel/zImage -Binary -Offset 0x00200000 \
+	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x00800000 \
+	./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz -Binary -Offset 0x01000000 \
+	./loader/U-boot/u-boot-with-spl.sfp -Binary -Offset 0x02000000 \
+	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x02110000 \
+	./kernel/zImage -Binary -Offset 0x02200000 \
+	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x02800000 \
+	./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz -Binary -Offset 0x03000000 \
+	-Output ./rootfs/U10.flash -Motorola --address-length=4 -Data_Only
+else
+	/usr/bin/srec_cat \
+	./loader/U-boot/u-boot-with-spl.sfp -Binary \
+	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
+	./kernel/zImage -Binary -Offset 0x00200000 \
+	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x0800000 \
+	-Output ./rootfs/U10.flash -Motorola --address-length=4 -Data_Only
+fi
 
 # Create binary image from Motorola S-Record.  Fill blank spaces
 # with 0xff instead of 0x00.
@@ -42,8 +60,10 @@ echo "Building composite flash images."
 -Fill 0xff -over ./rootfs/U10.flash \
 -Output ./rootfs/U10.bin -Binary
 echo "U10 done!"
-if [ -z "$SKIP_UBIFS" ] 
+if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 then
+	echo "Using EMMC, skipping U11"
+else
 	/usr/bin/srec_cat \
 	./rootfs/ubi.img -Binary \
 	-Output ./rootfs/U11.flash -Motorola --address-length=4 -Data_Only
@@ -55,11 +75,13 @@ fi
 echo "Composite images created!"
 
 
-if [ -z "$SKIP_PMENGR_GROUP" ] 
+if [ -z "$SKIP_PMENGR_GROUP" ] || [ "$SKIP_PMENGR_GROUP" -eq 0 ]  
 then
 	echo "Setting image permissions."
-	if [ -z "$SKIP_UBIFS" ] 
+	if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 	then
+		:
+	else
 		chmod 666 ./rootfs/ubi.img
 		chgrp pmengr ./rootfs/ubi.img
 		chgrp pmengr ./rootfs/U11.bin
@@ -86,13 +108,13 @@ cp -Rp ./toolchain/* ./release/${RELEASE_FOLDER}/toolchain/
 cp -Rp ./DeviceTree ./release/${RELEASE_FOLDER}/.
 cp -Rp ./loader ./release/${RELEASE_FOLDER}/.
 cp -p ./kernel/zImage ./release/${RELEASE_FOLDER}/zImage/. 
-if [ -z "$SKIP_UBIFS" ] 
+if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 then
+	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.wic.gz ./release/${RELEASE_FOLDER}/rootfs/
+	cp -p ./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz ./release/${RELEASE_FOLDER}/zImage/.
+else
 	cp -p ./rootfs/ubi.img ./release/${RELEASE_FOLDER}/rootfs/. 
 	cp -p ./rootfs/U11.bin ./release/${RELEASE_FOLDER}/U11/. 
 fi
-cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.wic.gz ./release/${RELEASE_FOLDER}/rootfs/ || \
-	echo "Failed to copy fluke-full-image-${PROJECT_MACHINE}.wic.gz to release folder (only used for eMMC root fs)."
 cp -p ./rootfs/U10.bin ./release/${RELEASE_FOLDER}/U10/. 
 cp -p ./fpga/* ./release/${RELEASE_FOLDER}/fpga/.
-
