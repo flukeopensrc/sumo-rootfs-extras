@@ -1,0 +1,10 @@
+export PROJECT_NAME=Nighthawk
+#export PROJECT_BASE_DEPLOY_DIR=/home/fluke/work/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/
+export PROJECT_BASE_DEPLOY_DIR=/crosswind/usr1/halfdome/cda/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/
+export PROJECT_DEPLOY_DIR=${PROJECT_BASE_DEPLOY_DIR}glibc/images/
+export PROJECT_MACHINE=fluke-cda-nighthawk
+export PROJECT_IMAGES=$PROJECT_DEPLOY_DIR$PROJECT_MACHINE/
+export TOOLCHAIN_REPO=${PROJECT_BASE_DEPLOY_DIR}glibc/sdk/x86_64/${PROJECT_MACHINE}/
+export EMMC_ROOTFS=0
+export SKIP_PMENGR_GROUP=0
+ 
