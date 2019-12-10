@@ -7,4 +7,7 @@ export PROJECT_IMAGES=$PROJECT_DEPLOY_DIR$PROJECT_MACHINE/
 export TOOLCHAIN_REPO=${PROJECT_BASE_DEPLOY_DIR}glibc/sdk/x86_64/${PROJECT_MACHINE}/
 export EMMC_ROOTFS=0
 export SKIP_PMENGR_GROUP=0
- 
+
+#Kraken is currently just nighthawk with a customized image, so override some stuff
+export PROJECT_IMAGE_FILESTEM=fluke-cda-kraken-image-fluke-cda-nighthawk
+export PROJECT_RELEASE_NAME=Kraken

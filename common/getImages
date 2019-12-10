@@ -44,6 +44,7 @@ else
 	cp -p $PROJECT_IMAGES/zImage ./kernel/.
 fi
 
+install -d ./DeviceTree
 #cp -p $PROJECT_IMAGES/zImage-Nighthawk_soc_overlay.dtb ./DeviceTree/.
 cp -p $PROJECT_IMAGES/zImage-${PROJECT_NAME}_soc.dtb ./DeviceTree/.
 

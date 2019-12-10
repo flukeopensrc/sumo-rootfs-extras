@@ -5,6 +5,13 @@ set -e
 source ./setup_environment
 
 export PUBLISH_COMMON_DIR=../common/
+#set defaults for some optional variables
+if [ -z "$PROJECT_RELEASE_NAME" ]; then
+	export PROJECT_RELEASE_NAME=${PROJECT_NAME}
+fi
+if [ -z "$PROJECT_IMAGE_FILESTEM" ]; then
+	export PROJECT_IMAGE_FILESTEM=fluke-full-image-${PROJECT_MACHINE}
+fi
 
 echo "Getting images from the deploy archive."
 ${PUBLISH_COMMON_DIR}getImages
@@ -55,7 +62,7 @@ echo "U10 done!"
 echo "Composite images created!"
 
 BUILD_DATE=$(date +"%y_%m_%d")
-RELEASE_FOLDER=${BUILD_DATE}_${PROJECT_NAME}
+RELEASE_FOLDER=${BUILD_DATE}_${PROJECT_RELEASE_NAME}
 echo "Building release folder "$RELEASE_FOLDER
 
 install -d ./release/$RELEASE_FOLDER/toolchain
@@ -73,11 +80,11 @@ cp -Rp ./loader ./release/${RELEASE_FOLDER}/.
 cp -p ./kernel/zImage ./release/${RELEASE_FOLDER}/zImage/. 
 if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 then
-	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.wic.gz ./release/${RELEASE_FOLDER}/rootfs/
+	cp -p $PROJECT_IMAGES/${PROJECT_IMAGE_FILESTEM}.wic.gz ./release/${RELEASE_FOLDER}/rootfs/
 	cp -p ./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz ./release/${RELEASE_FOLDER}/zImage/.
 else
-	cp -p $PROJECT_IMAGES/fluke-full-image-${PROJECT_MACHINE}.ubi ./release/${RELEASE_FOLDER}/rootfs/.
-	ln -srf ./release/${RELEASE_FOLDER}/rootfs/fluke-full-image-${PROJECT_MACHINE}.ubi ./release/${RELEASE_FOLDER}/U11/U11.bin
+	cp -p $PROJECT_IMAGES/${PROJECT_IMAGE_FILESTEM}.ubi ./release/${RELEASE_FOLDER}/rootfs/.
+	ln -srf ./release/${RELEASE_FOLDER}/rootfs/${PROJECT_IMAGE_FILESTEM}.ubi ./release/${RELEASE_FOLDER}/U11/U11.bin
 fi
 cp -p ./rootfs/U10.bin ./release/${RELEASE_FOLDER}/U10/. 
 cp -p ./fpga/* ./release/${RELEASE_FOLDER}/fpga/.
