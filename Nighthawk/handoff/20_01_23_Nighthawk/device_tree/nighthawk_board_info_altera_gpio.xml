@@ -1,0 +1,364 @@
+<BoardInfo pov="hps_0_arm_a9_0">
+<!--
+This file is intended to be used when building device trees 
+for the Nighthawk A9 board.
+This board info file and hps_clock_info.xml are required input
+to sopc2dts to create a device tree suitable for the 3.9 version
+of the Linux kernel.  One typically executes sopc2dts as follows:
+
+	sopc2dts -i soc_system.sopcinfo -b soc_system_board_info.xml
+		-b hps_clock_info.xml -b hps_common_board_info.xml -o soc_system.dts 
+
+-->
+
+<DTAppend name="model" type="string" parentlabel="" val="Altera SOCFPGA Cyclone V"/>
+<DTAppend name="compatible" parentlabel="" >
+	<val type="string">altr,socfpga-cyclone5</val>
+	<val type="string">altr,socfpga</val>
+</DTAppend>
+
+<!-- Boot device -->
+<DTAppend name="n25q00@0" type="node" parentlabel="hps_0_qspi" newlabel="flash0"/>
+<DTAppend name="compatible" type="string" parentlabel="flash0" val="n25q00"/>
+>
+<DTAppend name="partition@0" type="node" parentlabel="flash0" newlabel="part0"/>
+<DTAppend name="label" type="string" parentlabel="part0" val="Flash 0 Raw Data"/>
+<DTAppend name="reg" parentlabel="part0" >
+<val type="hex">0x0</val>
+<val type="hex">0x800000</val>
+</DTAppend>
+<DTAppend name="partition@800000" type="node" parentlabel="flash0" newlabel="part1"/>
+<DTAppend name="label" type="string" parentlabel="part1" val="Flash 1 jffs2 Filesystem"/>
+<DTAppend name="reg" parentlabel="part1">
+<val type="hex">0x800000</val>
+<val type="hex">0x3000000</val>
+</DTAppend>
+<DTAppend name="partition@3800000" type="node" parentlabel="flash0" newlabel="part2"/>
+<DTAppend name="label" type="string" parentlabel="part2" val="FPGA Image"/>
+<DTAppend name="reg" parentlabel="part2">
+<val type="hex">0x3800000</val>  <!-- Third partition start address -->
+<val type="hex">0x600000</val> <!-- Third partition size -->
+</DTAppend>
+<DTAppend name="partition@3e00000" type="node" parentlabel="flash0" newlabel="part3"/>
+<DTAppend name="label" type="string" parentlabel="part3" val="Splash Screen Image"/>
+<DTAppend name="reg" parentlabel="part3">
+<val type="hex">0x3e00000</val>  <!-- Third partition start address -->
+<val type="hex">0x200000</val> <!-- Third partition size -->
+</DTAppend>
+<DTAppend name="spi-max-frequency" type="number" parentlabel="flash0" val="50000000"/>
+
+<!-- Second Flash device -->
+<DTAppend name="n25q00@1" type="node" parentlabel="hps_0_qspi" newlabel="flash1"/>
+<DTAppend name="compatible" type="string" parentlabel="flash1" val="n25q00"/>
+>
+<DTAppend name="#address-cells" type="number" parentlabel="flash1" val="1"/>
+<DTAppend name="#size-cells" type="number" parentlabel="flash1" val="1"/>
+<DTAppend name="reg" type="number" parentlabel="flash1" val="1"/>
+<DTAppend name="spi-max-frequency" type="number" parentlabel="flash1" val="50000000"/>
+<DTAppend name="page-size" type="number" parentlabel="flash1" val="256"/>
+<DTAppend name="block-size" type="number" parentlabel="flash1" val="16"/>
+<DTAppend name="m25p,fast-read" type="bool" parentlabel="flash1" val="true"/>
+<DTAppend name="read-delay" type="number" parentlabel="flash1" val="4"/>
+<DTAppend name="tshsl-ns" type="number" parentlabel="flash1" val="50"/>
+<DTAppend name="tsd2d-ns" type="number" parentlabel="flash1" val="50"/>
+<DTAppend name="tchsh-ns" type="number" parentlabel="flash1" val="4"/>
+<DTAppend name="tslch-ns" type="number" parentlabel="flash1" val="4"/>
+
+<DTAppend name="partition@0" type="node" parentlabel="flash1" newlabel="part4"/>
+<DTAppend name="label" type="string" parentlabel="part4" val="Flash 1 Raw Data"/>
+<DTAppend name="reg" parentlabel="part4" >
+<val type="hex">0x0</val>
+<val type="hex">0x7000000</val>
+</DTAppend>
+
+<I2CBus master="hps_0_i2c0">
+	<I2CChip addr="0x51" label="eeprom" name="atmel,24c32"></I2CChip>
+	<I2CChip addr="0x50" label="mac_eeprom" name="atmel,24mac402"></I2CChip>
+	<I2CChip addr="0x58" label="mac_euiadd" name="atmel,24mac402"></I2CChip>
+</I2CBus>
+<I2CBus master="hps_0_i2c1">
+	<I2CChip addr="0x51" label="rtc" name="rtc,pcf8563"></I2CChip>
+</I2CBus>
+<DTAppend name="pagesize" type="number" parentlabel="eeprom" val="32"/>
+<DTAppend name="pagesize" type="number" parentlabel="mac_eeprom" val="16"/>
+<DTAppend name="read-only" parentlabel="mac_euiadd"/>
+
+<!-- John's attempt to add a temperature sensor to the SPI bus -->
+<!-- Not sure if I got the syntax correct. -->
+<!-- The adt7302 temperature sensor is connected to cs1 of spi0 -->
+<!-- Enable support for SENSORS_AD7314 in the kernel -->
+<DTAppend name="temp@1" type="node" parentlabel="hps_0_spim0" newlabel="temp1"/>
+<DTAppend name="compatible" type="string" parentlabel="temp1" val="hwmon,adt7302"/>
+<DTAppend name="reg" type="number" parentlabel="temp1" val="1"/>
+<DTAppend name="spi-max-frequency" type="number" parentlabel="temp1" val="1000000"/>
+<DTAppend name="spi-cpha" type="number" parentlabel="temp1" val="1"/>
+<DTAppend name="spi-cpol" type="number" parentlabel="temp1" val="1"/>
+<DTAppend name="enable-dma" type="number" parentlabel="temp1" val="1"/>
+
+<!-- Kludge for /sopc/serial ports -->
+<alias name="serial0" value="/sopc@0/serial@0xffc02000"/>
+<alias name="serial1" value="/sopc@0/serial@0xffc03000"/>
+<alias name="serial2" value="/sopc@0/serial@0x10004d000"/>
+
+<DTAppend name="compatible" parentlabel="hps_0_uart0">
+	<val type="string">altr,altera_16550_uart-15.1</val>
+	<val type="string">altr,16550-FIFO128</val>
+	<val type="string">ns16550a</val>
+</DTAppend>
+<DTAppend name="compatible" parentlabel="hps_0_uart1">
+	<val type="string">altr,altera_16550_uart-15.1</val>
+	<val type="string">altr,16550-FIFO128</val>
+	<val type="string">ns16550a</val>
+</DTAppend>
+
+<!--
+    Change all Altera Avalon GPIO port compatible strings to flk,fgpio-1.0 for
+    Fluke GPIO.  Note that this does not change the HPS GPIO ports.
+    You may want to put Alias commands here to control the driver
+    registration order.  I don't have any control over the order
+    in Quartus!
+-->
+<DTAppend name="compatible" type="string" parentlabel="Nighthawk_FPGA_IO_Port_A" val="flk,fgpio-1.0" action = "replace"/>
+<DTAppend name="altr,gpio-bank-width" parentlabel="Nighthawk_FPGA_IO_Port_A" action = "remove"/>
+<DTAppend name="altr,interrupt_type" parentlabel="Nighthawk_FPGA_IO_Port_A" action = "remove"/>
+<DTAppend name="activebits" type="hex" parentlabel="Nighthawk_FPGA_IO_Port_A" val="0x7f"/>
+<DTAppend name="directionbits" type="hex" parentlabel="Nighthawk_FPGA_IO_Port_A" val="0x01"/>
+<DTAppend name="bidirbits" type="hex" parentlabel="Nighthawk_FPGA_IO_Port_A" val="0x00"/>
+<DTAppend name="flk,interrupt_type" type="number" parentlabel="Nighthawk_FPGA_IO_Port_A" val="1"/>
+
+<!--
+    Change the Altera Avalon counter compatible string.
+-->
+<DTAppend name="compatible" type="string" parentlabel="Nighthawk_FPGA_IO_Beeper_Counter" val="altr,cntr-1.0"/>
+
+<!-- Beeper Enable -->
+<DTAppend name="Beeper_Enable" type="node" parentlabel="sopc" newlabel="Beeper_Enable"/>
+<DTAppend name="compatible" type="string" parentlabel="Beeper_Enable" val="gpio-leds"/>
+<DTAppend name="Beep_En" type="node" parentlabel="Beeper_Enable" newlabel="Beep_En"/>
+<DTAppend name="label" type="string" parentlabel="Beep_En" val="Beeper_Enable"/>
+<DTAppend name="gpios" parentlabel="Beep_En" >
+<val type="phandle">Nighthawk_FPGA_IO_Beeper_Enable</val>
+<val type="number">0</val>
+<val type="number">1</val>
+</DTAppend>
+
+<!--
+<DTAppend name="compatible" type="string" parentlabel="Nighthawk_FPGA_IO_led_pio" val="flk,fgpio-1.0" action = "replace"/>
+<DTAppend name="altr,gpio-bank-width" parentlabel="Nighthawk_FPGA_IO_led_pio" action = "remove"/>
+-->
+
+<!-- Heartbeat LED -->
+<DTAppend name="altr,ngpio" type="number" parentlabel="Nighthawk_FPGA_IO_led_pio" val="1"/>
+<DTAppend name="leds" type="node" parentlabel="sopc" newlabel="soc_leds"/>
+<DTAppend name="compatible" type="string" parentlabel="soc_leds" val="gpio-leds"/>
+<DTAppend name="fpga0" type="node" parentlabel="soc_leds" newlabel="led_fpga0"/>
+<DTAppend name="label" type="string" parentlabel="led_fpga0" val="fpga_led0"/>
+<DTAppend name="gpios" parentlabel="led_fpga0" >
+<val type="phandle">Nighthawk_FPGA_IO_led_pio</val>
+<val type="number">0</val>
+<val type="number">1</val>
+</DTAppend>
+
+<!-- Use LED GPIOs to control Cadmus relays -->
+<DTAppend name="Relays" type="node" parentlabel="sopc" newlabel="Cadmus_Relays"/>
+<DTAppend name="compatible" type="string" parentlabel="Cadmus_Relays" val="gpio-leds"/>
+<DTAppend name="Cadmus_AC" type="node" parentlabel="Cadmus_Relays" newlabel="Cadmus_AC"/>
+<DTAppend name="label" type="string" parentlabel="Cadmus_AC" val="Cadmus_AC"/>
+<DTAppend name="gpios" parentlabel="Cadmus_AC" >
+<val type="phandle">Nighthawk_FPGA_IO_cadmus_control</val>
+<val type="number">0</val>
+<val type="number">1</val>
+</DTAppend>
+
+<DTAppend name="Cadmus_K3" type="node" parentlabel="Cadmus_Relays" newlabel="Cadmus_K3"/>
+<DTAppend name="label" type="string" parentlabel="Cadmus_K3" val="Cadmus_K3"/>
+<DTAppend name="gpios" parentlabel="Cadmus_K3" >
+<val type="phandle">Nighthawk_FPGA_IO_cadmus_control</val>
+<val type="number">1</val>
+<val type="number">1</val>
+</DTAppend>
+
+<DTAppend name="Cadmus_K11" type="node" parentlabel="Cadmus_Relays" newlabel="Cadmus_K11"/>
+<DTAppend name="label" type="string" parentlabel="Cadmus_K11" val="Cadmus_K11"/>
+<DTAppend name="gpios" parentlabel="Cadmus_K11" >
+<val type="phandle">Nighthawk_FPGA_IO_cadmus_control</val>
+<val type="number">2</val>
+<val type="number">1</val>
+</DTAppend>
+
+<DTAppend name="Cadmus_GUARD" type="node" parentlabel="Cadmus_Relays" newlabel="Cadmus_GUARD"/>
+<DTAppend name="label" type="string" parentlabel="Cadmus_GUARD" val="Cadmus_GUARD"/>
+<DTAppend name="gpios" parentlabel="Cadmus_GUARD" >
+<val type="phandle">Nighthawk_FPGA_IO_cadmus_control</val>
+<val type="number">3</val>
+<val type="number">1</val>
+</DTAppend>
+
+<!-- GPIB Buffer Disable -->
+<DTAppend name="GPIB_Disable" type="node" parentlabel="sopc" newlabel="GPIB_Disable"/>
+<DTAppend name="compatible" type="string" parentlabel="GPIB_Disable" val="gpio-leds"/>
+<DTAppend name="GPIB_Dis" type="node" parentlabel="GPIB_Disable" newlabel="GPIB_Dis"/>
+<DTAppend name="label" type="string" parentlabel="GPIB_Dis" val="GPIB_Disable"/>
+<DTAppend name="gpios" parentlabel="GPIB_Dis" >
+<val type="phandle">Nighthawk_FPGA_IO_gpib_disable</val>
+<val type="number">0</val>
+<val type="number">1</val>
+</DTAppend>
+
+<!-- Enable MSP430 BSL mode -->
+<DTAppend name="MSP_BSL_Enable" type="node" parentlabel="sopc" newlabel="MSP_BSL_Enable"/>
+<DTAppend name="compatible" type="string" parentlabel="MSP_BSL_Enable" val="gpio-leds"/>
+<DTAppend name="BSL_Enable" type="node" parentlabel="MSP_BSL_Enable" newlabel="BSL_Enable"/>
+<DTAppend name="label" type="string" parentlabel="BSL_Enable" val="MSP_BSL_Enable"/>
+<DTAppend name="gpios" parentlabel="BSL_Enable" >
+<val type="phandle">Nighthawk_FPGA_IO_MSP_PIO</val>
+<val type="number">0</val>
+<val type="number">1</val>
+</DTAppend>
+
+<!-- Display Backlight Brightness -->
+<DTAppend name="altr,ngpio" type="number" parentlabel="Nighthawk_FPGA_IO_LCD_PWM_DAC" val="8"/>
+
+<DTAppend name="LCD_PWM_DAC" parentlabel="sopc0" >
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">0</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">1</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">2</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">3</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">4</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">5</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">6</val>
+  <val type="number">0</val>
+  <val type="string">,</val>
+  <val type="phandle">Nighthawk_FPGA_IO_LCD_PWM_DAC</val>
+  <val type="number">7</val>
+  <val type="number">0</val>
+</DTAppend>
+
+<!-- Display Backlight Frequency -->
+<DTAppend name="altr,ngpio" type="number" parentlabel="Nighthawk_FPGA_IO_LCD_PWM_FREQ" val="8"/>
+
+<!-- Nighthawk knob encoder -->
+<DTAppend name="altr,ngpio" type="number" parentlabel="Nighthawk_FPGA_IO_Knob_PIO" val="9"/>
+
+<!-- Nighthawk Cadmus Relay Drive -->
+<DTAppend name="altr,ngpio" type="number" parentlabel="Nighthawk_FPGA_IO_cadmus_control" val="4"/>
+
+<DTAppend name="compatible" type="string" parentlabel="Nighthawk_FPGA_IO_fpga_reset" val="flk,fgpio-1.0" action = "replace"/>
+<DTAppend name="altr,gpio-bank-width" parentlabel="Nighthawk_FPGA_IO_fpga_reset" action = "remove"/>
+<DTAppend name="activebits" type="hex" parentlabel="Nighthawk_FPGA_IO_fpga_reset" val="0x01"/>
+<DTAppend name="directionbits" type="hex" parentlabel="Nighthawk_FPGA_IO_fpga_reset" val="0x01"/>
+<DTAppend name="bidirbits" type="hex" parentlabel="Nighthawk_FPGA_IO_fpga_reset" val="0x00"/>
+
+<!--
+    Add a port controller to the HPS GPIO ports.
+-->
+<!-- Port 0 -->
+<!--
+<DTAppend name="compatible" parentlabel="hps_0_gpio0">
+        <val type="string">snps,dw-gpio-14.0</val>
+        <val type="string">snps,dw-apb-gpio</val>
+</DTAppend>
+<DTAppend name="interrupt-parent" parentlabel="hps_0_gpio0" action = "remove"/>
+<DTAppend name="interrupts" parentlabel="hps_0_gpio0" action = "remove"/>
+<DTAppend name="#gpio-cells" parentlabel="hps_0_gpio0" action = "remove"/>
+<DTAppend name="gpio-controller" parentlabel="hps_0_gpio0" action = "remove"/>
+<DTAppend name="#address-cells" type="number" parentlabel="hps_0_gpio0" val="1"/>
+<DTAppend name="#size-cells" type="number" parentlabel="hps_0_gpio0" val="0"/>
+
+<DTAppend name="gpio-controller@0" type="node" parentlabel="hps_0_gpio0" newlabel="porta"/>
+<DTAppend name="compatible" type="string" parentlabel="porta" val="snps,dw-apb-gpio-port"/>
+<DTAppend name="gpio-controller" parentlabel="porta"/>
+<DTAppend name="#gpio-cells" type="number" parentlabel="porta" val="2"/>
+<DTAppend name="snps,nr-gpios" type="number" parentlabel="porta" val="29"/>
+<DTAppend name="reg" type="number" parentlabel="porta" val="0"/>
+-->
+
+<!-- Port 1 -->
+<!--
+<DTAppend name="compatible" parentlabel="hps_0_gpio1">
+        <val type="string">snps,dw-gpio-14.0</val>
+        <val type="string">snps,dw-apb-gpio</val>
+</DTAppend>
+<DTAppend name="interrupt-parent" parentlabel="hps_0_gpio1" action = "remove"/>
+<DTAppend name="interrupts" parentlabel="hps_0_gpio1" action = "remove"/>
+<DTAppend name="#gpio-cells" parentlabel="hps_0_gpio1" action = "remove"/>
+<DTAppend name="gpio-controller" parentlabel="hps_0_gpio1" action = "remove"/>
+<DTAppend name="#address-cells" type="number" parentlabel="hps_0_gpio1" val="1"/>
+<DTAppend name="#size-cells" type="number" parentlabel="hps_0_gpio1" val="0"/>
+
+<DTAppend name="gpio-controller@0" type="node" parentlabel="hps_0_gpio1" newlabel="portb"/>
+<DTAppend name="compatible" type="string" parentlabel="portb" val="snps,dw-apb-gpio-port"/>
+<DTAppend name="gpio-controller" parentlabel="portb"/>
+<DTAppend name="#gpio-cells" type="number" parentlabel="portb" val="2"/>
+<DTAppend name="snps,nr-gpios" type="number" parentlabel="portb" val="29"/>
+<DTAppend name="reg" type="number" parentlabel="portb" val="0"/>
+-->
+
+<!-- Port 2 -->
+<!--
+<DTAppend name="compatible" parentlabel="hps_0_gpio2">
+        <val type="string">snps,dw-gpio-14.0</val>
+        <val type="string">snps,dw-apb-gpio</val>
+</DTAppend>
+<DTAppend name="interrupt-parent" parentlabel="hps_0_gpio2" action = "remove"/>
+<DTAppend name="interrupts" parentlabel="hps_0_gpio2" action = "remove"/>
+<DTAppend name="#gpio-cells" parentlabel="hps_0_gpio2" action = "remove"/>
+<DTAppend name="gpio-controller" parentlabel="hps_0_gpio2" action = "remove"/>
+<DTAppend name="#address-cells" type="number" parentlabel="hps_0_gpio2" val="1"/>
+<DTAppend name="#size-cells" type="number" parentlabel="hps_0_gpio2" val="0"/>
+
+<DTAppend name="gpio-controller@0" type="node" parentlabel="hps_0_gpio2" newlabel="portc"/>
+<DTAppend name="compatible" type="string" parentlabel="portc" val="snps,dw-apb-gpio-port"/>
+<DTAppend name="gpio-controller" parentlabel="portc"/>
+<DTAppend name="#gpio-cells" type="number" parentlabel="portc" val="2"/>
+<DTAppend name="snps,nr-gpios" type="number" parentlabel="portc" val="27"/>
+<DTAppend name="reg" type="number" parentlabel="portc" val="0"/>
+-->
+
+<!--
+  Added a clock definition to deal with undefined reference to
+  hps_0_fpga_interfaces.
+<DTAppend name="hps_0_fpga_interfaces" type="node" parentlabel="clocks" newlabel="hps_0_fpga_interfaces"/>
+<DTAppend name="compatible" type="string" parentlabel="hps_0_fpga_interfaces" val="fixed-clock"/>
+<DTAppend name="clock-frequency" type="number" parentlabel="hps_0_fpga_interfaces" val="0"/>
+<DTAppend name="#clock-cells" type="number" parentlabel="hps_0_fpga_interfaces" val="0"/>
+<DTAppend name="clock-output-names" type="string" parentlabel="hps_0_fpga_interfaces" val="hps_0_fpga_interfaces-clk"/>
+-->
+
+<!-- Ethernet Splitter -->
+<DTAppend name="altr,emac-splitter" parentlabel="hps_0_gmac0">
+	<val type="phandle">hps_emac_interface_splitter_0</val>
+</DTAppend>
+
+<DTAppend name="compatible" type="string" parentlabel="hps_emac_interface_splitter_0" val="altr,emac-splitter-1.0"/>
+
+<!--
+  Added a clock definition to deal with undefined reference to
+  Nighthawk_FPGA_IO_pll_0.
+-->
+<DTAppend name="Nighthawk_FPGA_IO_pll_0" type="node" parentlabel="clocks" newlabel="Nighthawk_FPGA_IO_pll_0"/>
+<DTAppend name="compatible" type="string" parentlabel="Nighthawk_FPGA_IO_pll_0" val="fixed-clock"/>
+<DTAppend name="clock-frequency" type="number" parentlabel="Nighthawk_FPGA_IO_pll_0" val="0"/>
+<DTAppend name="#clock-cells" type="number" parentlabel="Nighthawk_FPGA_IO_pll_0" val="0"/>
+<DTAppend name="clock-output-names" type="string" parentlabel="Nighthawk_FPGA_IO_pll_0" val="Nighthawk_FPGA_IO_pll_0-clk"/>
+
+</BoardInfo>
