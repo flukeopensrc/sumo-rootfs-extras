@@ -31,7 +31,7 @@ echo Retrieving images from $PROJECT_IMAGES
 
 install -d ./loader/U-boot/
 cp -p $PROJECT_IMAGES/u-boot-with-spl.sfp-${PROJECT_MACHINE} ./loader/U-boot/u-boot-with-spl.sfp
-cp -p $PROJECT_IMAGES/u-boot.img ./loader/U-boot/.
+#cp -p $PROJECT_IMAGES/u-boot.img ./loader/U-boot/.
 #cp -p $PROJECT_IMAGES/modules-fluke-cda-nighthawk.tgz ./modules/.
 install -d ./kernel/
 if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
@@ -46,7 +46,7 @@ fi
 
 install -d ./DeviceTree
 #cp -p $PROJECT_IMAGES/zImage-Nighthawk_soc_overlay.dtb ./DeviceTree/.
-cp -p $PROJECT_IMAGES/zImage-${PROJECT_NAME}_soc.dtb ./DeviceTree/.
+cp -p $PROJECT_IMAGES/${PROJECT_NAME}_soc.dtb ./DeviceTree/.
 
 #cd ./modules
 #gunzip ./modules-fluke-cda-nighthawk.tgz
