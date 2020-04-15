@@ -1,633 +1,596 @@
 {
-    "A5_DORM": {
-        "description": "Set A5 to Dormant",
+    "A5_100H_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x000f",
-                "value": "0xf7ff"
-            },
+                "operation": "exec",
+                "parameters": [
+                    "0x71e0",
+                    "0xde3f",
+                    "0xcfff",
+                    "0x1eb",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_100MF_RANGE": {
+        "description": "",
+        "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x00f0",
-                "value": "0xf7ff"
-            },
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xa7ff",
+                    "0x1be",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_120KOHM_RANGE": {
+        "description": "",
+        "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x0f00",
-                "value": "0xf7ff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xf000",
-                "value": "0xf7ff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY2",
-                "mask": "0x000f",
-                "value": "0xe2eb"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY2",
-                "mask": "0x00f0",
-                "value": "0xe2eb"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY2",
-                "mask": "0x0f00",
-                "value": "0xe2eb"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY2",
-                "mask": "0xf000",
-                "value": "0xe2eb"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY3",
-                "mask": "0x000f",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY3",
-                "mask": "0x00f0",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY3",
-                "mask": "0x0f00",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY3",
-                "mask": "0xf000",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY4",
-                "mask": "0x0f",
-                "value": "0x7f"
-            },
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY4",
-                "mask": "0xf0",
-                "value": "0x7f"
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcfd",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
                 "register": "A5SW1",
-                "value": "0xff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5SW2",
-                "value": "0xf"
+                "value": "0x7b"
             }
         ]
     },
-    "A5_INTER_RANGE": {
-        "description": "Set A5 to near dormant (except for compensation); used to go between non-adjacent ranges",
+    "A5_120MH_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xf7ff"
-            },
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xcfff",
+                    "0x2f1",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_120MOHM_HII_RANGE": {
+        "description": "",
+        "steps": [
             {
                 "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2eb"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY3",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY4",
-                "value": "0x7f"
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcf7",
+                    "0xefe6",
+                    "0x3ff",
+                    "0xfc"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
                 "register": "A5SW1",
-                "value": "0xff"
+                "value": "0x7b"
+            }
+        ]
+    },
+    "A5_120MOHM_RANGE": {
+        "description": "HiI",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcf7",
+                    "0xefe6",
+                    "0x3ff",
+                    "0xfc"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5SW2",
-                "value": "0xf"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_1OHM_RANGE": {
-        "description": "1 ohm range",
+    "A5_120NF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
+                "mask": "0xff5f",
                 "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xfe6f"
+                "register": "A5RLY3",
+                "value": "0xad10"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xaf10",
+                    "0x3df",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_120OHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb0e0",
+                    "0xde3f",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2f3"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_1OHM_AND_10OHM": {
-        "description": "TODO: Dave's guess Transition between 1 ohm and 10 ohm ranges",
+    "A5_120UF_RANGE": {
+        "description": "",
         "steps": [
             {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xfc7f"
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xaf10",
+                    "0x1df",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_120UH_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xcdff",
+                    "0x3f1",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_12H_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xcfff",
+                    "0x1eb",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_12KOHM_HII_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0x71e0",
+                    "0xde3f",
+                    "0xefe6",
+                    "0x3ff",
+                    "0x7d"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2e3"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_10OHM_RANGE": {
-        "description": "10 ohm range",
+    "A5_12KOHM_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xfd7f"
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcfe",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2eb"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_10OHM_AND_100OHM": {
-        "description": "Transition between 10 ohm and 100 ohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xf97f"
-            }
-        ]
-    },
-    "A5_100OHM_RANGE": {
-        "description": "100 ohm range",
+    "A5_12MF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xfb7f"
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xabff",
+                    "0x1be",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_12MH_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xcfff",
+                    "0x371",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_12MOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcf7",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7e"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2eb"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_100OHM_AND_1KOHM": {
-        "description": "TODO: Dave's guess Transition between 100 ohm and 1 kohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xf37f"
-            }
-        ]
-    },
-    "A5_1KOHM_RANGE": {
-        "description": "1 kohm range",
+    "A5_12NF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xf7ff"
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xfd10",
+                    "0x3df",
+                    "0x2f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_12OHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xc0e0",
+                    "0xde3f",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2eb"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_1KOHM_AND_10KOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
+    "A5_12UF_RANGE": {
+        "description": "",
         "steps": [
             {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xe7ff"
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xaf10",
+                    "0x2df",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_1GOHM_HII_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdaef",
+                    "0xefe6",
+                    "0x3ff",
+                    "0xfc"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2cb"
-            }
-        ]
-    },
-    "A5_10KOHM_RANGE": {
-        "description": "10 kohm range",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xefff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2df"
-            }
-        ]
-    },
-    "A5_10KOHM_AND_100KOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xcfff"
-            }
-        ]
-    },
-    "A5_100KOHM_RANGE": {
-        "description": "100 kohm range",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xdfff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2df"
-            }
-        ]
-    },
-    "A5_100KOHM_AND_1MOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0x9fff"
-            }
-        ]
-    },
-    "A5_1MOHM_RANGE": {
-        "description": "1 Mohm range",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xbfff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2df"
-            }
-        ]
-    },
-    "A5_1MOHM_AND_10MOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0x3fff"
-            }
-        ]
-    },
-    "A5_10MOHM_RANGE": {
-        "description": "10 Mohm range",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0x7fff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2df"
-            }
-        ]
-    },
-    "A5_10MOHM_AND_100MOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
-        "steps": [
-            {
-                "description": "transition value",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0x7fff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe29e"
-            }
-        ]
-    },
-    "A5_100MOHM_RANGE": {
-        "description": "100 Mohm range",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xffff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2be"
-            }
-        ]
-    },
-    "A5_100MOHM_AND_1GOHM": {
-        "description": "TODO: Dave's guess Transition between 1 kohm and 10 kohm ranges",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2bc"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
     "A5_1GOHM_RANGE": {
-        "description": "1 Gohm range",
+        "description": "HiI",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xffff"
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdaef",
+                    "0xefe6",
+                    "0x3ff",
+                    "0xfc"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xe2bd"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_1UF_LLF_RANGE": {
-        "description": "1 microfarad lowest frequency range",
+    "A5_1_2F_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xdfff"
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0x2fff",
+                    "0x1be",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_1_2H_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xcfff",
+                    "0x1f1",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_1_2KOHM_HII_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb0e0",
+                    "0xde3f",
+                    "0xefe6",
+                    "0x3ff",
+                    "0x7d"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xfedf"
+                "register": "A5SW1",
+                "value": "0x7b"
+            }
+        ]
+    },
+    "A5_1_2KOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0x71e0",
+                    "0xde3f",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7f"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY3",
-                "value": "0xeee5"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_10UF_LLF_RANGE": {
-        "description": "10 microfarad lowest frequency range",
+    "A5_1_2MF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xdfff"
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0xabff",
+                    "0x2be",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_1_2MH_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xb1e0",
+                    "0xde3f",
+                    "0x8fff",
+                    "0x3f1",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_1_2MOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xf1e0",
+                    "0xdcfb",
+                    "0xeff2",
+                    "0x3ff",
+                    "0x7e"
+                ],
+                "sequence": "A5_RANGE_RES"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xfedf"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY3",
-                "value": "0xede5"
+                "register": "A5SW1",
+                "value": "0x7b"
             }
         ]
     },
-    "A5_100UF_LLF_RANGE": {
-        "description": "100 microfarad lowest frequency range",
+    "A5_1_2NF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0xff70",
-                "value": "0xefff"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY2",
-                "value": "0xfedf"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5RLY3",
-                "value": "0xebe6"
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0x5f3f",
+                    "0xfe10",
+                    "0x3df",
+                    "0x2f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
             }
         ]
     },
-    "A5_2WCOMP_ON": {
-        "description": "2-wire Compensation on (in operate or standby)",
+    "A5_1_2UF_RANGE": {
+        "description": "",
         "steps": [
             {
                 "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x0080",
-                "value": "0x0000"
-            }
-        ]
-    },
-    "A5_2WCOMP_OFF": {
-        "description": "2-wire Compensation off (in operate or standby)",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x0080",
-                "value": "0x0080"
-            }
-        ]
-    },
-    "A5_OPER_COMP": {
-        "description": "Operate with 2-wire compensation on",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x000F",
-                "value": "0x0008"
-            }
-        ]
-    },
-    "A5_OPER_NOCOMP": {
-        "description": "Operate with 2-wire compensation off",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x000F",
-                "value": "0x0002"
-            }
-        ]
-    },
-    "A5_STBY": {
-        "description": "Go to standby",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "A5RLY1",
-                "mask": "0x000F",
-                "value": "0x000F"
-            }
-        ]
-    },
-    "A5_SET_DAC": {
-        "description": "Zero DACs",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "P5SPICTL",
-                "value": "0xa980"
-            },
-            {
-                "description": "First parameter: primary DAC setting",
-                "operation": "write",
-                "register": "A5PRIMARYDAC"
-            },
-            {
-                "description": "Second parameter: fine DAC setting",
-                "operation": "write",
-                "register": "A5FINECOMPDAC"
-            }
-        ]
-    },
-    "A5_DAC_ZERO": {
-        "description": "Zero DACs TODO: this can later be an exec of A5_SET_DAC",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5FINECOMPDAC",
-                "value": "0xfff000"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A5PRIMARYDAC",
-                "value": "0x00000"
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xef10",
+                    "0x35f",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
             }
         ]
     },
@@ -654,6 +617,166 @@
             }
         ]
     },
+    "A5_DAC_ZERO": {
+        "description": "Zero DACs TODO: this can later be an exec of A5_SET_DAC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5FINECOMPDAC",
+                "value": "0xfff000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5PRIMARYDAC",
+                "value": "0x00000"
+            }
+        ]
+    },
+    "A5_DORM": {
+        "description": "Set A5 to Dormant",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY1",
+                "value": "0x71ff"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY2",
+                "value": "0xde3f"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY3",
+                "value": "0xeff2"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY4",
+                "value": "0x3ff"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5SW1",
+                "value": "0xff"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5SW2",
+                "value": "0x7f"
+            }
+        ]
+    },
+    "A5_EX_100KOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcdbd",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_EX_100MOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcbaf",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_EX_10KOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcdbe",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_EX_10MOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcdb7",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_EX_1GOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcb9f",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_EX_1MOHM_RANGE": {
+        "description": "",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xcdd3",
+                    "0xcdbb",
+                    "0x3f50",
+                    "0x3ff",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
     "A5_INIT": {
         "description": "Initialize the a5 msp430",
         "steps": [
@@ -663,6 +786,12 @@
                 "register": "P5P1SEL",
                 "value": "0x3f"
             },
+            {
+                "description": "enable spi, ADC ch0-2",
+                "operation": "force",
+                "register": "P5P3DIR",
+                "value": "0x0C"
+            },  
             {
                 "description": "set data bus as output",
                 "operation": "force",
@@ -778,15 +907,295 @@
                 "value": "0xa1"
             },
             {
-                "description": "avearge 16 readings",
+                "description": "A/D will average 16 readings",
                 "operation": "force",
                 "register": "P5ADAVG",
                 "value": "0x0010"
             },
             {
-                "description": "now initialize all of the register data",
+                "description": "now initialize the relays and switches",
                 "operation": "exec",
                 "sequence": "A5_DORM"
+            }
+        ]
+    },
+    "A5_INTER_RANGE": {
+        "description": "Set A5 to near dormant (except for compensation); used to go between non-adjacent ranges",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0x71ff",
+                    "0xde3f",
+                    "0xeff2",
+                    "0x3ff",
+                    "0xff"
+                ],
+                "sequence": "A5_RANGE_RES"
+            }
+        ]
+    },
+    "A5_INTER_RANGE_CAP_LOW": {
+        "description": "Set A5 to near dormant for low capacitance (except for compensation); used to go between non-adjacent ranges",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "parameters": [
+                    "0xc5d3",
+                    "0xdf3f",
+                    "0xaf10",
+                    "0x3df",
+                    "0x3f"
+                ],
+                "sequence": "A5_RANGE_CAP_LOW"
+            }
+        ]
+    },
+    "A5_OPER": {
+        "description": "Operate with 2-wire compensation off",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x001f",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x0012"
+            }
+        ]
+    },
+    "A5_OPER_2WCOMP": {
+        "description": "Operate with 2-wire compensation ON",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x001f",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x0008"
+            }
+        ]
+    },
+    "A5_OPER_2WCOMP_CAP_LOW": {
+        "description": "Operate with 2-wire compensation ON, low capacitance ranges",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x222c",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x2200"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x0020"
+            }
+        ]
+    },
+    "A5_OPER_CAP_LOW": {
+        "description": "Operate with 2-wire compensation off, low capacitance ranges",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x222c",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x0020"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x0080"
+            }
+        ]
+    },
+    "A5_OPER_CAP_LOW_TWO": {
+        "description": "Operate with 2-wire compensation off, bottom 2 low capacitance ranges",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x222c",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x0020"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x1080"
+            }
+        ]
+    },
+    "A5_RANGE_CAP_LOW": {
+        "description": "Configure a low capacitance range (or inter-range) configuration, compensation to be set later.",
+        "steps": [
+            {
+                "description": "Compensation relays excluded.",
+                "mask": "0xddd3",
+                "operation": "modify",
+                "register": "A5RLY1"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY2"
+            },
+            {
+                "description": "",
+                "mask": "0xef5f",
+                "operation": "modify",
+                "register": "A5RLY3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5SW2"
+            }
+        ]
+    },
+    "A5_RANGE_RES": {
+        "description": "Configure most ranges (or inter-range) configuration, compensation to be set later.",
+        "steps": [
+            {
+                "description": "Compensation relays excluded.",
+                "mask": "0xffe0",
+                "operation": "modify",
+                "register": "A5RLY1"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY2"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY3"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5RLY4"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A5SW2"
+            }
+        ]
+    },
+    "A5_SET_DAC": {
+        "description": "Zero DACs",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P5SPICTL",
+                "value": "0xa980"
+            },
+            {
+                "description": "First parameter: primary DAC setting",
+                "operation": "write",
+                "register": "A5PRIMARYDAC"
+            },
+            {
+                "description": "Second parameter: fine DAC setting",
+                "operation": "write",
+                "register": "A5FINECOMPDAC"
+            }
+        ]
+    },
+    "A5_STBY": {
+        "description": "Standby with 2-wire compensation off",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x001f",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x001f"
+            }
+        ]
+    },
+    "A5_STBY_2WCOMP": {
+        "description": "Standby with 2-wire compensation ON",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x001f",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x000f"
+            }
+        ]
+    },
+    "A5_STBY_2WCOMP_CAP_LOW": {
+        "description": "Standby with 2-wire compensation ON, low capacitance ranges",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x222c",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x202c"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x0020"
+            }
+        ]
+    },
+    "A5_STBY_CAP_LOW": {
+        "description": "Standby with 2-wire compensation off, low capacitance ranges",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x222c",
+                "operation": "modify",
+                "register": "A5RLY1",
+                "value": "0x002c"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x0000"
+            },
+            {
+                "description": "",
+                "mask": "0x10a0",
+                "operation": "modify",
+                "register": "A5RLY3",
+                "value": "0x0020"
+            }
+        ]
+    },
+    "A5_Z_CAL_ZERO_POST_CKPT": {
+        "description": "Post checkpoint for sequence",
+        "steps": [
+            {
+                "description": "Set PMUX on A5 to VHIDRV",
+                "mask": "0x41",
+                "operation": "modify",
+                "register": "A5SW1",
+                "value": "0x00"
             }
         ]
     }

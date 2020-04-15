@@ -1,132 +1,18 @@
 {
-    "A6_DORM": {
-        "description": "TODO: A6_Zero_Dacs sets VDAC to a high value if polarity is negative!",
-        "steps": [
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_ZERO_POS_DCV"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_ZERO_ACI"
-            },
-            {
-                "description": "",
-                "operation": "delay",
-                "value": "0x50"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6DDSEL0",
-                "value": "0xFD"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6DDSEL1",
-                "value": "0xF7"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6DDSEL2",
-                "value": "0xF5"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6DDSRLY1",
-                "value": "0x00"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "A6DDSRLY2",
-                "value": "0x40"
-            },
-            {
-                "description": "Power on default: primary channel selects RAM waveform 0, secondary selects waveform 1",
-                "operation": "force",
-                "register": "P6DDSCTL",
-                "value": "0x004"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_SAMPLING_LOF": {
-        "description": "Set the A6 for sampling signals < 40 Hz",
-        "steps": [
-            {
-                "description": "A6DDSEL0_Sampling <40Hz",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0x7E"
-            },
-            {
-                "description": "A6DDSEL1_Sampling <40Hz",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xDD"
-            },
-            {
-                "description": "A6DDSEL2_Sampling <40Hz",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBC"
-            }
-        ]
-    },
-    "A6_EXT_10MHZ_REF": {
-        "description": "Select internal 10 MHz phase/frequency reference",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0x20",
-                "value": "0x20"
-            }
-        ]
-    },
-    "A6_INT_10MHZ_REF": {
-        "description": "Select internal 10 MHz phase/frequency reference",
-        "steps": [
-            {
-                "description": "",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0x20",
-                "value": "0x00"
-            }
-        ]
-    },
     "A6_1000VAC_RANGE": {
         "description": "Set the A6 for the 1000V AC range",
         "steps": [
             {
-                "description": "A6ADMUX_1000VAC",
+                "description": "VDAC vs VDAC",
                 "operation": "write",
                 "register": "A6ADMUX",
-                "value": "0xFF"
+                "value": "0x7E"
             },
             {
                 "description": "A6DDSEL0_1000VAC",
                 "operation": "write",
                 "register": "A6DDSEL0",
-                "value": "0xFF"
+                "value": "0xFE"
             },
             {
                 "description": "A6DDSEL1_1000VAC",
@@ -142,9 +28,9 @@
             },
             {
                 "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
                 "operation": "modify",
                 "register": "P6DDSCTL",
-                "mask": "0xC43",
                 "value": "0x800"
             },
             {
@@ -166,367 +52,52 @@
             }
         ]
     },
-    "A6_330VHF_RANGE": {
-        "description": "High frequency 330V AC range",
+    "A6_1000VDC_CAL": {
+        "description": "Tweaks needed for 1000vdc cal, TODO refact",
         "steps": [
             {
-                "description": "",
-                "operation": "force",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xDD"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xFD"
-            },
-            {
-                "description": "Set the primary channel parts of P6DDSCTL",
+                "description": "open the loop integrator",
+                "mask": "0x20",
                 "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x800"
+                "register": "A6DDSEL1",
+                "value": "0x20"
             },
             {
-                "description": "",
+                "description": "connect the input to 1kv sense buffer",
                 "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0xBF"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0xB"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
+                "register": "A8RLY",
+                "value": "0x417"
             }
         ]
     },
-    "A6_100VAC_RANGE": {
-        "description": "Set the A6 to 100VAC",
+    "A6_1000VDC_CKPT": {
+        "description": "Tweaks needed for 1000vdc cal, TODO refact",
         "steps": [
             {
-                "description": "A6ADMUX_100VAC",
-                "operation": "write",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL0_100VAC",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL1_100VAC",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xFD"
-            },
-            {
-                "description": "A6DDSEL2_100VAC",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
-            },
-            {
-                "description": "Set the primary channel parts of P6DDSCTL",
+                "description": "connect the sense buff out to pmux",
+                "mask": "0x10",
                 "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x800"
+                "register": "P8P2",
+                "value": "0x0"
             },
             {
-                "description": "A6DDSRLY1_100VAC",
-                "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0xA4"
-            },
-            {
-                "description": "A6DDSRLY2_1000VAC",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x58"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_100MVAC_RANGE": {
-        "description": "Set the A6 to 100mVAC",
-        "steps": [
-            {
-                "description": "A6ADMUX_100mVAC",
-                "operation": "write",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL0_100mVAC",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL1_100mVAC",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xFD"
-            },
-            {
-                "description": "A6DDSEL2_100mVAC",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
-            },
-            {
-                "description": "Set the primary channel parts of P6DDSCTL",
+                "description": "short the loop integrator",
+                "mask": "0x20",
                 "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x000"
-            },
-            {
-                "description": "A6DDSRLY1_100mVAC",
-                "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0x32"
-            },
-            {
-                "description": "A6DDSRLY2_1000VAC",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x58"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_10VAC_RANGE": {
-        "description": "Set the A6 to 10VAC",
-        "steps": [
-            {
-                "description": "A6ADMUX_10VAC",
-                "operation": "write",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL0_10VAC",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL1_10VAC",
-                "operation": "write",
                 "register": "A6DDSEL1",
-                "value": "0xFD"
+                "value": "0x0"
             },
             {
-                "description": "A6DDSEL2_10VAC",
+                "description": "disconnect the input to 1kv sense buffer",
                 "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
+                "register": "A8RLY",
+                "value": "0x413"
             },
             {
-                "description": "Set the primary channel parts of P6DDSCTL",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x000"
-            },
-            {
-                "description": "A6DDSRLY1_10VAC",
+                "description": "Workaround for 1kV range, leaves terms disconnected",
                 "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0xE2"
-            },
-            {
-                "description": "A6DDSRLY2_1000VAC",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x58"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_10MVAC_RANGE": {
-        "description": "Set the A6 to 10mVAC",
-        "steps": [
-            {
-                "description": "A6ADMUX_10mVAC",
-                "operation": "write",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL0_10mVAC",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL1_10mVAC",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xB5"
-            },
-            {
-                "description": "A6DDSEL2_10mVAC",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
-            },
-            {
-                "description": "Set the primary channel parts of P6DDSCTL",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x000"
-            },
-            {
-                "description": "A6DDSRLY1_10mVAC",
-                "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0x31"
-            },
-            {
-                "description": "A6DDSRLY2_1000VAC",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x58"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_1VAC_RANGE": {
-        "description": "Set the A6 to 1VAC",
-        "steps": [
-            {
-                "description": "A6ADMUX_1VAC",
-                "operation": "write",
-                "register": "A6ADMUX",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL0_1VAC",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "A6DDSEL1_1VAC",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xB5"
-            },
-            {
-                "description": "A6DDSEL2_1VAC",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
-            },
-            {
-                "description": "Set the primary channel parts of P6DDSCTL",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0xC43",
-                "value": "0x000"
-            },
-            {
-                "description": "A6DDSRLY1_1VAC",
-                "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0xE1"
-            },
-            {
-                "description": "A6DDSRLY2_1000VAC",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x58"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_100VDC_RANGE": {
-        "description": "Positive 100 volt range DC",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL0",
-                "value": "0xFF"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL1",
-                "value": "0xFA"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSEL2",
-                "value": "0xBD"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSRLY1",
-                "value": "0xA0"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6DDSRLY2",
-                "value": "0x4A"
-            },
-            {
-                "description": "",
-                "operation": "exec",
-                "sequence": "A6_STROBERELAYS"
-            },
-            {
-                "description": "Set the DAC close to zero for positive polarity",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x138"
+                "register": "A14RLY2",
+                "value": "0x12"
             }
         ]
     },
@@ -567,16 +138,63 @@
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
-            },
-            {
-                "description": "Set the DAC close to zero for positive polarity",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x138"
             }
         ]
     },
-    "A6_100MVDC_RANGE": {
+    "A6_120MVAC_RANGE": {
+        "description": "Set the A6 to 100mVAC",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6DDSEL0_100mVAC",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFE"
+            },
+            {
+                "description": "A6DDSEL1_100mVAC",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xF5"
+            },
+            {
+                "description": "A6DDSEL2_100mVAC",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x000"
+            },
+            {
+                "description": "A6DDSRLY1_100mVAC",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0x31"
+            },
+            {
+                "description": "A6DDSRLY2_100mVAC",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0xD8"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_120MVDC_RANGE": {
         "description": "Positive 100 millivolt range DC",
         "steps": [
             {
@@ -601,28 +219,221 @@
                 "description": "",
                 "operation": "write",
                 "register": "A6DDSRLY1",
-                "value": "0xB0"
+                "value": "0x10"
             },
             {
                 "description": "",
                 "operation": "write",
                 "register": "A6DDSRLY2",
-                "value": "0x48"
+                "value": "0xC8"
             },
             {
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
-            },
-            {
-                "description": "Set the DAC close to zero for positive polarity",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x138"
             }
         ]
     },
-    "A6_10VDC_RANGE": {
+    "A6_120VAC_RANGE": {
+        "description": "Set the A6 to 100VAC",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6DDSEL0_100VAC",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFE"
+            },
+            {
+                "description": "A6DDSEL1_100VAC",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFD"
+            },
+            {
+                "description": "A6DDSEL2_100VAC",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL (was 0x800 until Rev 4)",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x000"
+            },
+            {
+                "description": "A6DDSRLY1_100VAC",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xA4"
+            },
+            {
+                "description": "A6DDSRLY2_100VAC",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x58"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_120VDC_RANGE": {
+        "description": "Positive 100 volt range DC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFA"
+            },
+            {
+                "description": "Was 0xBD until Rev4",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xAD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xA0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x4A"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_12MVAC_RANGE": {
+        "description": "Set the A6 to 10mVAC",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6DDSEL0_10mVAC",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xEE"
+            },
+            {
+                "description": "A6DDSEL1_10mVAC",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xF5"
+            },
+            {
+                "description": "A6DDSEL2_10mVAC",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x000"
+            },
+            {
+                "description": "A6DDSRLY1_10mVAC",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0x31"
+            },
+            {
+                "description": "A6DDSRLY2_10mVAC",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x5C"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_12VAC_RANGE": {
+        "description": "Set the A6 to 10VAC",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6DDSEL0_10VAC",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xEE"
+            },
+            {
+                "description": "A6DDSEL1_10VAC",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFD"
+            },
+            {
+                "description": "A6DDSEL2_10VAC",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x000"
+            },
+            {
+                "description": "A6DDSRLY1_10VAC",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xE2"
+            },
+            {
+                "description": "A6DDSRLY2_10VAC",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x58"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_12VDC_RANGE": {
         "description": "Positive 10 volt range DC",
         "steps": [
             {
@@ -659,23 +470,70 @@
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
-            },
-            {
-                "description": "Set the DAC close to zero for positive polarity",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x138"
             }
         ]
     },
-    "A6_1VDC_RANGE": {
+    "A6_1_2VAC_RANGE": {
+        "description": "Set the A6 to 1VAC",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6DDSEL0_1VAC",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xEE"
+            },
+            {
+                "description": "A6DDSEL1_1VAC",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xB5"
+            },
+            {
+                "description": "A6DDSEL2_1VAC",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x000"
+            },
+            {
+                "description": "A6DDSRLY1_1VAC",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xE1"
+            },
+            {
+                "description": "A6DDSRLY2_1VAC",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x58"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_1_2VDC_RANGE": {
         "description": "Positive 1 volt range DC",
         "steps": [
             {
-                "description": "",
+                "description": "VDAC vs VDAC",
                 "operation": "write",
                 "register": "A6ADMUX",
-                "value": "0xFF"
+                "value": "0x7E"
             },
             {
                 "description": "",
@@ -703,56 +561,68 @@
             },
             {
                 "description": "",
+                "mask": "0xf7",
                 "operation": "modify",
                 "register": "A6DDSRLY2",
-                "mask": "0xf7",
                 "value": "0x41"
             },
             {
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
-            },
-            {
-                "description": "Set the DAC close to zero for positive polarity",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x138"
             }
         ]
     },
-    "A6_DCI_FUNC": {
-        "description": "Set A6 up for DC current (from dormant), positive current value (negative polarity DAC)",
+    "A6_330VHF_RANGE": {
+        "description": "High frequency 330V AC range",
         "steps": [
             {
+                "description": "VDAC vs VDAC",
+                "operation": "force",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
                 "description": "",
-                "operation": "modify",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xEE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFD"
+            },
+            {
+                "description": "",
+                "operation": "write",
                 "register": "A6DDSEL2",
-                "mask": "0x40",
-                "value": "0x00"
+                "value": "0xBD"
+            },
+            {
+                "description": "Set the primary channel parts of P6DDSCTL",
+                "mask": "0xC43",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x800"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xA2"
             },
             {
                 "description": "",
                 "operation": "write",
                 "register": "A6DDSRLY2",
-                "value": "0x49"
+                "value": "0x58"
             },
             {
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
-            }
-        ]
-    },
-    "A6_ACP_ACI_FUNC": {
-        "description": "Set A6 up for the AC current part of AC power",
-        "steps": [
-            {
-                "description": "Set the secondary channel parts of P6DDSCTL",
-                "operation": "modify",
-                "register": "P6DDSCTL",
-                "mask": "0x38C",
-                "value": "0x204"
             }
         ]
     },
@@ -761,9 +631,9 @@
         "steps": [
             {
                 "description": "Set the secondary channel parts of P6DDSCTL",
+                "mask": "0x38C",
                 "operation": "modify",
                 "register": "P6DDSCTL",
-                "mask": "0x38C",
                 "value": "0x204"
             },
             {
@@ -776,107 +646,209 @@
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xED"
             }
         ]
     },
-    "A6_SET_FREQ": {
-        "description": "Set Frequency accumulator",
+    "A6_ACP_ACI_FUNC": {
+        "description": "Set A6 up for the AC current part of AC power",
         "steps": [
             {
-                "description": "TODO: Why is this step here????",
+                "description": "Set the secondary channel parts of P6DDSCTL",
+                "mask": "0x38C",
                 "operation": "modify",
-                "register": "A6VDACCOARSE",
-                "mask": "0x1",
+                "register": "P6DDSCTL",
+                "value": "0x204"
+            },
+            {
+                "description": "",
+                "mask": "0x10",
+                "operation": "modify",
+                "register": "A6DDSEL0",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_ACVOFFSET_CAL": {
+        "description": "Set A6 for ACV offset cal after dialing up output",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x59"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "",
+                "mask": "0x08",
+                "operation": "modify",
+                "register": "A6DDSEL0",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_AD_NULL_SETUP": {
+        "description": "Setup A/D nulling; set VDAC to zero before this, and average 10 A/D readings after.",
+        "steps": [
+            {
+                "description": "Set A/D inputs to AIN7 vs AINCOM",
+                "operation": "write",
+                "register": "P6ADSEL",
+                "value": "0x78"
+            },
+            {
+                "description": "Set AIN7 inputs to VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0xEB"
+            },
+            {
+                "description": "Set ADC divider select to 0/*1",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBB"
+            },
+            {
+                "description": "Set A/D to 2.5 readings/second",
+                "operation": "write",
+                "register": "P6ADDRATE",
+                "value": "0x3"
+            },
+            {
+                "description": "Recalibrate A/D after speed change",
+                "operation": "force",
+                "register": "P6ADOGCAL",
                 "value": "0x0"
+            }
+        ]
+    },
+    "A6_CONFIG_AD_RATE": {
+        "description": "Set A/D rate and have it recalibrate itself (NOTE: caller must delay 1 minute!).",
+        "steps": [
+            {
+                "description": "Set A/D measurement rate",
+                "operation": "write",
+                "register": "P6ADDRATE"
             },
             {
-                "description": "TODO: once A6DDSACCUM is working again, change to A6DDSACCUM and remove next step",
-                "operation": "write",
-                "register": "P6DDSACCUMLSB"
+                "description": "Tell A/D to recalibrate itself",
+                "operation": "force",
+                "register": "P6ADOGCAL",
+                "value": "0x0"
             }
         ]
     },
-    "A6_SET_PWM4": {
-        "description": "Set PWM4 (ACV centering offset) DAC",
+    "A6_CONFIG_DIGITIZER": {
+        "description": "Configure all but the A/D rate (which adds a second for A/D self-calibration); inputs: P6DIGNUMSMPLS; P6DIGEXPECTED1; A6DDSEL2 gain bits; P6ADSEL; A6ADMUX",
         "steps": [
             {
-                "description": "",
+                "description": "Set number of samples for digitizer to average",
                 "operation": "write",
-                "register": "P6PWM4"
+                "register": "P6DIGNUMSMPLS"
+            },
+            {
+                "description": "Set the expected average for the digitizer",
+                "operation": "write",
+                "register": "P6DIGEXPECTED1"
+            },
+            {
+                "description": "Set instrumentation amp gain",
+                "mask": "0x07",
+                "operation": "modify",
+                "register": "A6DDSEL2"
+            },
+            {
+                "description": "Set A/D inputs",
+                "operation": "write",
+                "register": "P6ADSEL"
+            },
+            {
+                "description": "Set instrumentation amp inputs",
+                "operation": "write",
+                "register": "A6ADMUX"
             }
         ]
     },
-    "A6_SET_PWM5": {
-        "description": "Set PWM5 (ACI and secondary ACV centering offset) DAC",
+    "A6_DACRATIO1": {
+        "description": "Set VDAC & IDAC to the checkpoint value for DAC ratio cal",
         "steps": [
             {
-                "description": "",
-                "operation": "write",
-                "register": "P6PWM5"
+                "description": "Coarse counts near positive zero value; fine counts at 0",
+                "operation": "exec",
+                "parameters": [
+                    "0x13b",
+                    "0x0000"
+                ],
+                "sequence": "A6_SET_VDAC"
+            },
+            {
+                "description": "Same as for VDAC",
+                "operation": "exec",
+                "parameters": [
+                    "0x13b",
+                    "0x0000"
+                ],
+                "sequence": "A6_SET_IDAC"
             }
         ]
     },
-    "A6_SET_ISCALE_ICOMP": {
-        "description": "Set scale and comp DACs (1st and 2nd parameters, respectively)",
+    "A6_DACRATIO2": {
+        "description": "Set VDAC & IDAC to the initial guess for ratio cal iteration",
+        "steps": [
+            {
+                "description": "Coarse counts one less than VDACRATIO1; fine counts set to default ratio",
+                "operation": "exec",
+                "parameters": [
+                    "0x13a",
+                    "0x3a98"
+                ],
+                "sequence": "A6_SET_VDAC"
+            },
+            {
+                "description": "Same as for VDAC",
+                "operation": "exec",
+                "parameters": [
+                    "0x13a",
+                    "0x3a98"
+                ],
+                "sequence": "A6_SET_IDAC"
+            }
+        ]
+    },
+    "A6_DCI_FUNC": {
+        "description": "Set A6 up for DC current (from dormant), positive current value (negative polarity DAC)",
         "steps": [
             {
                 "description": "",
-                "operation": "write",
-                "register": "L6ISCALEDAC"
+                "mask": "0x40",
+                "operation": "modify",
+                "register": "A6DDSEL2",
+                "value": "0x00"
             },
             {
                 "description": "",
                 "operation": "write",
-                "register": "A6ICOMPDAC"
-            }
-        ]
-    },
-    "A6_SET_VSCALE_VCOMP": {
-        "description": "Set scale and comp DACs (1st and 2nd parameters, respectively)",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "L6VSCALEDAC"
+                "register": "A6DDSRLY2",
+                "value": "0x41"
             },
             {
                 "description": "",
-                "operation": "write",
-                "register": "A6VCOMPDAC"
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
             }
         ]
     },
-    "A6_SET_VCAL": {
-        "description": "Set VCAL DAC coarse and fine counts (parameters 1 & 2)",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VCALCOARSE"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VCALFINE"
-            }
-        ]
-    },
-    "A6_SET_VDAC": {
-        "description": "Set VDAC coarse and fine counts (parameters 1 & 2)",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VDACCOARSE"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VDACFINE"
-            }
-        ]
-    },
-    "A6_SET_POLARITY_NEGATIVE": {
+    "A6_DCI_SET_POLARITY_NEGATIVE": {
         "description": "Set polarity negative (assume it is positive now).",
         "steps": [
             {
@@ -888,15 +860,13 @@
             {
                 "description": "Set the DAC close to zero for positive polarity",
                 "operation": "write",
-                "register": "A6VCALCOARSE",
+                "register": "A6IDACCOARSE",
                 "value": "0x138"
             },
             {
-                "description": "Switch A6 output from DAC to DDS and bypass feedback capacitor",
-                "mask": "0x28",
-                "operation": "modify",
-                "register": "A6DDSEL1",
-                "value": "0x00"
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_ENABLE"
             },
             {
                 "description": "Set polarity relay to negative.",
@@ -914,36 +884,22 @@
                 "description": "Set VDAC close to zero for negative polarity",
                 "operation": "write",
                 "register": "A6VDACCOARSE",
-                "value": "0x3e9c"
+                "value": "0x3ec4"
             },
             {
-                "description": "Set IDAC/VCAL close to zero for negative polarity",
+                "description": "Set IDAC close to zero for negative polarity",
                 "operation": "write",
-                "register": "A6VCALCOARSE",
-                "value": "0x3e9c"
+                "register": "A6IDACCOARSE",
+                "value": "0x3ec4"
             },
             {
-                "description": "Reconnect feedback capacitor",
-                "mask": "0x08",
-                "operation": "modify",
-                "register": "A6DDSEL1",
-                "value": "0x08"
-            },
-            {
-                "description": "A little delay (TODO: tweak value or eliminate based on testing)",
-                "operation": "delay",
-                "value": "0x10"
-            },
-            {
-                "description": "Switch output back to DAC",
-                "mask": "0x20",
-                "operation": "modify",
-                "register": "A6DDSEL1",
-                "value": "0x20"
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_DISABLE"
             }
         ]
     },
-    "A6_SET_POLARITY_POSITIVE": {
+    "A6_DCI_SET_POLARITY_POSITIVE": {
         "description": "Set polarity positive (assume it was negative).",
         "steps": [
             {
@@ -955,21 +911,19 @@
             {
                 "description": "Set DAC close to zero for negative polarity",
                 "operation": "write",
-                "register": "A6VCALCOARSE",
+                "register": "A6IDACCOARSE",
                 "value": "0x3e9c"
             },
             {
-                "description": "Switch A6 output from DAC to DDS and bypass feedback capacitor",
-                "operation": "modify",
-                "register": "A6DDSEL1",
-                "mask": "0x28",
-                "value": "0x00"
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_ENABLE"
             },
             {
                 "description": "Set polarity relay to positive.",
+                "mask": "0x08",
                 "operation": "modify",
                 "register": "A6DDSRLY2",
-                "mask": "0x08",
                 "value": "0x08"
             },
             {
@@ -984,29 +938,466 @@
                 "value": "0x138"
             },
             {
-                "description": "Set VCAL/IDAC close to zero for positive polarity",
+                "description": "Set IDAC close to zero for positive polarity",
                 "operation": "write",
-                "register": "A6VCALCOARSE",
+                "register": "A6IDACCOARSE",
                 "value": "0x138"
             },
             {
-                "description": "Reconnect feedback capacitor",
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_DISABLE"
+            }
+        ]
+    },
+    "A6_DCV_SET_POLARITY_NEGATIVE": {
+        "description": "Set polarity negative (assume it is positive now).",
+        "steps": [
+            {
+                "description": "Set the DAC close to zero for positive polarity",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x138"
+            },
+            {
+                "description": "Set the DAC close to zero for positive polarity",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x138"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_ENABLE"
+            },
+            {
+                "description": "Set polarity relay to negative.",
+                "mask": "0x88",
                 "operation": "modify",
-                "register": "A6DDSEL1",
+                "register": "A6DDSRLY2",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "Set VDAC close to zero for negative polarity",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x3ec4"
+            },
+            {
+                "description": "Set IDAC close to zero for negative polarity",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x3ec4"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_DISABLE"
+            }
+        ]
+    },
+    "A6_DCV_SET_POLARITY_POSITIVE": {
+        "description": "Set polarity positive (assume it was negative).",
+        "steps": [
+            {
+                "description": "Set DAC close to zero for negative polarity",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x3e9c"
+            },
+            {
+                "description": "Set DAC close to zero for negative polarity",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x3e9c"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_ENABLE"
+            },
+            {
+                "description": "Set polarity relay to positive.",
                 "mask": "0x08",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
                 "value": "0x08"
             },
             {
-                "description": "A little delay (TODO: tweak value or eliminate based on testing)",
-                "operation": "delay",
-                "value": "0x10"
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
             },
             {
-                "description": "Switch output back to DAC",
-                "operation": "modify",
+                "description": "Set VDAC close to zero for positive polarity",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x138"
+            },
+            {
+                "description": "Set IDAC close to zero for positive polarity",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x138"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_AMPLIFIER_DISABLE"
+            }
+        ]
+    },
+    "A6_DORM": {
+        "description": "DAC zeroing isn't totally reliable. Consider a quick zero sequence that sets bipolar zero",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_ZERO_DACS_QUICK"
+            },
+            {
+                "description": "",
+                "operation": "delay",
+                "value": "0x50"
+            },
+            {
+                "description": "Initial setting inst amp inputs: VDAC vs VDAC",
+                "operation": "force",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSEL0",
+                "value": "0xFD"
+            },
+            {
+                "description": "",
+                "operation": "force",
                 "register": "A6DDSEL1",
+                "value": "0xF4"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSEL2",
+                "value": "0xF5"
+            },
+            {
+                "description": "Power on default: primary channel selects RAM waveform 0, secondary selects waveform 1",
+                "operation": "force",
+                "register": "P6DDSCTL",
+                "value": "0x004"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSRLY1",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSRLY2",
+                "value": "0x40"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "Reset the digitizer",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "P6DIGCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "Initial setting A/D inputs: inst amp vs COMMON",
+                "operation": "force",
+                "register": "P6ADSEL",
+                "value": "0x78"
+            }
+        ]
+    },
+    "A6_DUMP": {
+        "description": "Get A6DDSEL0, A6DDSEL1, A6DDSEL2, A6DDSRLY1, A6DDSRLY2",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSEL0"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSEL1"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSEL2"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSRLY1"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSRLY2"
+            }
+        ]
+    },
+    "A6_EXT_10MHZ_REF": {
+        "description": "Select internal 10 MHz phase/frequency reference",
+        "steps": [
+            {
+                "description": "",
                 "mask": "0x20",
+                "operation": "modify",
+                "register": "P6DDSCTL",
                 "value": "0x20"
+            }
+        ]
+    },
+    "A6_FUNC_TC_CALIBRATE_AD": {
+        "description": "Thermocouple calibrate the A/D",
+        "steps": [
+            {
+                "description": "Use the 250mv buffer range",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBA"
+            },
+            {
+                "description": "Start A/D self-cal",
+                "operation": "force",
+                "register": "P6ADOGCAL",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_FUNC_TC_SETUP": {
+        "description": "Thermocouple measure setup",
+        "steps": [
+            {
+                "description": "AD MUX: PMUX vs S1COM",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFA"
+            },
+            {
+                "description": "A6 select (2) for TC measurement",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xC0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x59"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_FUNC_TC_STARTUP": {
+        "description": "Thermocouple measure startup",
+        "steps": [
+            {
+                "description": "Select the A/D Buffer",
+                "operation": "write",
+                "register": "P6ADSEL",
+                "value": "0x78"
+            },
+            {
+                "description": "SetA/D mux to IDAC to IDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "A6 select (2) for TC measurement",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set A/D to 10 sps",
+                "operation": "write",
+                "register": "P6ADDRATE",
+                "value": "0x23"
+            }
+        ]
+    },
+    "A6_GET_A6AD": {
+        "description": "Get A6 voltage",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6AD"
+            }
+        ]
+    },
+    "A6_GET_DIGITIZER_STATUS": {
+        "description": "Get digitizer status register (same as control register)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "P6DIGCTL"
+            }
+        ]
+    },
+    "A6_GET_DIGITIZER_VALUE_1": {
+        "description": "Get the only or the first digitizer average",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "P6DIGAVG1"
+            }
+        ]
+    },
+    "A6_GET_DIGITIZER_VALUE_2": {
+        "description": "Get the second digitizer average (when two digitizers are running)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "P6DIGAVG2"
+            }
+        ]
+    },
+    "A6_GET_FREQ": {
+        "description": "Get Frequency accumulator",
+        "steps": [
+            {
+                "description": "TODO: once A6DDSACCUM is working again, change to A6DDSACCUM and remove next step",
+                "operation": "read",
+                "register": "P6DDSACCUMLSB"
+            }
+        ]
+    },
+    "A6_GET_IDAC": {
+        "description": "Get IDAC DAC (IDAC) coarse and fine counts (parameters 1 & 2)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6IDACCOARSE"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6IDACFINE"
+            }
+        ]
+    },
+    "A6_GET_ISCALE_ICOMP": {
+        "description": "Get the scale and comp DACs (1st and 2nd parameters, respectively)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "L6ISCALEDAC"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6ICOMPDAC"
+            }
+        ]
+    },
+    "A6_GET_POLARITY": {
+        "description": "Read A6DDSRLY2, which includes the VDAC/IDAC polarity relays",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6DDSRLY2"
+            }
+        ]
+    },
+    "A6_GET_PWM4": {
+        "description": "Get PWM4 (ACV DC cancellation) DAC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "P6PWM4"
+            }
+        ]
+    },
+    "A6_GET_PWM5": {
+        "description": "Set PWM5 (ACI and secondary ACV DC cancellation) DAC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "P6PWM5"
+            }
+        ]
+    },
+    "A6_GET_VDAC": {
+        "description": "Get VDAC coarse and fine counts (parameters 1 & 2)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6VDACCOARSE"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6VDACFINE"
+            }
+        ]
+    },
+    "A6_GET_VSCALE_VCOMP": {
+        "description": "Get scale and comp DACs (1st and 2nd parameters, respectively)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "L6VSCALEDAC"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A6VCOMPDAC"
             }
         ]
     },
@@ -1024,153 +1415,6 @@
                 "operation": "force",
                 "register": "A6VCOMPDAC",
                 "value": "0x0x00"
-            }
-        ]
-    },
-    "A6_STROBERELAYS": {
-        "description": "Strobe the A6 latching relays",
-        "steps": [
-            {
-                "description": "Activate the relay strobe",
-                "operation": "modify",
-                "mask": "0x40",
-                "register": "A6DDSRLY2",
-                "value": "0x00"
-            },
-            {
-                "description": "A little delay (TODO: tweak value or eliminate based on testing)",
-                "operation": "delay",
-                "value": "0x10"
-            },
-            {
-                "description": "End the relay strobe",
-                "operation": "modify",
-                "mask": "0x40",
-                "register": "A6DDSRLY2",
-                "value": "0x40"
-            }
-        ]
-    },
-    "A6_TOGGLELED": {
-        "description": "TODO: DELETE THIS IF NO ONE USES IT. toggle a6 led",
-        "steps": [
-            {
-                "description": "",
-                "operation": "force",
-                "register": "P6LED",
-                "value": "0x1"
-            },
-            {
-                "description": "",
-                "operation": "delay",
-                "value": "0x1000"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "P6LED",
-                "value": "0x0"
-            },
-            {
-                "description": "",
-                "operation": "delay",
-                "value": "0x1000"
-            },
-            {
-                "description": "",
-                "operation": "force",
-                "register": "P6LED",
-                "value": "0x1"
-            },
-            {
-                "description": "",
-                "operation": "delay",
-                "value": "0x1000"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "P6LED",
-                "value": "0x0"
-            }
-        ]
-    },
-    "A6_ZERO_ACI": {
-        "description": "Set DACs close to zero for ACI",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VCALCOARSE",
-                "value": "0x2000"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6ISCALEDACCTL",
-                "value": "0x00"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6ICOMPDAC",
-                "value": "0x00"
-            }
-        ]
-    },
-    "A6_ZERO_DCI": {
-        "description": "Set DACs close to zero for positive DCI",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VCALCOARSE",
-                "value": "0x3ebf"
-            }
-        ]
-    },
-    "A6_ZERO_ACV": {
-        "description": "Set DACs close to zero for ACV",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x2000"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VSCALEDACCTL",
-                "value": "0x00"
-            },
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VCOMPDAC",
-                "value": "0x00"
-            }
-        ]
-    },
-    "A6_ZERO_NEG_DCV": {
-        "description": "Set DAC close to zero for negative DCV",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x3E9B"
-            }
-        ]
-    },
-    "A6_ZERO_POS_DCV": {
-        "description": "Set DAC close to zero for positive DCV",
-        "steps": [
-            {
-                "description": "",
-                "operation": "write",
-                "register": "A6VDACCOARSE",
-                "value": "0x013B"
             }
         ]
     },
@@ -1202,10 +1446,10 @@
                 "value": "0x00"
             },
             {
-                "description": "",
+                "description": "VDAC vs VDAC",
                 "operation": "write",
                 "register": "A6ADMUX",
-                "value": "0xff"
+                "value": "0x7E"
             },
             {
                 "description": "",
@@ -1223,13 +1467,892 @@
                 "description": "",
                 "operation": "exec",
                 "sequence": "A6_DORM"
+            }
+        ]
+    },
+    "A6_INT_10MHZ_REF": {
+        "description": "Select internal 10 MHz phase/frequency reference",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x20",
+                "operation": "modify",
+                "register": "P6DDSCTL",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_ISCALE_AND_IDAC_OPER": {
+        "description": "Operate: Set scale/comp (parameters 1 & 2) Set IDAC coarse/fine counts (parameters 3 & 4)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_ISCALE_ICOMP"
+            },
+            {
+                "description": "a small delay to prevent overshoot",
+                "operation": "delay",
+                "value": "0x4a"
             },
             {
                 "description": "",
                 "operation": "exec",
-                "sequence": "TOGGLE_FAULT_CLR"
+                "sequence": "A6_SET_IDAC"
+            }
+        ]
+    },
+    "A6_ISCALE_AND_IDAC_STBY": {
+        "description": "Standby: (reverse order) Set scale/comp (parameters 1 & 2) Set IDAC coarse/fine counts (parameters 3 & 4)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_IDAC"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_ISCALE_ICOMP"
+            }
+        ]
+    },
+    "A6_MEASURE_SETUP": {
+        "description": "Set A6 admux to measure voltage",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P6ADSEL",
+                "value": "0x78"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xFB"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0xBD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P6ADDRATE",
+                "value": "0xA1"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "P6ADOGCAL",
+                "value": "0x0"
+            },
+            {
+                "description": "",
+                "operation": "delay",
+                "value": "0x3E8"
+            }
+        ]
+    },
+    "A6_READ_AD": {
+        "description": "Take an A/D reading directly; returns one A/D reading",
+        "steps": [
+            {
+                "description": "Read the A/D",
+                "operation": "read",
+                "register": "P6AD"
+            }
+        ]
+    },
+    "A6_RESET_DIGITIZER": {
+        "description": "Toggle the hard reset bit of the digitizer.",
+        "steps": [
+            {
+                "description": "Clear the reset bit (active low)",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "P6DIGCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "Set the reset bit",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "P6DIGCTL",
+                "value": "0x80"
+            },
+            {
+                "description": "Send the SDATAC command to the ADC",
+                "operation": "force",
+                "register": "P6ADSDATAC",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_SAMPLING_LOF": {
+        "description": "Set the A6 for sampling signals <= 40 Hz",
+        "steps": [
+            {
+                "description": "A6DDSEL0_Sampling <40Hz",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFE"
+            },
+            {
+                "description": "A6DDSEL1_Sampling <40Hz",
+                "mask": "0x20",
+                "operation": "modify",
+                "register": "A6DDSEL1",
+                "value": "0x00"
+            },
+            {
+                "description": "A6DDSEL2_Sampling <40Hz",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0x3D"
+            }
+        ]
+    },
+    "A6_ACI_BELOW_40HZ": {
+        "description": "Set the A6 for sampling ACI <= 40 Hz",
+        "steps": [
+            {
+                "description": "Enable A6_SAMP_ACI* and disable ACI*",
+                "operation": "modify",
+                "mask": "0x30",
+                "register": "A6DDSEL0",
+                "value": "0x10"
+            }
+        ]
+    },
+    "A6_ACI_ABOVE_40HZ": {
+        "description": "Set the A6 for normal ACI operation",
+        "steps": [
+            {
+                "description": "Disable A6_SAMP_ACI* and enable ACI*",
+                "operation": "modify",
+                "mask": "0x30",
+                "register": "A6DDSEL0",
+                "value": "0x20"
+            }
+        ]
+    },
+    "A6_SCOPE_SETUP": {
+        "description": "Setup A6 board for scope",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFA"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xE2"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x58"
+            }
+        ]
+    },
+    "A6_SET_A6ADMUX": {
+        "description": "Set A6ADMUX",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6ADMUX"
+            }
+        ]
+    },
+    "A6_SET_BIPOLAR": {
+        "description": "With no particular niceties upfront, set VDAC/IDAC to bipolar (centered)",
+        "steps": [
+            {
+                "description": "Without preamble, set to bipolar",
+                "mask": "0x18",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x18"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "Set VDAC close to zero for bipolar",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "Set IDAC close to zero for bipolar",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x2000"
+            }
+        ]
+    },
+    "A6_SET_FREQ": {
+        "description": "Set Frequency accumulator",
+        "steps": [
+            {
+                "description": "TODO: once A6DDSACCUM is working again, change to A6DDSACCUM and remove next step",
+                "operation": "write",
+                "register": "P6DDSACCUMLSB"
+            }
+        ]
+    },
+    "A6_SET_IDAC": {
+        "description": "Set IDAC DAC (IDAC) coarse and fine counts (parameters 1 & 2)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACCOARSE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACFINE"
+            }
+        ]
+    },
+    "A6_SET_ISCALE_ICOMP": {
+        "description": "Set scale and comp DACs (1st and 2nd parameters, respectively)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "L6ISCALEDAC"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6ICOMPDAC"
+            }
+        ]
+    },
+    "A6_SET_K18": {
+        "description": "Set relay K18",
+        "steps": [
+            {
+                "description": "Set relay K18",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x80"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_SET_PWM4": {
+        "description": "Set PWM4 (ACV DC cancellation) DAC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P6PWM4"
+            }
+        ]
+    },
+    "A6_SET_PWM5": {
+        "description": "Set PWM5 (ACI and secondary ACV DC cancellation) DAC",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "P6PWM5"
+            }
+        ]
+    },
+    "A6_SET_VDAC": {
+        "description": "Set VDAC coarse and fine counts (parameters 1 & 2)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACCOARSE"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACFINE"
+            }
+        ]
+    },
+    "A6_SET_VSCALE_VCOMP": {
+        "description": "Set scale and comp DACs (1st and 2nd parameters, respectively)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "L6VSCALEDAC"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6VCOMPDAC"
+            }
+        ]
+    },
+    "A6_START_DIGITIZER": {
+        "description": "Start digitizer taking A/D readings",
+        "steps": [
+            {
+                "description": "Set the GO bit",
+                "mask": "0x01",
+                "operation": "modify",
+                "register": "P6DIGCTL",
+                "value": "0x01"
+            }
+        ]
+    },
+    "A6_STOP_DIGITIZER": {
+        "description": "Stop digitizer, which stops A/D",
+        "steps": [
+            {
+                "description": "Clear the GO bit",
+                "mask": "0x01",
+                "operation": "modify",
+                "register": "P6DIGCTL",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_STOP_SAMPLING_LOF": {
+        "description": "Stop sampling signals > 40 Hz",
+        "steps": [
+            {
+                "description": "Open SAMP_ACV switch.",
+                "mask": "0x20",
+                "operation": "modify",
+                "register": "A6DDSEL1",
+                "value": "0x20"
+            },
+            {
+                "description": "Close SAMP_ACV_CAL* switch",
+                "mask": "0x80",
+                "operation": "modify",
+                "register": "A6DDSEL2",
+                "value": "0x80"
+            },
+            {
+                "description": "Send the SDATAC command to the ADC",
+                "operation": "force",
+                "register": "P6ADSDATAC",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_STROBERELAYS": {
+        "description": "Strobe the A6 latching relays",
+        "steps": [
+            {
+                "description": "Activate the relay strobe",
+                "mask": "0x40",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x00"
+            },
+            {
+                "description": "A little delay (TODO: tweak value or eliminate based on testing)",
+                "operation": "delay",
+                "value": "0x10"
+            },
+            {
+                "description": "End the relay strobe",
+                "mask": "0x40",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x40"
+            }
+        ]
+    },
+    "A6_SYNC_ADC": {
+        "description": "Strobe the sync line of the ADS1256",
+        "steps": [
+            {
+                "description": "Clear sync bit.",
+                "mask": "0x20",
+                "operation": "modify",
+                "register": "P6ADPORT",
+                "value": "0x0"
+            },
+            {
+                "description": "Hold low for 1 ms.",
+                "operation": "delay",
+                "value": "0x1"
+            },
+            {
+                "description": "Set sync bit.",
+                "mask": "0x20",
+                "operation": "modify",
+                "register": "P6ADPORT",
+                "value": "0x20"
+            }
+        ]
+    },
+    "A6_TCM_HI_RANGE": {
+        "description": "Thermocouple Measure HI range",
+        "steps": [
+            {
+                "description": "select hi range",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xE0"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_TCM_LO_RANGE": {
+        "description": "Thermocouple Measure LO range",
+        "steps": [
+            {
+                "description": "select lo range",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xC0"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_TCS_HI_RANGE": {
+        "description": "Thermocouple Source HI range",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFA"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xE0"
+            },
+            {
+                "description": "",
+                "mask": "0xf7",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x59"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_TCS_LO_RANGE": {
+        "description": "Thermocouple Source LO range",
+        "steps": [
+            {
+                "description": "VDAC vs VDAC",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0x7E"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL0",
+                "value": "0xFF"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL1",
+                "value": "0xFA"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSEL2",
+                "value": "0xBD"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY1",
+                "value": "0xC0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6DDSRLY2",
+                "value": "0x59"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            }
+        ]
+    },
+    "A6_VLOOP_MON_MEAS": {
+        "description": "Set up the A6 to monitor the error integrator voltage",
+        "steps": [
+            {
+                "description": "Close VLOOP_MON* switch",
+                "mask": "0x4",
+                "operation": "modify",
+                "register": "A6DDSEL0",
+                "value": "0x0"
+            },
+            {
+                "description": "Select SMUX and SCOM as inputs.",
+                "operation": "write",
+                "register": "A6ADMUX",
+                "value": "0xBD"
+            },
+            {
+                "description": "Set gain to 1 and divide by 10",
+                "mask": "0x7",
+                "operation": "modify",
+                "register": "A6DDSEL2",
+                "value": "0x5"
+            },
+            {
+                "description": "Select AIN7 and AINCOM as ADC inputs",
+                "operation": "write",
+                "register": "P6ADSEL",
+                "value": "0x78"
+            },
+            {
+                "description": "Get the A/D measurement",
+                "operation": "read",
+                "register": "P6AD"
+            }
+        ]
+    },
+    "A6_VSCALE_AND_VDAC_OPER": {
+        "description": "Operate: Set scale/comp (parameters 1 & 2) Set coarse/fine counts (parameters 3 & 4)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_VSCALE_VCOMP"
+            },
+            {
+                "description": "a small delay to prevent overshoot",
+                "operation": "delay",
+                "value": "0x20"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_VDAC"
+            }
+        ]
+    },
+    "A6_VSCALE_AND_VDAC_STBY": {
+        "description": "Standby: (reverse order) Set scale/comp (parameters 3 & 4) Set coarse/fine counts (parameters 1 & 2)",
+        "steps": [
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_VDAC"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_SET_VSCALE_VCOMP"
+            }
+        ]
+    },
+    "A6_ZERO_ACI": {
+        "description": "Set DACs close to zero for ACI",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6ISCALEDACCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6ICOMPDAC",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_ZERO_ACV": {
+        "description": "Set DACs close to zero for ACV",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VSCALEDACCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6VCOMPDAC",
+                "value": "0x00"
+            }
+        ]
+    },
+    "A6_ZERO_AMPLIFIER_DISABLE": {
+        "description": "Reverts to prior state after changing supplies/polarity",
+        "steps": [
+            {
+                "description": "A little delay",
+                "operation": "delay",
+                "value": "0x32"
+            },
+            {
+                "description": "",
+                "mask": "0x22",
+                "operation": "modify",
+                "register": "A6DDSEL1",
+                "value": "0x22"
+            }
+        ]
+    },
+    "A6_ZERO_AMPLIFIER_ENABLE": {
+        "description": "Provides a solid zero to the amplifier when changing supplies/polarity",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0x22",
+                "operation": "modify",
+                "register": "A6DDSEL1",
+                "value": "0x0"
+            }
+        ]
+    },
+    "A6_ZERO_DACS_QUICK": {
+        "description": "Set scale & comp DACs to 0, VDAC/IDAC to zero in bipolar",
+        "steps": [
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6VSCALEDACCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6VCOMPDAC",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6ISCALEDACCTL",
+                "value": "0x00"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6ICOMPDAC",
+                "value": "0x00"
+            },
+            {
+                "description": "Set VDAC/IDAC to bipolar/centered",
+                "mask": "0x18",
+                "operation": "modify",
+                "register": "A6DDSRLY2",
+                "value": "0x18"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "Set the DAC close to zero for bipolar",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "Set the DAC close to zero for bipolar",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x2000"
+            }
+        ]
+    },
+    "A6_ZERO_DCI": {
+        "description": "Set DACs close to zero for positive DCI",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x3ebf"
+            }
+        ]
+    },
+    "A6_ZERO_NEG_DCV": {
+        "description": "Set DAC close to zero for negative DCV",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x3E9B"
+            }
+        ]
+    },
+    "A6_ZERO_POS_DCV": {
+        "description": "Set DAC close to zero for positive DCV",
+        "steps": [
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x013B"
+            }
+        ]
+    },
+    "A6_Z_CAL_ZERO": {
+        "description": "Configure A14, A5, and A6 for offset zero cal in resistance",
+        "steps": [
+            {
+                "description": "",
+                "mask": "0xF8",
+                "operation": "modify",
+                "register": "A6DDSEL2",
+                "value": "0xB8"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A5_OPER"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A14_Z_RES_CAL"
+            }
+        ]
+    },
+    "A6_Z_FUNC": {
+        "description": "Set up A6 for Resistance, Capacitance, Inductance",
+        "steps": [
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSEL0",
+                "value": "0xfc"
+            },
+            {
+                "description": "",
+                "operation": "force",
+                "register": "A6DDSRLY1",
+                "value": "0x60"
+            },
+            {
+                "description": "bipolar mode",
+                "operation": "force",
+                "register": "A6DDSRLY2",
+                "value": "0x58"
+            },
+            {
+                "description": "",
+                "operation": "exec",
+                "sequence": "A6_STROBERELAYS"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6VDACFINE",
+                "value": "0x0"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACCOARSE",
+                "value": "0x2000"
+            },
+            {
+                "description": "",
+                "operation": "write",
+                "register": "A6IDACFINE",
+                "value": "0x0"
             }
         ]
     }
 }
-

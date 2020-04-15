@@ -1,123 +1,63 @@
 {
-    "DC 100 mV pos": {
-        "description": "Positive Gain/offset correction for 100 mV DC range",
+    "DC120MV_P": {
+        "description": "Positive gain/offset correction for 120MV DC range",
         "type": "linear",
-        "gain": 100.66448,
-        "offset": 0.0,
-        "default": {
-            "gain": 100.0,
-            "offset": 0.0
-        }
+        "GAIN": 100.66448,
+        "OFFSET": 0.0
     },
-    "DC 100 mV neg": {
-        "description": "Negative Gain/offset correction for 100 mV DC range",
+    "DC120MV_N": {
+        "description": "Negative gain/offset correction for 120MV DC range",
         "type": "linear",
-        "gain": 100.66448,
-        "offset": 0.0,
-        "default": {
-            "gain": 100.0,
-            "offset": 0.0
-        }
+        "GAIN": 100.66448,
+        "OFFSET": 0.0
     },
-    "DC 1V pos": {
-        "description": "Positive Gain/offset correction for 1V DC range",
+    "DC1_2V_P": {
+        "description": "Positive gain/offset correction for 1.2V DC range",
         "type": "linear",
-        "gain": 10.08865,
-        "offset": 0.0,
-        "default": {
-            "gain": 10.0,
-            "offset": 0.0
-        }
+        "GAIN": 10.08865,
+        "OFFSET": 0.0
     },
-    "DC 1V neg": {
-        "description": "Negative Gain/offset correction for 1V DC range",
+    "DC1_2V_N": {
+        "description": "Negative gain/offset correction for 1.2V DC range",
         "type": "linear",
-        "gain": 10.08865,
-        "offset": 0.0,
-        "default": {
-            "gain": 10.0,
-            "offset": 0.0
-        }
+        "GAIN": 10.08865,
+        "OFFSET": 0.0
     },
-    "DC 10V pos": {
-        "description": "Positive Gain/offset correction for 10V DC range",
+    "DC12V_P": {
+        "description": "Positive gain/offset correction for 12V DC range",
         "type": "linear",
-        "gain": 1.000000,
-        "offset": 0.0,
-        "default": {
-            "gain": 1.0,
-            "offset": 0.0
-        }
+        "GAIN": 1.000000,
+        "OFFSET": 0.0
     },
-    "DC 10V neg": {
-        "description": "Negative Gain/offset correction for 10V DC range",
+    "DC12V_N": {
+        "description": "Negative gain/offset correction for 12V DC range",
         "type": "linear",
-        "gain": 1.000000,
-        "offset": 0.0,
-        "default": {
-            "gain": 1.0,
-            "offset": 0.0
-        }
+        "GAIN": 1.000000,
+        "OFFSET": 0.0
     },
-    "DC 100V pos": {
-        "description": "Positive Gain/offset correction for 100V DC range",
+    "DC120V_P": {
+        "description": "Positive gain/offset correction for 120V DC range",
         "type": "linear",
-        "gain": -0.100000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.1,
-            "offset": 0.0
-        }
+        "GAIN": 0.100000,
+        "OFFSET": 0.0
     },
-    "DC 100V neg": {
-        "description": "Negative Gain/offset correction for 100V DC range",
+    "DC120V_N": {
+        "description": "Negative gain/offset correction for 120V DC range",
         "type": "linear",
-        "gain": -0.100000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.1,
-            "offset": 0.0
-        }
+        "GAIN": 0.100000,
+        "OFFSET": 0.0
     },
-    "DC 330V pos": {
-        "description": "Positive Gain/offset correction for 330V DC range",
+    "DC1000V_P": {
+        "description": "Positive gain/offset correction for 1000V DC range",
         "type": "linear",
-        "gain": -0.033000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.033,
-            "offset": 0.0
-        }
+        "GAIN": -0.010000,
+        "OFFSET": 0.0
     },
-    "DC 330V neg": {
-        "description": "Negative Gain/offset correction for 330V DC range",
+    "DC1000V_N": {
+        "description": "Negative gain/offset correction for 1000V DC range",
         "type": "linear",
-        "gain": -0.033000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.033,
-            "offset": 0.0
-        }
-    },
-    "DC 1000V pos": {
-        "description": "Positive Gain/offset correction for 1000V DC range",
-        "type": "linear",
-        "gain": -0.010000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.01,
-            "offset": 0.0
-        }
-    },
-    "DC 1000V neg": {
-        "description": "Negative Gain/offset correction for 1000V DC range",
-        "type": "linear",
-        "gain": -0.010000,
-        "offset": 0.0,
-        "default": {
-            "gain": -0.01,
-            "offset": 0.0
-        }
+        "GAIN": -0.010000,
+        "OFFSET": 0.0
     }
 }
 
