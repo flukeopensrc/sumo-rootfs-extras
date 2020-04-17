@@ -1,0 +1,44 @@
+{
+    "A4AD9956": {
+        "description": "Compute frequency accumulator value for A4 DDS",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    },
+    "A4ADF4351": {
+        "description": "Compute frequency accumulator value for A4",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    },
+    "A4P4PGPP": {
+        "description": "Compute period value for A4",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    },
+    "A4P4PGPW": {
+        "description": "Compute pulse width value for A4",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    },
+    "A4MEASZ": {
+        "description": "Compute capacitance A4",
+        "type": "linear",
+        "GAIN": 4.964622047244057e-10,
+        "OFFSET": -7.781830629921188e-11
+    },
+    "A4MEASZ_50OHM": {
+        "description": "Compute resistance 50 OHM A4",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    },
+    "A4MEASZ_1MOHM": {
+        "description": "Compute resistance 1M OHM A4",
+        "type": "linear",
+        "GAIN": 1.0,
+        "OFFSET": 0.0
+    }
+}

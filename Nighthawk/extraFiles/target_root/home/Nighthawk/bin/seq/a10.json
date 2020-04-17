@@ -1,0 +1,134 @@
+{
+    "A10_DORM": {
+        "description": "Set A10 analog switch and relay to dormant",
+        "steps": [
+            {
+                "description": "A10 K1 relay open",
+                "operation": "write",
+                "register": "A10RLY",
+                "value": "0x0"
+            },
+            {
+                "description": "A10 analog switch all pins disabled",
+                "operation": "write",
+                "register": "A10SW",
+                "value": "0xee"
+            }
+        ]
+    },
+    "A10_DUMP": {
+        "description": "Get A10SW, A10RLY",
+        "steps": [
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A10SW"
+            },
+            {
+                "description": "",
+                "operation": "read",
+                "register": "A10RLY"
+            }
+        ]
+    },
+    "A10_MODIFY_A6AD_READ": {
+        "description": "Configure the A6/A10 to take an A6AD reading",
+        "steps": [
+		    {
+                "description": "Configure range",
+                "operation": "write",
+                "register": "A6DDSEL2"
+            },		
+            {
+                "description": "Set A/D mux",
+                "operation": "write",
+                "register": "A6ADMUX"
+            },
+            {
+                "description": "Select PMUX+ path for measurement",
+                "mask": "0x82",
+                "operation": "modify",
+                "register": "A10SW"
+            }
+        ]
+    },
+    "A10_CONFIGURE_A6AD_READ": {
+        "description": "Configure the A6/A10 to take an A6AD reading",
+        "steps": [
+		    {
+                "description": "Configure range",
+                "operation": "write",
+                "register": "A6DDSEL2"
+            },		
+            {
+                "description": "Set A/D mux",
+                "operation": "write",
+                "register": "A6ADMUX"
+            },
+            {
+                "description": "Select PMUX+ path for measurement",
+                "operation": "write",
+                "register": "A10SW"
+            }
+        ]
+    },
+    "A10_CONFIGURE_A6AD_DUMP": {
+        "description": "Get the A6/A10 to take an A6AD reading",
+        "steps": [
+            {
+                "description": "range",
+                "operation": "read",
+                "register": "A6DDSEL2"
+            },
+            {
+                "description": "A/D mux",
+                "operation": "read",
+                "register": "A6ADMUX"
+            },
+            {
+                "description": "Selected PMUX+ path for measurement",
+                "operation": "read",
+                "register": "A10SW"
+            }
+        ]
+    },
+    "A10_TC_OPERATE": {
+        "description": "Enable thermocouple terminals",
+        "steps": [
+            {
+                "description": "A10 K1 relay closed",
+                "operation": "write",
+                "register": "A10RLY",
+                "value": "0x1"
+            },
+            {
+                "description": "TC_SRC* path only",
+                "operation": "write",
+                "register": "A10SW",
+                "value": "0xf6"
+            }
+        ]
+    },
+    "A10_TC_SOURCE_EXTERNAL_REF": {
+        "description": "A10 analog switch pattern for external cold junction",
+        "steps": [
+            {
+                "description": "TC_SRC* path only",
+                "operation": "write",
+                "register": "A10SW",
+                "value": "0xf6"
+            }
+        ]
+    },
+    "A10_TC_SOURCE_INTERNAL_REF": {
+        "description": "A10 analog switch pattern for internal cold junction",
+        "steps": [
+            {
+                "description": "Select TC_SRC* plus TC_MSR* for internal ref. measurement",
+                "operation": "write",
+                "register": "A10SW",
+                "value": "0xf6"
+            }
+        ]
+    }
+}
