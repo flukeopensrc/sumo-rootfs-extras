@@ -1,0 +1,121 @@
+From ecfd87872ba56869788a4cedf1ff1073f1085bc1 Mon Sep 17 00:00:00 2001
+From: Frank Mori Hess <fmh6jj@gmail.com>
+Date: Fri, 12 Mar 2021 08:04:14 -0800
+Subject: [PATCH 2/4] Fluke CDA: fix compile errors/warnings with gcc 4.
+
+---
+ include/asm-nios2/checksum.h |  2 +-
+ include/asm-nios2/dma.h      |  1 +
+ include/asm-nios2/uaccess.h  | 64 ++++++++++++++++++++++++++++++++++++
+ 3 files changed, 66 insertions(+), 1 deletion(-)
+
+diff --git a/include/asm-nios2/checksum.h b/include/asm-nios2/checksum.h
+index 14e9487f593..16eb613d19f 100644
+--- a/include/asm-nios2/checksum.h
++++ b/include/asm-nios2/checksum.h
+@@ -41,7 +41,7 @@
+  * returns a 16-bit checksum, already complemented
+  */
+ 
+-extern inline __sum16 csum_tcpudp_magic(unsigned long saddr,
++static inline __sum16 csum_tcpudp_magic(unsigned long saddr,
+ 					       unsigned long daddr,
+ 					       unsigned short len,
+ 					       unsigned short proto,
+diff --git a/include/asm-nios2/dma.h b/include/asm-nios2/dma.h
+index 5f1bcc2a739..7dcfe89633f 100644
+--- a/include/asm-nios2/dma.h
++++ b/include/asm-nios2/dma.h
+@@ -48,6 +48,7 @@ void nios2_set_dma_waddr(unsigned int dmanr, unsigned int a);
+ 
+ static inline unsigned long claim_dma_lock(void)
+ {
++    return 0;
+ }
+ 
+ static inline void release_dma_lock(unsigned long flags)
+diff --git a/include/asm-nios2/uaccess.h b/include/asm-nios2/uaccess.h
+index 1348925a5b2..54bfa7134e5 100644
+--- a/include/asm-nios2/uaccess.h
++++ b/include/asm-nios2/uaccess.h
+@@ -104,6 +104,7 @@ extern int __put_user_bad(void);
+ 
+ #define __ptr(x) ((unsigned long *)(x))
+ 
++#if 0
+ #define get_user(x, ptr)					\
+ ({								\
+     int __gu_err = 0;						\
+@@ -124,6 +125,69 @@ extern int __put_user_bad(void);
+     __gu_err;							\
+ })
+ #define __get_user(x, ptr) get_user(x, ptr)
++#else
++/* Optimized macros */
++#define __get_user_asm(val, insn, addr, err)				\
++{									\
++	__asm__ __volatile__(						\
++	"       movi    %0, %3\n"					\
++	"1:   " insn " %1, 0(%2)\n"					\
++	"       movi     %0, 0\n"					\
++	"2:\n"								\
++	"       .section __ex_table,\"a\"\n"				\
++	"       .word 1b, 2b\n"						\
++	"       .previous"						\
++	: "=&r" (err), "=r" (val)					\
++	: "r" (addr), "i" (-EFAULT));					\
++}
++
++#define __get_user_unknown(val, size, ptr, err) do {			\
++	err = 0;							\
++	if (__copy_from_user(&(val), ptr, size)) {			\
++		err = -EFAULT;						\
++	}								\
++	} while (0)
++
++#define __get_user_common(val, size, ptr, err)				\
++do {									\
++	switch (size) {							\
++	case 1:								\
++		__get_user_asm(val, "ldbu", ptr, err);			\
++		break;							\
++	case 2:								\
++		__get_user_asm(val, "ldhu", ptr, err);			\
++		break;							\
++	case 4:								\
++		__get_user_asm(val, "ldw", ptr, err);			\
++		break;							\
++	default:							\
++		__get_user_unknown(val, size, ptr, err);		\
++		break;							\
++	}								\
++} while (0)
++
++#define __get_user(x, ptr)						\
++	({								\
++	long __gu_err = -EFAULT;					\
++	const __typeof__(*(ptr)) __user *__gu_ptr = (ptr);		\
++	unsigned long __gu_val = 0;					\
++	__get_user_common(__gu_val, sizeof(*(ptr)), __gu_ptr, __gu_err);\
++	(x) = (__force __typeof__(x))__gu_val;				\
++	__gu_err;							\
++	})
++
++#define get_user(x, ptr)						\
++({									\
++	long __gu_err = -EFAULT;					\
++	const __typeof__(*(ptr)) __user *__gu_ptr = (ptr);		\
++	unsigned long __gu_val = 0;					\
++	if (access_ok( 0, __gu_ptr, sizeof(*__gu_ptr)))	\
++		__get_user_common(__gu_val, sizeof(*__gu_ptr),		\
++			__gu_ptr, __gu_err);				\
++	(x) = (__force __typeof__(x))__gu_val;				\
++	__gu_err;							\
++})
++#endif
+ 
+ extern int __get_user_bad(void);
+ 
+-- 
+2.17.1
+
