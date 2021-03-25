@@ -20,10 +20,6 @@ copied or linked into the "files" subdirectory:
 ```
 fluke_dist.tar
 blackhawk_old_mtd0.bin
-blackhawk_old_mtd1.bin
-blackhawk_old_mtd2.bin
-blackhawk_old_mtd3.bin
-blackhawk_old_mtd4.bin
 blackhawk_initramfs.cpio.gz
 
 ```
@@ -99,23 +95,26 @@ above, and you will need various external files to be present in the
 `files` subdirectory as mentioned earlier.
 
 You should now have a `blackhawk_mtd0.bin` which can be copied to the
-/dev/mtd0 partition of the Blackhawk board.
+/dev/mtd0 partition of the Blackhawk board.  There will also be
+a `mergedOS.bin` suitable for use with the updater, which is the same thing 
+as 'blackhawk_mtd0.bin except it omits the trailing 0xff padding.
 
 ## Appendix: External Files
 ### fluke_dist.tar
 The `fluke_dist.tar` file comes from the "Open Source Software and Licenses
 5730A" CD version 1.01.
 
-### blackhawk_old_mtd[0-4].bin
-These are images of the original mtd partitions.  They were taken from
-a live Blackhawk A20 board by copying the device files like /dev/mtdblock0
-to a usb thumb drive.  The jffs2 file system was unmounted prior to
-copying /dev/mtdblock2 to insure it was in a consistent state.
+### blackhawk_old_mtd0.bin
+This is an image of the original mtd0 partition.  It was taken from
+a live Blackhawk A20 board by copying the device file /dev/mtd0
+to a usb thumb drive. 
 
-Alternatively, someone must have the full flash image used to manufacture
-the original boards, in which a case pristine image of the jffs2
-filesystem partition
-could be extracted from that.  The partition map is as follows
+Alternatively, we have an older full flash image plus updater
+files which update the old image to the production version.  
+The current version of the updater has a mergedOS.bin
+file which is an image of the mtd0 partition (sans trailing 1's padding).
+
+The partition map is as follows
 (note the partitions appear in a different order than they are
 numbered):
 ```
@@ -129,7 +128,7 @@ Creating 5 MTD partitions on "physmap-flash.0":
 ```
 
 ### blackhawk_initramfs.cpio.gz
-We extracted the initramfs from partition0 of the old flash image using 
+We extracted the initramfs from partition 0 of the old flash image using 
 `binwalk` and `dd`
 as follows:
 ```
