@@ -27,4 +27,5 @@ $(BOOTLOADER_SREC):
 	
 .PHONY: clean
 clean:
-	$(RM) Blackhawk_OG_vmlinux_nios.srec blackhawk_mtd0.bin blackhawk_mtd0_preamble.bin
+	$(RM) Blackhawk_OG_vmlinux_nios.srec blackhawk_mtd0.bin blackhawk_mtd0_preamble.bin mergedOS.bin
+
