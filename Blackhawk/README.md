@@ -73,7 +73,9 @@ make hwselect SYSPTF=../../fluke_HW/Blackhawk_OG_soc.linux.ptf
 make oldconfig
 make
 
-# install kernel modules into our initramfs directory before making zImage
+# Install kernel modules into our initramfs directory before making zImage.
+# Ignore any depmod warning about missing modules.builtin (modules.builtin 
+# didn't get added until kernel version 2.6.33).
 make modules_install
 
 make zImage
