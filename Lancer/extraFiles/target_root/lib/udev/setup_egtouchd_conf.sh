@@ -15,10 +15,9 @@ if test -e "/etc/$EGTOUCHD_CONF"; then
 	fi
 else
 	ln -s /tmp/$EGTOUCHD_CONF /etc/$EGTOUCHD_CONF
-	sync
 fi
 
-cp /etc/${EGTOUCHD_CONF}.vid_${ID_VENDOR_ID}_pid_${ID_MODEL_ID} /tmp/$EGTOUCHD_CONF
+# we copy then move so the config file appears atomically as a complete file
+cp /etc/${EGTOUCHD_CONF}.vid_${ID_VENDOR_ID}_pid_${ID_MODEL_ID} /tmp/${EGTOUCHD_CONF}.part
+mv /tmp/${EGTOUCHD_CONF}.part /tmp/${EGTOUCHD_CONF}
 sync
-touch /tmp/${EGTOUCHD_CONF}.lock
-
