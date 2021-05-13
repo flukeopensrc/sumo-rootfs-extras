@@ -18,4 +18,7 @@ else
 	sync
 fi
 
-cp /etc/$EGTOUCHD_CONF.vid_${ID_VENDOR_ID}_pid_${ID_MODEL_ID} /tmp/$EGTOUCHD_CONF
+cp /etc/${EGTOUCHD_CONF}.vid_${ID_VENDOR_ID}_pid_${ID_MODEL_ID} /tmp/$EGTOUCHD_CONF
+sync
+touch /tmp/${EGTOUCHD_CONF}.lock
+

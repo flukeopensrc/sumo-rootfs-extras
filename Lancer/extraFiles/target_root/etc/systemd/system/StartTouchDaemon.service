@@ -1,0 +1,16 @@
+[Unit]
+
+Description=Autostart the Egalax Touch Screen Daemon!
+
+[Service]
+Type=forking
+ExecStartPre=/usr/bin/test -e /tmp/eGTouchL.ini.lock
+RestartSec=1
+Restart=on-failure
+StartLimitBurst=20
+ExecStart=/usr/bin/eGTouchD
+
+[Install]
+
+WantedBy=multi-user.target
+
