@@ -1,3 +1,2 @@
-Dummy license file to point yocto LIC_FILES_CHKSUM at.  Do not change
-unless you have a good reason, since that will make us have to update 
-the md5sum for the file in the meta-fluke-cda layer.
+Copyright (c) 2019-2021 Fluke Corporation. All rights reserved.
+
