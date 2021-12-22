@@ -1,0 +1,19 @@
+[Unit]
+
+Description=Autostart the Egalax Touch Screen Daemon!
+
+[Service]
+Type=forking
+
+# Wait for the appropriate config file to be set up by our udev rule
+# before starting eGTouchD
+ExecStartPre=/usr/bin/test -e /etc/eGTouchL.ini
+RestartSec=1
+Restart=on-failure
+StartLimitBurst=20
+
+ExecStart=/usr/bin/eGTouchD
+
+[Install]
+
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+# These rules exist to choose the proper config file for the eGTouchD daemon 
+# based on which touchscreen is installed
+SUBSYSTEM=="usb", ACTION=="add", ATTR{idVendor}=="0eef", ATTR{idProduct}=="c000", RUN+="/lib/udev/setup_egtouchd_conf.sh"
+SUBSYSTEM=="usb", ACTION=="add", ATTR{idVendor}=="0eef", ATTR{idProduct}=="7201", RUN+="/lib/udev/setup_egtouchd_conf.sh"
+
