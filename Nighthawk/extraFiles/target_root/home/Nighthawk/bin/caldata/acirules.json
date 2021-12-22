@@ -1,156 +1,270 @@
 {
-    "AC 100 uA range": {
-        "description": "VCAL volts for 100 uA AC range",
-        "type": "ac chain",
+    "AC120MA": {
+        "description": "IDAC volts for 120 mA AC range",
         "links": [
-            "AC 100 uA gain"
-        ]
+            "AC120MA_G",
+            "ACI_Z",
+            "AC120MA_F",
+            "AC120MA_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC 1 mA range": {
-        "description": "VCAL volts for 1 mA AC range",
-        "type": "ac chain",
+    "AC120MA_S": {
+        "description": "Scale DAC volts for 120 mA AC range",
         "links": [
-            "AC 1 mA gain"
-        ]
+            "AC120MA_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC 10 mA range": {
-        "description": "VCAL volts for 10 mA AC range",
-        "type": "ac chain",
+    "AC120MA_LF": {
+        "description": "IDAC volts for 120 mA LF AC range",
         "links": [
-            "AC 10 mA gain"
-        ]
+            "AC120MA",
+            "ACI_SAMPRATIO",
+            "AC120MA_LF_G",
+            "AC120MA_LF_Z"
+        ],
+        "type": "ac chain"
     },
-    "AC 100 mA range": {
-        "description": "VCAL volts for 100 mA AC range",
-        "type": "ac chain",
+    "AC120UA": {
+        "description": "IDAC volts for 120 uA AC range",
         "links": [
-            "AC 100 mA gain"
-        ]
+            "AC120UA_G",
+            "ACI_Z",
+            "AC120UA_F",
+            "AC120UA_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC 1A range": {
-        "description": "VCAL volts for 1A AC range",
-        "type": "ac chain",
+    "AC120UA_S": {
+        "description": "Scale DAC volts for 120 uA AC range",
         "links": [
-            "AC 1A gain"
-        ]
+            "AC120UA_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC 3A range": {
-        "description": "VCAL volts for 3A AC range",
-        "type": "ac chain",
+    "AC120UA_LF": {
+        "description": "IDAC volts for 120 uA LF AC range",
         "links": [
-            "AC 3A gain"
-        ]
+            "AC120UA",
+            "ACI_SAMPRATIO",
+            "AC120UA_LF_G",
+            "AC120UA_LF_Z"
+        ],
+        "type": "ac chain"
     },
-    "AC 10A range": {
-        "description": "VCAL volts for 10A AC range",
-        "type": "ac chain",
+    "AC12A": {
+        "description": "IDAC volts for 12 A AC range",
         "links": [
-            "AC 10A gain"
-        ]
+            "AC12A_G",
+            "ACI12A_Z",
+            "AC12A_F",
+            "AC12A_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC 30A range": {
-        "description": "VCAL volts for 30A AC range",
-        "type": "ac chain",
+    "AC12A_LF": {
+        "description": "IDAC volts for 12 A AC LF range",
         "links": [
-            "AC 30A gain"
-        ]
+            "AC12A_LF_G",
+            "AC12A_LF_Z",
+            "AC12A_F",
+            "AC12A_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 100 mV range": {
-        "description": "VCAL volts for secondary 100 mV AC range",
-        "type": "ac chain",
+    "AC12A_S": {
+        "description": "Scale DAC volts for 12 A AC range",
         "links": [
-            "AC 100 mA gain"
-        ]
+            "AC12A_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 1V range": {
-        "description": "VCAL volts for secondary 1V AC range",
-        "type": "ac chain",
+    "AC12A_LF_SAMPLING": {
+        "description": "IDAC volts for 12 A LF AC range",
         "links": [
-            "AC 1A gain"
-        ]
+            "AC12A",
+            "ACI_SAMPRATIO",
+            "AC12A_LF_G",
+            "AC12A_LF_Z"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 5V range": {
-        "description": "VCAL volts for secondary 5V AC range",
-        "type": "ac chain",
+    "AC12MA": {
+        "description": "IDAC volts for 12 mA AC range",
         "links": [
-            "AC 3A gain"
-        ]
+            "AC12MA_G",
+            "ACI_Z",
+            "AC12MA_F",
+            "AC12MA_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC 100 uA range scale": {
-        "description": "Scale DAC volts for 100 uA AC range",
-        "type": "ac chain",
-        "links": [
-            "AC 100 uA scale gain"
-        ]
-    },
-    "AC 1 mA range scale": {
-        "description": "Scale DAC volts for 1 mA AC range",
-        "type": "ac chain",
-        "links": [
-            "AC 1 mA scale gain"
-        ]
-    },
-    "AC 10 mA range scale": {
+    "AC12MA_S": {
         "description": "Scale DAC volts for 10 mA AC range",
-        "type": "ac chain",
         "links": [
-            "AC 10 mA scale gain"
-        ]
+            "AC12MA_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC 100 mA range scale": {
-        "description": "Scale DAC volts for 100 mA AC range",
-        "type": "ac chain",
+    "AC12MA_LF": {
+        "description": "IDAC volts for 12 mA LF AC range",
         "links": [
-            "AC 100 mA scale gain"
-        ]
+            "AC12MA",
+            "ACI_SAMPRATIO",
+            "AC12MA_LF_G",
+            "AC12MA_LF_Z"
+        ],
+        "type": "ac chain"
     },
-    "AC 1A range scale": {
-        "description": "Scale DAC volts for 1A AC range",
-        "type": "ac chain",
+    "AC1_2A": {
+        "description": "IDAC volts for 1.2 A AC range",
         "links": [
-            "AC 1A scale gain"
-        ]
+            "AC1_2A_G",
+            "ACI_Z",
+            "AC1_2A_F",
+            "AC1_2A_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC 3A range scale": {
-        "description": "Scale DAC volts for 3A AC range",
-        "type": "ac chain",
+    "AC1_2A_S": {
+        "description": "Scale DAC volts for 1.2 A AC range",
         "links": [
-            "AC 3A scale gain"
-        ]
+            "AC1_2A_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC 10A range scale": {
-        "description": "Scale DAC volts for 10A AC range",
-        "type": "ac chain",
+    "AC1_2A_LF": {
+        "description": "IDAC volts for 1.2 A LF AC range",
         "links": [
-            "AC 10A scale gain"
-        ]
+            "AC1_2A",
+            "ACI_SAMPRATIO",
+            "AC1_2A_LF_G",
+            "AC1_2A_LF_Z"
+        ],
+        "type": "ac chain"
     },
-    "AC 30A range scale": {
-        "description": "Scale DAC volts for 30A AC range",
-        "type": "ac chain",
+    "AC1_2MA": {
+        "description": "IDAC volts for 1.2 mA AC range",
         "links": [
-            "AC 30A scale gain"
-        ]
+            "AC1_2MA_G",
+            "ACI_Z",
+            "AC1_2MA_F",
+            "AC1_2MA_PIECEWISE"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 100 mV range scale": {
+    "AC1_2MA_S": {
+        "description": "Scale DAC volts for 1.2 mA AC range",
+        "links": [
+            "AC1_2MA_SG"
+        ],
+        "type": "ac chain"
+    },
+    "AC1_2MA_LF": {
+        "description": "IDAC volts for 1.2 mA LF AC range",
+        "links": [
+            "AC1_2MA",
+            "ACI_SAMPRATIO",
+            "AC1_2MA_LF_G",
+            "AC1_2MA_LF_Z"
+        ],
+        "type": "ac chain"
+    },
+    "AC30A": {
+        "description": "IDAC volts for 30 A AC range",
+        "links": [
+            "AC30A_G",
+            "ACI30A_Z",
+            "AC30A_F",
+            "AC30A_PIECEWISE"
+        ],
+        "type": "ac chain"
+    },
+    "AC30A_S": {
+        "description": "Scale DAC volts for 30 A AC range",
+        "links": [
+            "AC30A_SG"
+        ],
+        "type": "ac chain"
+    },
+    "AC30A_LF": {
+        "description": "IDAC volts for 30 A LF AC range",
+        "links": [
+            "AC30A",
+            "ACI_SAMPRATIO",
+            "AC30A_LF_G",
+            "AC30A_LF_Z"
+        ],
+        "type": "ac chain"
+    },
+    "AC3A": {
+        "description": "IDAC volts for 3 A AC range",
+        "links": [
+            "AC3A_G",
+            "ACI_Z",
+            "AC3A_F",
+            "AC3A_PIECEWISE"
+        ],
+        "type": "ac chain"
+    },
+    "AC3A_S": {
+        "description": "Scale DAC volts for 3 A AC range",
+        "links": [
+            "AC3A_SG"
+        ],
+        "type": "ac chain"
+    },
+    "AC3A_LF": {
+        "description": "IDAC volts for 3 A LF AC range",
+        "links": [
+            "AC3A",
+            "ACI_SAMPRATIO",
+            "AC3A_LF_G",
+            "AC3A_LF_Z"
+        ],
+        "type": "ac chain"
+    },
+    "ACAUX100MV": {
+        "description": "IDAC volts for secondary 100 mV AC range",
+        "links": [
+            "ACAUX100MV_G"
+        ],
+        "type": "ac chain"
+    },
+    "ACAUX100MV_S": {
         "description": "Scale DAC volts for 100 mV AC range",
-        "type": "ac chain",
         "links": [
-            "AC aux 100 mA scale gain"
-        ]
+            "ACAUX100MV_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 1V range scale": {
+    "ACAUX1V": {
+        "description": "IDAC volts for secondary 1V AC range",
+        "links": [
+            "ACAUX1V_G"
+        ],
+        "type": "ac chain"
+    },
+    "ACAUX1V_S": {
         "description": "Scale DAC volts for 1V AC range",
-        "type": "ac chain",
         "links": [
-            "AC aux 1A scale gain"
-        ]
+            "ACAUX1A_SG"
+        ],
+        "type": "ac chain"
     },
-    "AC aux 5V range scale": {
-        "description": "Scale DAC volts for 5V AC range",
-        "type": "ac chain",
+    "ACAUX5V": {
+        "description": "IDAC volts for secondary 5V AC range",
         "links": [
-            "AC aux 5V scale gain"
-        ]
+            "ACAUX5V_G"
+        ],
+        "type": "ac chain"
+    },
+    "ACAUX5V_S": {
+        "description": "Scale DAC volts for 5V AC range",
+        "links": [
+            "ACAUX5V_SG"
+        ],
+        "type": "ac chain"
     }
 }

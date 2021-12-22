@@ -1,0 +1,15 @@
+#!/bin/sh
+#export TZ=GMT8
+source /home/setup_environment_target
+cat /home/Nighthawk/bin/NighthawkSplash.bin >> /dev/fb0
+
+sync
+mount
+
+/home/Nighthawk/bin/update &> /update_out.txt 2>&1
+
+/home/Nighthawk/config/ipenetIG
+/home/Nighthawk/config/ipenetOG
+#/home/Nighthawk/bin/nighthawk-outguard -platform linuxfb:size=800x480:mmsize=152.4x91.4 &
+sleep 5
+/home/Nighthawk/bin/runme

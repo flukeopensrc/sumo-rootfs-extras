@@ -1,0 +1,44 @@
+{
+    "TCMHI": {
+        "GAIN": 10.01399,
+        "OFFSET": 0.0002776,
+        "description": "High range used with TC measurement function",
+        "type": "linear"
+    },
+    "TCMHIRATIO": {
+        "DIVISOR": "TCMHI",
+        "NUMERATOR": "TCMHI",
+        "description": "Hi range ratio used with TC measuement function",
+        "type": "ratio"
+    },
+    "TCMLO": {
+        "GAIN": 101.02774,
+        "OFFSET": 0.00061,
+        "description": "Low range used with TC measurement function",
+        "type": "linear"
+    },
+    "TCMLORATIO": {
+        "DIVISOR": "TCMHI",
+        "NUMERATOR": "TCMLO",
+        "description": "Low range ratio used with TC measuement function",
+        "type": "ratio"
+    },
+    "TCSHI": {
+        "GAIN": 10.054972,
+        "OFFSET": -1e-05,
+        "description": "10V DC range used with TC source function",
+        "type": "linear"
+    },
+    "TCSLO": {
+        "GAIN": 101.45611,
+        "OFFSET": -0.0001,
+        "description": "1V DC range used with Tc source function",
+        "type": "linear"
+    },
+    "TRJOFFSETCORRECTION": {
+        "GAIN": 1.0,
+        "OFFSET": 0.0,
+        "description": "Thermocouple Offset Correction for TC measurement function",
+        "type": "linear"
+    }
+}

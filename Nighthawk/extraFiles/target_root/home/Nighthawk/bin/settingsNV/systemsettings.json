@@ -1,300 +1,439 @@
 [
-	{
-		"currentValue" : 50,
-		"factoryDefault" : 50,
-		"integervalidator" : 
-		{
-			"max" : 100,
-			"min" : 0
-		},
-		"name" : "brightness"
-	},
-	{
-		"currentValue" : "I90D",
-		"factoryDefault" : "I90D",
-		"name" : "cal_interval",
-		"regexvalidator" : 
-		{
-			"regex" : "^(I90D|I1Y|I2Y)$"
-		}
-	},
-	{
-		"currentValue" : "C95",
-		"factoryDefault" : "C95",
-		"name" : "confidence_level",
-		"regexvalidator" : 
-		{
-			"regex" : "^(C95|C99)$"
-		}
-	},
-	{
-		"currentValue" : 30.199999999999999,
-		"doublevalidator" : 
-		{
-			"max" : 30.199999999999999,
-			"min" : 0.0
-		},
-		"factoryDefault" : 30.199999999999999,
-		"name" : "current_max"
-	},
-	{
-		"currentValue" : -30.199999999999999,
-		"doublevalidator" : 
-		{
-			"max" : 0.0,
-			"min" : -30.199999999999999
-		},
-		"factoryDefault" : -30.199999999999999,
-		"name" : "current_min"
-	},
-	{
-		"currentValue" : "Z600",
-		"factoryDefault" : "Z600",
-		"name" : "dbm_reference",
-		"regexvalidator" : 
-		{
-			"regex" : "^(Z50|Z75|Z90|Z100|Z135|Z150|Z300|Z600|Z900|Z1000|Z1200)$"
-		}
-	},
-	{
-		"currentValue" : "CELSIUS",
-		"factoryDefault" : "CELSIUS",
-		"name" : "degree_default",
-		"regexvalidator" : 
-		{
-			"regex" : "^(CELSIUS|FAHRENHEIT)$"
-		}
-	},
-	{
-		"currentValue" : "NOMINAL",
-		"factoryDefault" : "NOMINAL",
-		"name" : "error_reference",
-		"regexvalidator" : 
-		{
-			"regex" : "^(NOMINAL|TRUEVALUE)$"
-		}
-	},
-	{
-		"currentValue" : 10,
-		"factoryDefault" : 10,
-		"integervalidator" : 
-		{
-			"max" : 30,
-			"min" : 0
-		},
-		"name" : "gpib_address"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : true,
-		"name" : "gpib_enabled"
-	},
-	{
-		"currentValue" : "R100",
-		"factoryDefault" : "R100",
-		"name" : "pt385_default",
-		"regexvalidator" : 
-		{
-			"regex" : "^(R100|R200|R500|R1000)$"
-		}
-	},
-	{
-		"currentValue" : 0,
-		"factoryDefault" : 0,
-		"integervalidator" : 
-		{
-			"max" : 255,
-			"min" : 0
-		},
-		"name" : "remote_ese"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : true,
-		"name" : "remote_psc"
-	},
-	{
-		"currentValue" : 0,
-		"factoryDefault" : 0,
-		"integervalidator" : 
-		{
-			"max" : 255,
-			"min" : 0
-		},
-		"name" : "remote_sre"
-	},
-	{
-		"currentValue" : "B9600",
-		"factoryDefault" : "B9600",
-		"name" : "rs232_baud_rate",
-		"regexvalidator" : 
-		{
-			"regex" : "^(B9600|B19200|B38400|B57600|B115200)$"
-		}
-	},
-	{
-		"currentValue" : 8,
-		"factoryDefault" : 8,
-		"integervalidator" : 
-		{
-			"max" : 8,
-			"min" : 7
-		},
-		"name" : "rs232_data_bits"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : true,
-		"name" : "rs232_enabled"
-	},
-	{
-		"currentValue" : "CRLF",
-		"factoryDefault" : "CRLF",
-		"name" : "rs232_eol_char",
-		"regexvalidator" : 
-		{
-			"regex" : "^(CR|LF|CRLF)$"
-		}
-	},
-	{
-		"currentValue" : "xon_xoff",
-		"factoryDefault" : "xon_xoff",
-		"name" : "rs232_flow_control",
-		"regexvalidator" : 
-		{
-			"regex" : "^(none|xon_xoff|rts_cts)$"
-		}
-	},
-	{
-		"currentValue" : "TERM",
-		"factoryDefault" : "TERM",
-		"name" : "rs232_interface",
-		"regexvalidator" : 
-		{
-			"regex" : "^(TERM|COMP)$"
-		}
-	},
-	{
-		"currentValue" : "none",
-		"factoryDefault" : "none",
-		"name" : "rs232_parity",
-		"regexvalidator" : 
-		{
-			"regex" : "^(none|odd|even)$"
-		}
-	},
-	{
-		"currentValue" : 1,
-		"factoryDefault" : 1,
-		"integervalidator" : 
-		{
-			"max" : 2,
-			"min" : 1
-		},
-		"name" : "rs232_stop_bits"
-	},
-	{
-		"currentValue" : "PT385",
-		"factoryDefault" : "PT385",
-		"name" : "rtd_default",
-		"regexvalidator" : 
-		{
-			"regex" : "^(PT385|PT3926|PT3916|CU10|NU120)$"
-		}
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : false,
-		"factoryDefault" : false,
-		"name" : "state_fine_trace"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : false,
-		"factoryDefault" : false,
-		"name" : "state_gross_trace"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : false,
-		"factoryDefault" : false,
-		"name" : "system_fine_trace"
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : false,
-		"name" : "system_gross_trace"
-	},
-	{
-		"currentValue" : "B",
-		"factoryDefault" : "K",
-		"name" : "tc_default",
-		"regexvalidator" : 
-		{
-			"regex" : "^[BCEJKLNRSTUXYZ]$|^A1$|^XK$"
-		}
-	},
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : true,
-		"name" : "telnet_enabled"
-	},
-	{
-		"currentValue" : "CRLF",
-		"factoryDefault" : "CRLF",
-		"name" : "telnet_eol_char",
-		"regexvalidator" : 
-		{
-			"regex" : "^(CR|LF|CRLF)$"
-		}
-	},
-	{
-		"currentValue" : "TERM",
-		"factoryDefault" : "TERM",
-		"name" : "telnet_interface",
-		"regexvalidator" : 
-		{
-			"regex" : "^(TERM|COMP)$"
-		}
-	},
     {
-        "currentValue" : "ITS90",
-        "factoryDefault" : "ITS90",
-        "name" : "temp_scale_default",
-        "regexvalidator" :
-        {
-            "regex" : "^(ITS90|IPTS48|IPTS68)$"
+        "currentValue": 50,
+        "factoryDefault": 50,
+        "int64Validator": {
+            "max": 100,
+            "min": 0
+        },
+        "name": "display_brightness"
+    },
+    {
+        "currentValue": "I",
+        "enumValidator": {
+            "regex": "^(I|II|III|DOD)$"
+        },
+        "factoryDefault": "I",
+        "name": "model_type"
+    },
+    {
+        "currentValue": 50,
+        "factoryDefault": 50,
+        "int64Validator": {
+            "max": 100,
+            "min": 0
+        },
+        "name": "led_brightness"
+    },
+    {
+        "currentValue": "NONE",
+        "enumValidator": {
+            "regex": "^(NONE|T15|T30|T60)$"
+        },
+        "factoryDefault": "NONE",
+        "name": "auto_dim"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "show_secondary_specs"
+    },
+    {
+        "currentValue": "HOUR12",
+        "enumValidator": {
+            "regex": "^(HOUR12|HOUR24)$"
+        },
+        "factoryDefault": "HOUR12",
+        "name": "time_format"
+    },
+    {
+        "currentValue": "MDY",
+        "enumValidator": {
+            "regex": "^(MDY|DMY|YMD)$"
+        },
+        "factoryDefault": "MDY",
+        "name": "date_format"
+    },
+    {
+        "currentValue": 5560,
+        "factoryDefault": 5560,
+        "int64Validator": {
+            "max": 9999,
+            "min": 0
+        },
+        "name": "passcode"
+    },
+    {
+        "currentValue": 10,
+        "factoryDefault": 10,
+        "int64Validator": {
+            "max": 60,
+            "min": 1
+        },
+        "name": "overload_tlimit"
+    },
+    {
+        "currentValue": "5560 hello world",
+        "factoryDefault": "5560 hello world",
+        "name": "report_string",
+        "stringValidator": {
+            "regex": "^(.*)$"
         }
     },
-	{
-		"booleanvalidator" : "",
-		"currentValue" : true,
-		"factoryDefault" : true,
-		"name" : "usbtmc_enabled"
-	},
-	{
-		"currentValue" : 1020.0,
-		"doublevalidator" : 
-		{
-			"max" : 1020.0,
-			"min" : 0.0
-		},
-		"factoryDefault" : 1020.0,
-		"name" : "voltage_max"
-	},
-	{
-		"currentValue" : -1020.0,
-		"doublevalidator" : 
-		{
-			"max" : 0.0,
-			"min" : -1020.0
-		},
-		"factoryDefault" : -1020.0,
-		"name" : "voltage_min"
-	}
+    {
+        "currentValue": "71077345",
+        "factoryDefault": "00000000",
+        "name": "serial_number",
+        "stringValidator": {
+            "regex": "^(.*)$"
+        }
+    },
+    {
+        "currentValue": "5560A",
+        "factoryDefault": "5560A",
+        "name": "model_id",
+        "stringValidator": {
+            "regex": "^(.*)$"
+        }
+    },
+    {
+        "currentValue": "",
+        "factoryDefault": "",
+        "name": "build_date",
+        "stringValidator": {
+            "regex": "^(.*)$"
+        }
+    },
+    {
+        "currentValue": "5560A",
+        "factoryDefault": "5560A",
+        "name": "pud_string",
+        "stringValidator": {
+            "regex": "^(.*)$"
+        }
+    },
+    {
+        "currentValue": "I1Y",
+        "enumValidator": {
+            "regex": "^(I90D|I1Y|I2Y)$"
+        },
+        "factoryDefault": "I1Y",
+        "name": "cal_interval"
+    },
+    {
+        "currentValue": "C95",
+        "enumValidator": {
+            "regex": "^(C95|C99)$"
+        },
+        "factoryDefault": "C95",
+        "name": "confidence_level"
+    },
+    {
+        "currentValue": 30.2,
+        "doubleValidator": {
+            "max": 30.2,
+            "min": 0.001
+        },
+        "factoryDefault": 30.2,
+        "name": "current_max"
+    },
+    {
+        "currentValue": -30.2,
+        "doubleValidator": {
+            "max": -0.001,
+            "min": -30.2
+        },
+        "factoryDefault": -30.2,
+        "name": "current_min"
+    },
+    {
+        "currentValue": "Z600",
+        "enumValidator": {
+            "regex": "^(Z50|Z75|Z90|Z100|Z135|Z150|Z300|Z600|Z900|Z1000|Z1200)$"
+        },
+        "factoryDefault": "Z600",
+        "name": "dbm_reference"
+    },
+    {
+        "currentValue": "CELSIUS",
+        "enumValidator": {
+            "regex": "^(CELSIUS|FAHRENHEIT)$"
+        },
+        "factoryDefault": "CELSIUS",
+        "name": "degree_default"
+    },
+    {
+        "currentValue": "NOMINAL",
+        "enumValidator": {
+            "regex": "^(NOMINAL|TRUEVALUE)$"
+        },
+        "factoryDefault": "NOMINAL",
+        "name": "error_reference"
+    },
+    {
+        "currentValue": 4,
+        "factoryDefault": 4,
+        "int64Validator": {
+            "max": 30,
+            "min": 0
+        },
+        "name": "gpib_address"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "gpib_enabled"
+    },
+    {
+        "currentValue": "ENGLISH",
+        "enumValidator": {
+            "regex": "^(ENGLISH|CHINESE|FRENCH|GERMAN|PORTUGUESE|SPANISH|RUSSIAN|JAPANESE|KOREAN|ITALIAN)$"
+        },
+        "factoryDefault": "ENGLISH",
+        "name": "language"
+    },
+    {
+        "currentValue": "BX9600",
+        "enumValidator": {
+            "regex": "^(BX9600|BX19200|BX38400|BX57600|BX115200)$"
+        },
+        "factoryDefault": "BX9600",
+        "name": "rs232_baud_rate"
+    },
+    {
+        "currentValue": "DBIT8",
+        "enumValidator": {
+            "regex": "^(DBIT7|DBIT8)$"
+        },
+        "factoryDefault": "DBIT8",
+        "name": "rs232_data_bits"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "rs232_enabled"
+    },
+    {
+        "currentValue": "CRLF",
+        "enumValidator": {
+            "regex": "^(CR|LF|CRLF)$"
+        },
+        "factoryDefault": "CRLF",
+        "name": "rs232_eol_char"
+    },
+    {
+        "currentValue": "xon_xoff",
+        "enumValidator": {
+            "regex": "^(none|rts_cts|xon_xoff)$"
+        },
+        "factoryDefault": "xon_xoff",
+        "name": "rs232_flow_control"
+    },
+    {
+        "currentValue": "TERM",
+        "enumValidator": {
+            "regex": "^(COMP|TERM)$"
+        },
+        "factoryDefault": "TERM",
+        "name": "rs232_interface"
+    },
+    {
+        "currentValue": "none",
+        "enumValidator": {
+            "regex": "^(odd|even|none|ignore)$"
+        },
+        "factoryDefault": "none",
+        "name": "rs232_parity"
+    },
+    {
+        "currentValue": "SBIT1",
+        "enumValidator": {
+            "regex": "^(SBIT1|SBIT2)$"
+        },
+        "factoryDefault": "SBIT1",
+        "name": "rs232_stop_bits"
+    },
+    {
+        "currentValue": "PT385",
+        "enumValidator": {
+            "regex": "^(CU10|CU50|NI120|PT385|PT385_1K|PT385_200|PT385_500|PT3916|PT3926)$"
+        },
+        "factoryDefault": "PT385",
+        "name": "rtd_default"
+    },
+    {
+        "currentValue": "TC",
+        "enumValidator": {
+            "regex": "^(TC|RTD)$"
+        },
+        "factoryDefault": "TC",
+        "name": "tsense_type"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": false,
+        "factoryDefault": false,
+        "name": "opman_gross_trace"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": false,
+        "name": "state_fine_trace"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": false,
+        "name": "state_gross_trace"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": false,
+        "factoryDefault": false,
+        "name": "system_fine_trace"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": false,
+        "factoryDefault": false,
+        "name": "system_gross_trace"
+    },
+    {
+        "currentValue": "K",
+        "enumValidator": {
+            "regex": "^[BCDEGJKLNRSTUXYZ]$|^A1$|^XK$"
+        },
+        "factoryDefault": "K",
+        "name": "tc_default"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "telnet_enabled"
+    },
+    {
+        "currentValue": 3490,
+        "factoryDefault": 3490,
+        "int64Validator": {
+            "max": 65535,
+            "min": 1024
+        },
+        "name": "telnet_port"
+    },
+    {
+        "currentValue": "CRLF",
+        "enumValidator": {
+            "regex": "^(CR|LF|CRLF)$"
+        },
+        "factoryDefault": "CRLF",
+        "name": "telnet_eol_char"
+    },
+    {
+        "currentValue": "TERM",
+        "enumValidator": {
+            "regex": "^(COMP|TERM)$"
+        },
+        "factoryDefault": "TERM",
+        "name": "telnet_interface"
+    },
+    {
+        "currentValue": "ITS90",
+        "enumValidator": {
+            "regex": "^(ITS90|IPTS48|IPTS68)$"
+        },
+        "factoryDefault": "ITS90",
+        "name": "temp_scale_default"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "usbtmc_enabled"
+    },
+    {
+        "currentValue": 1020.0,
+        "doubleValidator": {
+            "max": 1020.0,
+            "min": 0.001
+        },
+        "factoryDefault": 1020.0,
+        "name": "voltage_max"
+    },
+    {
+        "currentValue": -1020.0,
+        "doubleValidator": {
+            "max": -0.001,
+            "min": -1020.0
+        },
+        "factoryDefault": -1020.0,
+        "name": "voltage_min"
+    },
+    {
+        "currentValue": "GT1000",
+        "enumValidator": {
+            "regex": "^(GT1000|GT100|GT10|PPM|PCT|SCI)$"
+        },
+        "factoryDefault": "GT1000",
+        "name": "error_unit"
+    },
+    {
+        "currentValue": "INT",
+        "enumValidator": {
+            "regex": "^(INT|EXT)$"
+        },
+        "factoryDefault": "INT",
+        "name": "reference_clock_default"
+    },
+    {
+        "currentValue": 0.0,
+        "doubleValidator": {
+            "max": 180.0,
+            "min": -180.0
+        },
+        "factoryDefault": 0.0,
+        "name": "reference_phase_default"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": false,
+        "factoryDefault": false,
+        "name": "power_on_wizard"
+    },
+    {
+        "booleanValidator": "",
+        "currentValue": true,
+        "factoryDefault": true,
+        "name": "phase_correction"
+    },
+    {
+        "currentValue": 10.0,
+        "doubleValidator": {
+            "max": 60.0,
+            "min": 0.0
+        },
+        "factoryDefault": 10.0,
+        "name": "scope_overload_limit_default"
+    },
+    {
+        "currentValue": "NONE",
+        "enumValidator": {
+            "regex": "^(NONE|C5500A50T|C9100_10T|C9100_50T|C5560A50T|C5560A1T|C5560A2T|C5560A10T|C52120A25T|C52120A50T|CUSTOM)$"
+        },
+        "factoryDefault": "NONE",
+        "name": "coil_type"
+    },
+    {
+        "currentValue": 0,
+        "factoryDefault": 0,
+        "int64Validator": {
+            "max": 100,
+            "min": 0
+        },
+        "name": "coil_turns"
+    }
 ]

@@ -4,7 +4,7 @@
 source /home/setup_environment_target
 
 # Set the MAC addresses on the external outguard interface.
-/home/Nighthawk/config/setmacOG
+/home/$PRODUCT_NAME/config/setmacOG
 
 # Set up the internal ethernet interface.
 if [ 'on' = $sh_dualether ]

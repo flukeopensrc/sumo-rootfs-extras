@@ -1,0 +1,490 @@
+{
+    "DIAG": {
+        "description": "Hijacking the diagnostic procedure as a test bed for cal steps.",
+        "steps": [
+            {
+                "extconfig": "ZEROCAL",
+                "message": "This is a test procedure only. Press continue to begin",
+                "type": "message"
+            },
+            {
+                "description": "ACV offsets",
+                "function": "ACV",
+                "qualifier": {
+                    "cal": "zero"
+                },
+                "type": "opman"
+            },
+            {
+                "extconfig": "ZEROCAL",
+                "message": "Press continue to end",
+                "type": "message"
+            }
+        ]
+    },
+    "ZERO": {
+        "description": "Zero calibration procedure",
+        "name": "Zero",
+        "steps": [
+            {
+                "description": "Press continue to begin",
+                "extconfig": "ZEROCAL",
+                "name": "Please disconnect all terminals",
+                "type": "message"
+            },
+            {
+                "description": "Press continue to begin",
+                "extconfig": "ZEROCAL",
+                "name": "Press continue to begin",
+                "type": "message"
+            },
+            {
+                "description": "Calculates A6 vdac ratio constant",
+                "name": "VDAC_RATIO_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "VDAC_RATIO_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 15000.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6VDAC",
+                    "paramKey": "RATIO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 vdac positive zero constant",
+                "name": "VDAC_POSITIVE_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "VDAC_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 314.62,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6VDAC",
+                    "paramKey": "POSZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 vdac negative zero constant",
+                "name": "VDAC_NEGATIVE_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "VDAC_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 16068.24,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6VDAC",
+                    "paramKey": "NEGZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 vdac bipolar zero constant",
+                "name": "VDAC_BIPOLAR_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "VDAC_BI_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 8192.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6VDAC",
+                    "paramKey": "BIZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 idac ratio constant",
+                "name": "IDAC_RATIO_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "IDAC_RATIO_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 15000.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6IDAC",
+                    "paramKey": "RATIO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 idac positive zero constant",
+                "name": "IDAC_POSITIVE_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "IDAC_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 314.62,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6IDAC",
+                    "paramKey": "POSZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 idac negative zero constant",
+                "name": "IDAC_NEGATIVE_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "IDAC_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 16068.24,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6IDAC",
+                    "paramKey": "NEGZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates A6 idac bipolar zero constant",
+                "name": "IDAC_BIPOLAR_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "IDAC_BI_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 8192.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "A6IDAC",
+                    "paramKey": "BIZERO",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "sync constants over to Opman",
+                "name": "sync constants over to Opman",
+                "type": "sync"
+            },
+            {
+                "description": "Calculates +120 mV offset constant",
+                "name": "DC120MV_POS_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC120MV_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC120MV"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC120MV_P",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates +1.2 V offset constant",
+                "name": "DC1_2V_POS_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC1_2V_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC1_2V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC1_2V_P",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates +12 V offset constant",
+                "name": "DC12V_POS_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC12V_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC12V_P",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates +120 V offset constant",
+                "name": "DC120V_POS_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC120V_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC120V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC120V_P",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates +1000 V offset constant",
+                "name": "DC1000V_POS_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC1000V_POS_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": 0.0,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC1000V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC1000V_P",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates -120 mV offset constant",
+                "name": "DC120MV_NEG_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC120MV_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": -1e-07,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC120MV"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC120MV_N",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates -1.2 V offset constant",
+                "name": "DC1_2V_NEG_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC1_2V_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": -1e-07,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC1_2V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC1_2V_N",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates -12 V offset constant",
+                "name": "DC12V_NEG_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC12V_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": -1e-07,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC12V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC12V_N",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates -120 V offset constant",
+                "name": "DC120V_NEG_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC120V_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": -1e-07,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC120V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC120V_N",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Calculates -1000 V offset constant",
+                "name": "DC1000V_NEG_ZERO",
+                "stateArray": [
+                    {
+                        "isOperate": false,
+                        "monitorConfiguration": "DC1000V_NEG_ZERO",
+                        "primaryMagnitude": {
+                            "magnitude": -1e-07,
+                            "units": "VOLT"
+                        },
+                        "primaryRange": {
+                            "remoteName": "DC1000V"
+                        }
+                    }
+                ],
+                "targetValue": 0.0,
+                "type": "source",
+                "valCalc": {
+                    "correctorKey": "DC1000V_N",
+                    "paramKey": "OFFSET",
+                    "type": "nameonly"
+                }
+            },
+            {
+                "description": "Saves the cal constants",
+                "name": "Zero calibration complete; press continue to save the result.",
+                "type": "message"
+            },
+            {
+                "description": "sync constants over to Opman",
+                "name": "sync constants over to Opman",
+                "type": "sync"
+            }
+        ]
+    }
+}

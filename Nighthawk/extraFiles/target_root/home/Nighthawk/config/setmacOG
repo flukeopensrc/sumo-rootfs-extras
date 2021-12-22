@@ -6,6 +6,7 @@
 # which can be executed from the command line to populate
 # this file.
 
-export macaddr_eth1=00:80:40:FF:00:37
+# Set up the internal ethernet interface.
+export macaddr=00:80:40:FF:00:C0
 /sbin/ifconfig eth1 down
-/sbin/ifconfig eth1 hw ether $macaddr_eth1
+/sbin/ifconfig eth1 hw ether $macaddr

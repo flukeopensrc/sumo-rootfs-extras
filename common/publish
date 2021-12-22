@@ -34,12 +34,12 @@ if [ -n "$EMMC_ROOTFS" ] && [ "$EMMC_ROOTFS" -ne 0 ]
 then
 	/usr/bin/srec_cat \
 	./loader/U-boot/u-boot-with-spl.sfp -Binary \
-	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
+	./DeviceTree/${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
 	./kernel/zImage -Binary -Offset 0x00200000 \
 	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x00800000 \
 	./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz -Binary -Offset 0x01000000 \
 	./loader/U-boot/u-boot-with-spl.sfp -Binary -Offset 0x02000000 \
-	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x02110000 \
+	./DeviceTree/${PROJECT_NAME}_soc.dtb -Binary -Offset 0x02110000 \
 	./kernel/zImage -Binary -Offset 0x02200000 \
 	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x02800000 \
 	./kernel/fluke-initrd-image-${PROJECT_MACHINE}.ext4.gz -Binary -Offset 0x03000000 \
@@ -48,7 +48,7 @@ then
 else
 	/usr/bin/srec_cat \
 	./loader/U-boot/u-boot-with-spl.sfp -Binary \
-	./DeviceTree/zImage-${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
+	./DeviceTree/${PROJECT_NAME}_soc.dtb -Binary -Offset 0x00110000 \
 	./kernel/zImage -Binary -Offset 0x00200000 \
 	./fpga/${PROJECT_NAME}_OG.rbf -Binary -Offset 0x0800000 \
 	-Output ./rootfs/U10.flash -Motorola --address-length=4 -Data_Only

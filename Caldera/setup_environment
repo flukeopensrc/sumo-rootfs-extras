@@ -1,6 +1,6 @@
 export PROJECT_NAME=Caldera
-#export PROJECT_BASE_DEPLOY_DIR=/home/fmhess/git/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/
-export PROJECT_BASE_DEPLOY_DIR=/crosswind/usr1/halfdome/cda/fluke-cda-setup/angstrom-v2018.06-sumo-fluke-cda-manifest/deploy/
+#export PROJECT_BASE_DEPLOY_DIR=/home/fmhess/git/fluke-cda-setup/angstrom-v2019.12-zeus-fluke-cda-manifest/deploy/
+export PROJECT_BASE_DEPLOY_DIR=/crosswind/usr1/halfdome/cda/fluke-cda-setup/angstrom-v2019.12-zeus-fluke-cda-manifest/deploy/
 export PROJECT_DEPLOY_DIR=${PROJECT_BASE_DEPLOY_DIR}glibc/images/
 export PROJECT_MACHINE=fluke-cda-caldera
 export PROJECT_IMAGES=$PROJECT_DEPLOY_DIR$PROJECT_MACHINE/

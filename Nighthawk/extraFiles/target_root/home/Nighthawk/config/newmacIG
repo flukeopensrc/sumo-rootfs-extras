@@ -1,0 +1,19 @@
+#!/bin/sh
+source /home/setup_environment_target
+
+# Set up the internal ethernet interface.
+file0=/home/$PRODUCT_NAME/config/setmacIG
+
+# If the file exists, copy it to backup and delete original
+if [  -f "$file0" ]
+then
+    cp $file0 ${file0}.save
+    rm $file0
+fi
+
+echo "export macaddr_eth0=$1" >> $file0
+echo '/sbin/ifconfig eth0 down' >> $file0
+echo '/sbin/ifconfig eth0 hw ether $macaddr_eth0' >> $file0
+
+chmod a+x $file0
+

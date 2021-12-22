@@ -1,0 +1,8 @@
+{
+    "ACDC_52120": {
+        "description": "Cadmus/52120 gain/offset correction for 1V DC range",
+        "type": "linear",
+        "GAIN": 0.5,
+        "OFFSET": 0.0003
+    }	
+}
