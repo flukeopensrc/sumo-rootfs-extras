@@ -1,8 +1,0 @@
-#!/bin/sh
-
-export QMLSCENE_DEVICE=softwarecontext
-export QT_QPA_PLATFORM=linuxfb
-export QT_QPA_FONTDIR=/usr/share/fonts/ttf
-
-/home/Nighthawk/bin/fp &
-
